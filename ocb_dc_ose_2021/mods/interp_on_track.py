@@ -33,7 +33,7 @@ def interp_on_track(
 
 
 b = hydra_zen.make_custom_builds_fn(populate_full_signature=True)
-interp_on_track_endpoint, interp_on_track_cfg = aprl.module.register(
+run, cfg = aprl.module.register(
     interp_on_track,
     base_args=dict(
         grid_paths="???",
@@ -45,4 +45,4 @@ interp_on_track_endpoint, interp_on_track_cfg = aprl.module.register(
 )
 
 if __name__ == "__main__":
-    interp_on_track_endpoint()
+    run()

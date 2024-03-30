@@ -49,7 +49,7 @@ def mu(
 
 
 b = hydra_zen.make_custom_builds_fn()
-mu_endpoint, mu_cfg = aprl.module.register(
+run, cfg = aprl.module.register(
     mu,
     base_args=dict(
         preprocess_ref=b(operator.itemgetter, "ssh"),
@@ -58,4 +58,4 @@ mu_endpoint, mu_cfg = aprl.module.register(
 )
 
 if __name__ == "__main__":
-    mu_endpoint()
+    run()

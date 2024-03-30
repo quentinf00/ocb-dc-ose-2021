@@ -18,7 +18,7 @@ def duacs_l3(sat="c2"):
 
 b = hydra_zen.make_custom_builds_fn(populate_full_signature=True)
 
-cmems_get_endpoint, cmems_get_cfg = aprl.module.register(
+run, cfg = aprl.module.register(
     copernicusmarine.get,
     base_args=dict(
         dataset_id=b(duacs_l3),
@@ -32,4 +32,4 @@ cmems_get_endpoint, cmems_get_cfg = aprl.module.register(
 )
 
 if __name__ == "__main__":
-    cmems_get_endpoint()
+    run()

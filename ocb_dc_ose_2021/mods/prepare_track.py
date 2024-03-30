@@ -49,13 +49,15 @@ def prepare_track(input_paths, output_path, preprocess, sort_paths=True):
     ).to_netcdf(output_path)
 
 
+def sorted_glob(pathname):
+    sorted(glob.glob(pathname=pathname, recursive=True))
+
+
 b = hydra_zen.make_custom_builds_fn(populate_full_signature=True)
-prepare_track_endpoint, prepare_track_cfg = aprl.module.register(
+run, cfg = aprl.module.register(
     prepare_track,
     base_args=dict(
-        input_paths=b(
-            sorted, b(glob.glob, pathname="data/downloads/ref/**/*.nc", recursive=True)
-        ),
+        input_paths=b(sorted_glob, pathname="data/downloads/ref/**/*.nc"),
         output_path="data/prepared/ref/default.nc",
         preprocess=partial(
             preprocess_track,
@@ -70,4 +72,4 @@ prepare_track_endpoint, prepare_track_cfg = aprl.module.register(
 )
 
 if __name__ == "__main__":
-    prepare_track_endpoint()
+    run()

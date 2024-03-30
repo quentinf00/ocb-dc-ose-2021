@@ -88,13 +88,13 @@ def lambdax(
 
 
 b = hydra_zen.make_custom_builds_fn()
-lambdax_endpoint, lambdax_cfg = aprl.module.register(
+run, cfg = aprl.module.register(
     lambdax,
     base_args=dict(
-        preprocess_ref=b(operator.itemgetter, "ssh"),
-        preprocess_study=b(operator.itemgetter, "rec_ssh"),
+        preprocess_ref=b(aprl.utils.kw2a, fn=operator.itemgetter, ssh_var="ssh"),
+        preprocess_study=b(aprl.utils.kw2a, fn=operator.itemgetter, ssh_var="rec_ssh"),
     ),
 )
 
 if __name__ == "__main__":
-    lambdax_endpoint()
+    run()
