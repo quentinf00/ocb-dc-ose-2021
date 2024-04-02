@@ -17,7 +17,7 @@ jobs:
         if: ${{ steps.check_author.outputs.skip  == 'false' }}
         with:
           micromamba-version: 'latest'
-          environment-file: env.yaml
+          environment-file: env-s3.yaml
           environment-name: ci
           init-shell: bash
           cache-environment: true
