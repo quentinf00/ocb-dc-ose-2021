@@ -1,0 +1,155 @@
+metrics:
+  _partial_: true
+  _target_: aprl.pipeline.run
+  dry: false
+  params:
+    max_lat: 43.0
+    max_lon: -55.0
+    max_time: '2017-12-31'
+    method: default
+    min_lat: 33.0
+    min_lon: -65.0
+    min_time: '2017-01-01'
+    sat: c2
+    study_path: data/downloads/method_outputs/${.method}.nc
+    study_var: ssh
+  stages:
+    _01_dl_track:
+      _partial_: true
+      _target_: copernicusmarine.python_interface.get.get
+      dataset_id:
+        _target_: ocb_dc_ose_2021.mods.cmems_get.duacs_l3
+        sat: ${....params.sat}
+      force_download: true
+      output_directory: data/downloads/ref/${...params.sat}
+      overwrite_output_data: true
+      regex:
+        _target_: ocb_dc_ose_2021.mods.cmems_get.month_regex_from_date
+        max_time: ${....params.max_time}
+        min_time: ${....params.min_time}
+    _02_prepare_track:
+      _partial_: true
+      _target_: ocb_dc_ose_2021.mods.prepare_track.prepare_track
+      input_paths:
+        _target_: ocb_dc_ose_2021.mods.prepare_track.sorted_glob
+        pathname: ${..._01_dl_track.output_directory}/**/*.nc
+      output_path: data/prepared/ref/${...params.sat}.nc
+      preprocess:
+        _partial_: true
+        _target_: ocb_dc_ose_2021.mods.prepare_track.preprocess_track
+        max_lat: ${....params.max_lat}
+        max_lon: ${....params.max_lon}
+        max_time: ${....params.max_time}
+        min_lat: ${....params.min_lat}
+        min_lon: ${....params.min_lon}
+        min_time: ${....params.min_time}
+    _03_interp_on_track:
+      _partial_: true
+      _target_: ocb_dc_ose_2021.mods.interp_on_track.interp_on_track
+      grid_paths: ${...params.study_path}
+      output_path: data/prepared/method_outputs/${...params.method}_on_track.nc
+      preprocess_grid:
+        _partial_: true
+        _target_: ocb_dc_ose_2021.mods.interp_on_track.preprocess_map
+        ssh_var: ${....params.study_var}
+      preprocess_track: null
+      track_paths: ${.._02_prepare_track.output_path}
+    _04_1_lambdax:
+      _partial_: true
+      _target_: ocb_dc_ose_2021.mods.lambdax.lambdax
+      delta_t: 0.9434
+      length_scale: 1000.0
+      output_lambdax_path: data/metrics/lambdax_${...params.method}.json
+      output_psd_path: data/prepared/method_outputs/psd_${...params.method}.nc
+      preprocess_ref:
+        _target_: aprl.utils.kw2a
+        fn:
+          _target_: hydra_zen.funcs.get_obj
+          path: operator.itemgetter
+        ssh_var: ssh
+      preprocess_study:
+        _target_: aprl.utils.kw2a
+        fn:
+          _target_: hydra_zen.funcs.get_obj
+          path: operator.itemgetter
+        ssh_var: ${....params.study_var}
+      ref_paths: ${.._02_prepare_track.output_path}
+      segment_overlapping: 0.25
+      study_paths: ${.._03_interp_on_track.output_path}
+      velocity: 6.77
+    _04_2_mu:
+      _partial_: true
+      _target_: ocb_dc_ose_2021.mods.mu.mu
+      output_path: data/metrics/mu_${...params.method}.json
+      preprocess_ref:
+        _target_: aprl.utils.kw2a
+        fn:
+          _target_: hydra_zen.funcs.get_obj
+          path: operator.itemgetter
+        ssh_var: ssh
+      preprocess_study:
+        _args_:
+        - _target_: hydra_zen.funcs.get_obj
+          path: operator.itemgetter
+        _target_: aprl.utils.kw2a
+        ssh_var: ${....params.study_var}
+      ref_paths: ${.._02_prepare_track.output_path}
+      study_paths: ${.._03_interp_on_track.output_path}
+  to_run:
+  - _01_dl_track
+  - _02_prepare_track
+  - _03_interp_on_track
+  - _04_1_lambdax
+  - _04_2_mu
+input_data:
+  _partial_: true
+  _target_: aprl.pipeline.run
+  dry: false
+  params:
+    max_lat: 44.0
+    max_lon: -54.0
+    max_time: '2018-02-01'
+    min_lat: 32.0
+    min_lon: -66.0
+    min_time: '2016-12-01'
+    sat: null
+    sat_list:
+    - alg
+    - h2ag
+    - j2g
+    - j2n
+    - j3
+    - s3a
+  stages:
+    _01_dl_track:
+      _partial_: true
+      _target_: copernicusmarine.python_interface.get.get
+      dataset_id:
+        _target_: ocb_dc_ose_2021.mods.cmems_get.duacs_l3
+        sat: ${....params.sat}
+      force_download: true
+      output_directory: data/downloads/input/${...params.sat}
+      overwrite_output_data: true
+      regex:
+        _target_: ocb_dc_ose_2021.mods.cmems_get.month_regex_from_date
+        max_time: ${....params.max_time}
+        min_time: ${....params.min_time}
+    _02_prepare_track:
+      _partial_: true
+      _target_: ocb_dc_ose_2021.mods.prepare_track.prepare_track
+      input_paths:
+        _target_: ocb_dc_ose_2021.mods.prepare_track.sorted_glob
+        pathname: ${..._01_dl_track.output_directory}/**/*.nc
+      output_path: data/prepared/input/${...params.sat}.nc
+      preprocess:
+        _partial_: true
+        _target_: ocb_dc_ose_2021.mods.prepare_track.preprocess_track
+        max_lat: ${....params.max_lat}
+        max_lon: ${....params.max_lon}
+        max_time: ${....params.max_time}
+        min_lat: ${....params.min_lat}
+        min_lon: ${....params.min_lon}
+        min_time: ${....params.min_time}
+  to_run:
+  - _01_dl_track
+  - _02_prepare_track

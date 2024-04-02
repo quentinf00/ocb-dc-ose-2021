@@ -42,7 +42,7 @@ _03_interp_on_track = interp_on_track_cfg(
     grid_paths="${...params.study_path}",
     preprocess_grid=preprocess_map_cfg(ssh_var="${....params.study_var}"),
     track_paths="${.._02_prepare_track.output_path}",
-    output_path="data/prepared/methods/${...params.method}_on_track.nc",
+    output_path="data/prepared/method_outputs/${...params.method}_on_track.nc",
 )
 
 lambdax_cfg = aprl.utils.make_partial(lambdax.cfg)
@@ -52,7 +52,7 @@ _04_1_lambdax = lambdax_cfg(
     ref_paths="${.._02_prepare_track.output_path}",
     study_paths="${.._03_interp_on_track.output_path}",
     output_lambdax_path="data/metrics/lambdax_${...params.method}.json",
-    output_psd_path="data/prepared/methods/psd_${...params.method}.nc",
+    output_psd_path="data/prepared/method_outputs/psd_${...params.method}.nc",
     preprocess_study=pp_lx_study_cfg(ssh_var="${....params.study_var}"),
     preprocess_ref=pp_lx_ref_cfg(ssh_var="ssh"),
 )
@@ -79,7 +79,7 @@ stages = {
 
 params = dict(
     method="default",
-    study_path="data/downloads/methods/${.method}.nc",
+    study_path="data/downloads/method_outputs/${.method}.nc",
     study_var="ssh",
     sat="c2",
     min_time="2017-01-01",
