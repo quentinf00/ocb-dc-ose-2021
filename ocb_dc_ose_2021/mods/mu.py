@@ -52,8 +52,8 @@ b = hydra_zen.make_custom_builds_fn()
 run, cfg = aprl.module.register(
     mu,
     base_args=dict(
-        preprocess_ref=b(operator.itemgetter, "ssh"),
-        preprocess_study=b(operator.itemgetter, "rec_ssh"),
+        preprocess_ref=b(aprl.utils.kw2a, fn=operator.itemgetter, ssh_var="ssh"),
+        preprocess_study=b(aprl.utils.kw2a, operator.itemgetter, ssh_var="rec_ssh"),
     ),
 )
 

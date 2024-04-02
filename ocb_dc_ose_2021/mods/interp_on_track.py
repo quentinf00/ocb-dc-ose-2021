@@ -20,7 +20,6 @@ def interp_on_track(
     grid_paths, track_paths, output_path, preprocess_grid=None, preprocess_track=None
 ):
     Path(output_path).parent.mkdir(parents=True, exist_ok=True)
-
     map = xr.open_mfdataset(
         grid_paths, preprocess=preprocess_grid, combine="nested", concat_dim="time"
     )
@@ -33,13 +32,14 @@ def interp_on_track(
 
 
 b = hydra_zen.make_custom_builds_fn(populate_full_signature=True)
+pb = hydra_zen.make_custom_builds_fn(zen_partial=True, populate_full_signature=True)
 run, cfg = aprl.module.register(
     interp_on_track,
     base_args=dict(
         grid_paths="???",
         track_paths="data/prepared/ref/default.nc",
         output_path="data/prepared/method_output/map_on_track.nc",
-        preprocess_grid=partial(preprocess_map, ssh_var="rec_ssh"),
+        preprocess_grid=pb(preprocess_map, ssh_var="rec_ssh"),
         preprocess_track=None,
     ),
 )

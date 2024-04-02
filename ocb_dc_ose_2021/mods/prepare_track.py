@@ -3,6 +3,7 @@ from functools import partial
 from pathlib import Path
 
 import aprl.module
+import aprl.utils
 import hydra_zen
 import ocn_tools._src.geoprocessing.validation as ocnval
 import pandas as pd
@@ -39,27 +40,29 @@ def preprocess_track(
     )
 
 
-def prepare_track(input_paths, output_path, preprocess, sort_paths=True):
+def prepare_track(input_paths, output_path, preprocess):
     Path(output_path).parent.mkdir(parents=True, exist_ok=True)
     xr.open_mfdataset(
-        sorted(input_paths),
-        preprocess=preprocess_track,
+        input_paths,
+        preprocess=preprocess,
         combine="nested",
         concat_dim="time",
     ).to_netcdf(output_path)
 
 
 def sorted_glob(pathname):
-    sorted(glob.glob(pathname=pathname, recursive=True))
+    return sorted(glob.glob(pathname=pathname, recursive=True))
 
 
 b = hydra_zen.make_custom_builds_fn(populate_full_signature=True)
+pb = hydra_zen.make_custom_builds_fn(zen_partial=True, populate_full_signature=True)
+
 run, cfg = aprl.module.register(
     prepare_track,
     base_args=dict(
         input_paths=b(sorted_glob, pathname="data/downloads/ref/**/*.nc"),
         output_path="data/prepared/ref/default.nc",
-        preprocess=partial(
+        preprocess=pb(
             preprocess_track,
             min_lon=-65,
             max_lon=-55,

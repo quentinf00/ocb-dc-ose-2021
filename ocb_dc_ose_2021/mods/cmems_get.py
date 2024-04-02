@@ -27,8 +27,8 @@ run, cfg = aprl.module.register(
         force_download=True,
         overwrite_output_data=True,
     ),
-    builds_kwargs=dict(populate_full_signature=False),
-    zen_kwargs=dict(exclude="download_file_list"),
+    builds_kws=dict(populate_full_signature=False),
+    zen_kws=dict(exclude="download_file_list"),
 )
 
 if __name__ == "__main__":

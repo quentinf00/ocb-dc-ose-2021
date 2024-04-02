@@ -77,7 +77,7 @@ def lambdax(
 
     ## Robust lambda_x computation when small wavelength reach score > 0.5
     lambda_x = 1 / min_intersect(ds)
-    log.debug(f"Effective scale resolved (interpolated at score 0.5) {lambda_x:.2f}")
+    log.info(f"Effective scale resolved (interpolated at score 0.5) {lambda_x:.2f}")
 
     Path(output_lambdax_path).parent.mkdir(parents=True, exist_ok=True)
     Path(output_psd_path).parent.mkdir(parents=True, exist_ok=True)
