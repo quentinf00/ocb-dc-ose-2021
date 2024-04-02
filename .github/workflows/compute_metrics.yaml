@@ -35,7 +35,7 @@ jobs:
         shell: bash -el {0}
         id: metrics_to_recompute
         run: |
-          dvc --cd leaderboard pull data/prepared/ref data/prepared/method_outputs
+          dvc --cd leaderboard pull data/prepared/ref/* data/prepared/method_outputs/*
           STATUS=$(dvc --cd leaderboard status --json)
           echo $STATUS
           STAGES=$(echo "$STATUS" | jq -r '[keys[] | select(contains("diagnostics/metric"))] | join(" ")')
