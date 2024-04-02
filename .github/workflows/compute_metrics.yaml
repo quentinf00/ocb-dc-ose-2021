@@ -45,9 +45,9 @@ jobs:
         shell: bash -el {0}
         if: ${{ (steps.check_author.outputs.skip == 'false') && steps.metrics_to_recompute.outputs.stages }}
         run: |
-          dvc freeze diagnostics/fetch_reference_data
+          dvc --cd leaderboard freeze diagnostics/fetch_reference_data
           dvc --cd leaderboard repro -k --pull --allow-missing ${{steps.stages_to_run.outputs.stages}}
-          dvc unfreeze diagnostics/fetch_reference_data
+          dvc --cd leaderboard unfreeze diagnostics/fetch_reference_data
       - name: push new files
         if: ${{ (steps.check_author.outputs.skip == 'false') && steps.stages_to_run.outputs.stages }}
         shell: bash -l {0}
