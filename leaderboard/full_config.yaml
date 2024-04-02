@@ -11,7 +11,7 @@ metrics:
     min_lon: -65.0
     min_time: '2017-01-01'
     sat: c2
-    study_path: data/downloads/method_outputs/${.method}.nc
+    study_path: data/downloads/method_outputs/default.nc
     study_var: ssh
   stages:
     _01_dl_track:
@@ -19,48 +19,48 @@ metrics:
       _target_: copernicusmarine.python_interface.get.get
       dataset_id:
         _target_: ocb_dc_ose_2021.mods.cmems_get.duacs_l3
-        sat: ${....params.sat}
+        sat: c2
       force_download: true
-      output_directory: data/downloads/ref/${...params.sat}
+      output_directory: data/downloads/ref/c2
       overwrite_output_data: true
       regex:
         _target_: ocb_dc_ose_2021.mods.cmems_get.month_regex_from_date
-        max_time: ${....params.max_time}
-        min_time: ${....params.min_time}
+        max_time: '2017-12-31'
+        min_time: '2017-01-01'
     _02_prepare_track:
       _partial_: true
       _target_: ocb_dc_ose_2021.mods.prepare_track.prepare_track
       input_paths:
         _target_: ocb_dc_ose_2021.mods.prepare_track.sorted_glob
-        pathname: ${..._01_dl_track.output_directory}/**/*.nc
-      output_path: data/prepared/ref/${...params.sat}.nc
+        pathname: data/downloads/ref/c2/**/*.nc
+      output_path: data/prepared/ref/c2.nc
       preprocess:
         _partial_: true
         _target_: ocb_dc_ose_2021.mods.prepare_track.preprocess_track
-        max_lat: ${....params.max_lat}
-        max_lon: ${....params.max_lon}
-        max_time: ${....params.max_time}
-        min_lat: ${....params.min_lat}
-        min_lon: ${....params.min_lon}
-        min_time: ${....params.min_time}
+        max_lat: 43.0
+        max_lon: -55.0
+        max_time: '2017-12-31'
+        min_lat: 33.0
+        min_lon: -65.0
+        min_time: '2017-01-01'
     _03_interp_on_track:
       _partial_: true
       _target_: ocb_dc_ose_2021.mods.interp_on_track.interp_on_track
-      grid_paths: ${...params.study_path}
-      output_path: data/prepared/method_outputs/${...params.method}_on_track.nc
+      grid_paths: data/downloads/method_outputs/default.nc
+      output_path: data/prepared/method_outputs/default_on_track.nc
       preprocess_grid:
         _partial_: true
         _target_: ocb_dc_ose_2021.mods.interp_on_track.preprocess_map
-        ssh_var: ${....params.study_var}
+        ssh_var: ssh
       preprocess_track: null
-      track_paths: ${.._02_prepare_track.output_path}
+      track_paths: data/prepared/ref/c2.nc
     _04_1_lambdax:
       _partial_: true
       _target_: ocb_dc_ose_2021.mods.lambdax.lambdax
       delta_t: 0.9434
       length_scale: 1000.0
-      output_lambdax_path: data/metrics/lambdax_${...params.method}.json
-      output_psd_path: data/prepared/method_outputs/psd_${...params.method}.nc
+      output_lambdax_path: data/metrics/lambdax_default.json
+      output_psd_path: data/prepared/method_outputs/psd_default.nc
       preprocess_ref:
         _target_: aprl.utils.kw2a
         fn:
@@ -72,15 +72,15 @@ metrics:
         fn:
           _target_: hydra_zen.funcs.get_obj
           path: operator.itemgetter
-        ssh_var: ${....params.study_var}
-      ref_paths: ${.._02_prepare_track.output_path}
+        ssh_var: ssh
+      ref_paths: data/prepared/ref/c2.nc
       segment_overlapping: 0.25
-      study_paths: ${.._03_interp_on_track.output_path}
+      study_paths: data/prepared/method_outputs/default_on_track.nc
       velocity: 6.77
     _04_2_mu:
       _partial_: true
       _target_: ocb_dc_ose_2021.mods.mu.mu
-      output_path: data/metrics/mu_${...params.method}.json
+      output_path: data/metrics/mu_default.json
       preprocess_ref:
         _target_: aprl.utils.kw2a
         fn:
@@ -92,9 +92,9 @@ metrics:
         - _target_: hydra_zen.funcs.get_obj
           path: operator.itemgetter
         _target_: aprl.utils.kw2a
-        ssh_var: ${....params.study_var}
-      ref_paths: ${.._02_prepare_track.output_path}
-      study_paths: ${.._03_interp_on_track.output_path}
+        ssh_var: ssh
+      ref_paths: data/prepared/ref/c2.nc
+      study_paths: data/prepared/method_outputs/default_on_track.nc
   to_run:
   - _01_dl_track
   - _02_prepare_track
@@ -126,30 +126,30 @@ input_data:
       _target_: copernicusmarine.python_interface.get.get
       dataset_id:
         _target_: ocb_dc_ose_2021.mods.cmems_get.duacs_l3
-        sat: ${....params.sat}
+        sat: null
       force_download: true
-      output_directory: data/downloads/input/${...params.sat}
+      output_directory: data/downloads/input/None
       overwrite_output_data: true
       regex:
         _target_: ocb_dc_ose_2021.mods.cmems_get.month_regex_from_date
-        max_time: ${....params.max_time}
-        min_time: ${....params.min_time}
+        max_time: '2018-02-01'
+        min_time: '2016-12-01'
     _02_prepare_track:
       _partial_: true
       _target_: ocb_dc_ose_2021.mods.prepare_track.prepare_track
       input_paths:
         _target_: ocb_dc_ose_2021.mods.prepare_track.sorted_glob
-        pathname: ${..._01_dl_track.output_directory}/**/*.nc
-      output_path: data/prepared/input/${...params.sat}.nc
+        pathname: data/downloads/input/None/**/*.nc
+      output_path: data/prepared/input/None.nc
       preprocess:
         _partial_: true
         _target_: ocb_dc_ose_2021.mods.prepare_track.preprocess_track
-        max_lat: ${....params.max_lat}
-        max_lon: ${....params.max_lon}
-        max_time: ${....params.max_time}
-        min_lat: ${....params.min_lat}
-        min_lon: ${....params.min_lon}
-        min_time: ${....params.min_time}
+        max_lat: 44.0
+        max_lon: -54.0
+        max_time: '2018-02-01'
+        min_lat: 32.0
+        min_lon: -66.0
+        min_time: '2016-12-01'
   to_run:
   - _01_dl_track
   - _02_prepare_track
