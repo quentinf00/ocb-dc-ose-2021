@@ -25,8 +25,8 @@ jobs:
       - name: Install repo
         shell: bash -el {0}
         run: |
-          pip install $(pwd)
-          PYTHONPATH=. dc_ose_2021-metrics --help
+          pip install "git+https://github.com/quentinf00/ocb-cd-ose-2021.git"
+          dc_ose_2021-metrics --help
       - name: Reproduce metrics
         if: ${{ steps.check_author.outputs.skip  == 'false' }}
         shell: bash -el {0}
@@ -34,8 +34,8 @@ jobs:
         run: |
           cd leaderboard
           METRIC_STAGES=$(dvc stage list --name-only | grep 'diagnostics/metric')
-          PYTHONPATH=. dvc  pull --allow-missing --with-deps $METRIC_STAGES
-          PYTHONPATH=. dvc  repro  $METRIC_STAGES
+          dvc  pull --allow-missing --with-deps $METRIC_STAGES
+          dvc  repro  $METRIC_STAGES
       - name: push new files
         if: ${{ (steps.check_author.outputs.skip == 'false') && steps.stages_to_run.outputs.stages }}
         shell: bash -l {0}
