@@ -21,11 +21,11 @@ jobs:
           environment-name: ci
           init-shell: bash
           cache-environment: true
-          post-cleanup: 'all'
+          # post-cleanup: 'none'
       - name: Install repo
         shell: bash -el {0}
         run: |
-          pip install "git+github.com/quentinf00/ocb-cd-ose-2021.git"
+          pip install -e .
           dc_ose_2021-metrics --help
       - name: Reproduce metrics
         if: ${{ steps.check_author.outputs.skip  == 'false' }}
@@ -33,9 +33,15 @@ jobs:
         id: reproduce_metrics
         run: |
           cd leaderboard
-          METRIC_STAGES=$(dvc stage list --name-only | grep 'diagnostics/metric')
-          dvc  pull --allow-missing --with-deps $METRIC_STAGES
-          dvc  repro  $METRIC_STAGES
+          export METRIC_STAGES=$(dvc stage list --name-only | grep 'diagnostics/metric')
+          echo $METRIC_STAGES
+          echo "Pulling data"
+          echo "$METRIC_STAGES" | xargs -t -I{} dvc pull --allow-missing --with-deps  {}
+          
+          echo "Metrics status"
+          echo "$METRIC_STAGES" | xargs -t -I{} dvc status {}
+          echo "Reproducing"
+          echo "$METRIC_STAGES" | xargs -t -I{} dvc repro {}
       - name: push new files
         if: ${{ (steps.check_author.outputs.skip == 'false') && steps.stages_to_run.outputs.stages }}
         shell: bash -l {0}
