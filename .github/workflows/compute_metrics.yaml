@@ -25,7 +25,7 @@ jobs:
       - name: Install repo
         shell: bash -el {0}
         run: |
-          pip install "git+https://github.com/quentinf00/ocb-cd-ose-2021.git"
+          pip install "git+github.com/quentinf00/ocb-cd-ose-2021.git"
           dc_ose_2021-metrics --help
       - name: Reproduce metrics
         if: ${{ steps.check_author.outputs.skip  == 'false' }}
