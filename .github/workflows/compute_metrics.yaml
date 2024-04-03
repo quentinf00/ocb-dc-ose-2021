@@ -21,36 +21,21 @@ jobs:
           environment-name: ci
           init-shell: bash
           cache-environment: true
-          cache-environment-key: environment
-          cache-downloads-key: downloads
-          post-cleanup: 'none'
-      - name: install pipelines
-        if: ${{ steps.check_author.outputs.skip  == 'false' }}
+          post-cleanup: 'all'
+      - name: Install repo
         shell: bash -el {0}
         run: |
-          pip install .
-      - name: install jq
-        if: ${{ steps.check_author.outputs.skip  == 'false' }}
-        uses: dcarbone/install-jq-action@v2
-      - name: compute_stages
+          pip install $(pwd)
+          PYTHONPATH=. dc_ose_2021-metrics --help
+      - name: Reproduce metrics
         if: ${{ steps.check_author.outputs.skip  == 'false' }}
         shell: bash -el {0}
-        id: metrics_to_recompute
+        id: reproduce_metrics
         run: |
           cd leaderboard
-          dvc  pull data/prepared/ref/* data/prepared/method_outputs/*
-          STATUS=$(dvc status --json)
-          echo $STATUS
-          STAGES=$(echo "$STATUS" | jq -r '[keys[] | select(contains("diagnostics/metric"))] | join(" ")')
-          echo $STAGES
-          echo "stages=$STAGES" >> "$GITHUB_OUTPUT"
-      - name: reproduce datachallenge results
-        shell: bash -el {0}
-        if: ${{ (steps.check_author.outputs.skip == 'false') && steps.metrics_to_recompute.outputs.stages }}
-        run: |
-          dvc --cd leaderboard freeze diagnostics/fetch_reference_data
-          dvc --cd leaderboard repro -k --pull --allow-missing ${{steps.stages_to_run.outputs.stages}}
-          dvc --cd leaderboard unfreeze diagnostics/fetch_reference_data
+          METRIC_STAGES=$(dvc stage list --name-only | grep 'diagnostics/metric')
+          PYTHONPATH=. dvc  pull --allow-missing --with-deps $METRIC_STAGES
+          PYTHONPATH=. dvc  repro  $METRIC_STAGES
       - name: push new files
         if: ${{ (steps.check_author.outputs.skip == 'false') && steps.stages_to_run.outputs.stages }}
         shell: bash -l {0}
