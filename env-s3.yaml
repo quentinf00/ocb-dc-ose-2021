@@ -5,3 +5,6 @@ dependencies:
   - xesmf
   - dvc
   - dvc-s3
+  - pip:
+    - "git+file:///home/q20febvr/ocb/ocb-dc-ose-2021"
+

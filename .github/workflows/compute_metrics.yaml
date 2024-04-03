@@ -21,7 +21,9 @@ jobs:
           environment-name: ci
           init-shell: bash
           cache-environment: true
-          post-cleanup: 'all'
+          cache-environment-key: environment
+          cache-downloads-key: downloads
+          post-cleanup: 'none'
       - name: install pipelines
         if: ${{ steps.check_author.outputs.skip  == 'false' }}
         shell: bash -el {0}
