@@ -1,0 +1,6 @@
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+    - "--no-deps -e git+https://github.com/quentinf00/ocb-dc-ose-2021"
+

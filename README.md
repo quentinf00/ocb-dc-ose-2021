@@ -1,5 +1,11 @@
 # Oceanbench data challenge demo
 
+## Installation:
+### Usage: Download prepared input data
+```
+git 
+```
+
 ## Modules:
 
 - cmems_get: download data from cmems portal
@@ -9,8 +15,8 @@
 - mu: compute normalized rmse score
 
 ## Pipelines:
-- input_data:
-- metrics
+- input_data: `ocb-dc_ose_2021-input_data`
+- metrics: `ocb-dc_ose_2021-metrics`
 
 
 
