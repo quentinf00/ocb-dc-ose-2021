@@ -21,7 +21,7 @@ jobs:
           environment-name: ci
           init-shell: bash
           cache-environment: true
-          # post-cleanup: 'none'
+          post-cleanup: 'all'
       - name: Install repo
         shell: bash -el {0}
         run: |
@@ -32,7 +32,7 @@ jobs:
         shell: bash -el {0}
         id: reproduce_metrics
         run: |
-          cd leaderboard
+          cd datachallenge
           export METRIC_STAGES=$(dvc stage list --name-only | grep 'diagnostics/metric')
           echo $METRIC_STAGES
           echo "Pulling data"
@@ -48,21 +48,21 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{secrets.aws_key}}
           AWS_SECRET_ACCESS_KEY: ${{secrets.aws_secret}}
           AWS_DEFAULT_REGION: ${{secrets.aws_region}}
-        run: dvc --cd leaderboard push -r s3 ${{steps.stages_to_run.outputs.stages}}
+        run: dvc --cd datachallenge push -r s3 ${{steps.stages_to_run.outputs.stages}}
       - name: dump metrics report
         if: ${{ (steps.check_author.outputs.skip == 'false') }}
         shell: bash -l {0}
         run: |
-          cd leaderboard
-          echo 'Data Challenge OSE Gulfstream 2021\n' > report.md
-          dvc metrics show --json | python scripts/format_metrics.py >> report.md
+          cd datachallenge
+          echo 'Data Challenge OSE Gulfstream 2021\n' > leaderboard.md
+          dvc metrics show --json | python scripts/format_metrics.py >> leaderboard.md
           cat report.md
       - name: Commit changes
         if: ${{ (steps.check_author.outputs.skip == 'false') }}
         uses: EndBug/add-and-commit@v9
         with:
           default_author: github_actions
-          message: 'Update dc_ose_2021 leaderboard'
-          add: 'dvc.lock report.md'
-          cwd: './leaderboard'
+          message: 'Update dc_ose_2021 datachallenge'
+          add: 'dvc.lock leaderboard.md full_config.yaml'
+          cwd: './datachallenge'
           push: true
