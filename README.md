@@ -8,16 +8,16 @@ mamba, conda-merge
 
 ### Usage: Download prepared input data
 ```
-!wget -nc https://raw.githubusercontent.com/quentinf00/ocb-dc-ose-2021/envs/dvc-s3.yaml
-!mamba env create --quiet -n dvc-s3 -f dvc-s3.yaml
+wget -nc https://raw.githubusercontent.com/quentinf00/ocb-dc-ose-2021/envs/dvc-s3.yaml
+mamba env create --quiet -n dvc-s3 -f dvc-s3.yaml
+dvc get https://github.com/quentinf00/ocb-dc-ose-2021.git datachallenge/data
 ```
 
 ### Usage: Reuse pipelines
 ```
-!wget -nc https://raw.githubusercontent.com/quentinf00/ocb-dc-ose-2021/envs/base.yaml
-!wget -nc https://raw.githubusercontent.com/quentinf00/ocb-dc-ose-2021/envs/dc.yaml
+wget -nc https://raw.githubusercontent.com/quentinf00/ocb-dc-ose-2021/envs/{base,dc}.yaml
 conda merge {base,dc}.yaml > env.yaml
-!mamba env create --quiet -n dc-base -f env.yaml
+mamba env create --quiet -n dc-base -f env.yaml
 
 ```
 
@@ -25,7 +25,8 @@ conda merge {base,dc}.yaml > env.yaml
 ```
 git clone https://github.com/quentinf00/ocb-dc-ose-2021.git
 conda merge envs/{base,dc,dvc-s3}.yaml > env.yaml
-!mamba env create --quiet -n dc-dvc -f env.yaml
+mamba env create --quiet -n dc-dvc -f env.yaml
+
 # login to cmems for data access
 copernicusmarine login
 
