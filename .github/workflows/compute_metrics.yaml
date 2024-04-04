@@ -13,19 +13,19 @@ jobs:
           echo "skip=${{github.author == 'github-actions'}}" >> "$GITHUB_OUTPUT"
       - uses: actions/checkout@v4
         if: ${{ steps.check_author.outputs.skip == 'false' }}
+      - name: merge env files
+        run: |
+          pip install conda-merge
+          conda merge envs/{base,dc-dev,dvc-s3}.yaml > env.yaml
       - uses: mamba-org/setup-micromamba@v1
         if: ${{ steps.check_author.outputs.skip  == 'false' }}
         with:
           micromamba-version: 'latest'
-          environment-file: env-s3.yaml
+          environment-file: env.yaml
           environment-name: ci
           init-shell: bash
           cache-environment: true
           post-cleanup: 'all'
-      - name: Install repo
-        shell: bash -el {0}
-        run: |
-          pip install -e .
       - name: Reproduce metrics
         if: ${{ steps.check_author.outputs.skip  == 'false' }}
         shell: bash -el {0}
