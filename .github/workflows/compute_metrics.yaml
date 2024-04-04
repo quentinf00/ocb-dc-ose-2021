@@ -51,14 +51,14 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{secrets.aws_secret}}
           AWS_DEFAULT_REGION: ${{secrets.aws_region}}
         run: dvc --cd datachallenge push -r s3 ${{steps.stages_to_run.outputs.stages}}
-      - name: dump metrics report
+      - name: dump leaderboard
         if: ${{ (steps.check_author.outputs.skip == 'false') }}
         shell: bash -l {0}
         run: |
           cd datachallenge
           echo 'Data Challenge OSE Gulfstream 2021\n' > leaderboard.md
           dvc metrics show --json | python scripts/format_metrics.py >> leaderboard.md
-          cat report.md
+          cat leaderboard.md
       - name: Commit changes
         if: ${{ (steps.check_author.outputs.skip == 'false') }}
         uses: EndBug/add-and-commit@v9
