@@ -180,6 +180,10 @@ stages:
   input_data/filter_and_merge@alg:
     cmd: "ocb-dc_ose_2021-input_data 'to_run=[_02_prepare_track]' params.sat=alg\n"
     deps:
+    - path: ../ocb_dc_ose_2021/mods/prepare_track.py
+      hash: md5
+      md5: 8f0f282bda8084b014ee26d160abb73a
+      size: 2078
     - path: ../ocb_dc_ose_2021/pipelines/input_data.py
       hash: md5
       md5: 884e57974c038af61fc9378806eb2e6e
@@ -215,6 +219,10 @@ stages:
   input_data/filter_and_merge@h2ag:
     cmd: "ocb-dc_ose_2021-input_data 'to_run=[_02_prepare_track]' params.sat=h2ag\n"
     deps:
+    - path: ../ocb_dc_ose_2021/mods/prepare_track.py
+      hash: md5
+      md5: 8f0f282bda8084b014ee26d160abb73a
+      size: 2078
     - path: ../ocb_dc_ose_2021/pipelines/input_data.py
       hash: md5
       md5: 884e57974c038af61fc9378806eb2e6e
@@ -250,6 +258,10 @@ stages:
   input_data/filter_and_merge@j2g:
     cmd: "ocb-dc_ose_2021-input_data 'to_run=[_02_prepare_track]' params.sat=j2g\n"
     deps:
+    - path: ../ocb_dc_ose_2021/mods/prepare_track.py
+      hash: md5
+      md5: 8f0f282bda8084b014ee26d160abb73a
+      size: 2078
     - path: ../ocb_dc_ose_2021/pipelines/input_data.py
       hash: md5
       md5: 884e57974c038af61fc9378806eb2e6e
@@ -285,6 +297,10 @@ stages:
   input_data/filter_and_merge@j2n:
     cmd: "ocb-dc_ose_2021-input_data 'to_run=[_02_prepare_track]' params.sat=j2n\n"
     deps:
+    - path: ../ocb_dc_ose_2021/mods/prepare_track.py
+      hash: md5
+      md5: 8f0f282bda8084b014ee26d160abb73a
+      size: 2078
     - path: ../ocb_dc_ose_2021/pipelines/input_data.py
       hash: md5
       md5: 884e57974c038af61fc9378806eb2e6e
@@ -320,6 +336,10 @@ stages:
   input_data/filter_and_merge@j3:
     cmd: "ocb-dc_ose_2021-input_data 'to_run=[_02_prepare_track]' params.sat=j3\n"
     deps:
+    - path: ../ocb_dc_ose_2021/mods/prepare_track.py
+      hash: md5
+      md5: 8f0f282bda8084b014ee26d160abb73a
+      size: 2078
     - path: ../ocb_dc_ose_2021/pipelines/input_data.py
       hash: md5
       md5: 884e57974c038af61fc9378806eb2e6e
@@ -355,6 +375,10 @@ stages:
   input_data/filter_and_merge@s3a:
     cmd: "ocb-dc_ose_2021-input_data 'to_run=[_02_prepare_track]' params.sat=s3a\n"
     deps:
+    - path: ../ocb_dc_ose_2021/mods/prepare_track.py
+      hash: md5
+      md5: 8f0f282bda8084b014ee26d160abb73a
+      size: 2078
     - path: ../ocb_dc_ose_2021/pipelines/input_data.py
       hash: md5
       md5: 884e57974c038af61fc9378806eb2e6e
@@ -446,6 +470,10 @@ stages:
   diagnostics/filter_and_merge_ref:
     cmd: ocb-dc_ose_2021-metrics 'to_run=[_02_prepare_track]'
     deps:
+    - path: ../ocb_dc_ose_2021/mods/prepare_track.py
+      hash: md5
+      md5: 8f0f282bda8084b014ee26d160abb73a
+      size: 2078
     - path: ../ocb_dc_ose_2021/pipelines/metrics.py
       hash: md5
       md5: fab002dc2a5d2fde86d26cbe409cd6ce
@@ -482,6 +510,10 @@ stages:
     cmd: ocb-dc_ose_2021-metrics 'to_run=[_03_interp_on_track]' 'params.study_var=rec_ssh'
       'params.method=4dvarnet'
     deps:
+    - path: ../ocb_dc_ose_2021/mods/interp_on_track.py
+      hash: md5
+      md5: c67360c4587837ec9934294bbf766746
+      size: 1475
     - path: ../ocb_dc_ose_2021/pipelines/metrics.py
       hash: md5
       md5: fab002dc2a5d2fde86d26cbe409cd6ce
@@ -521,6 +553,10 @@ stages:
     cmd: ocb-dc_ose_2021-metrics 'to_run=[_03_interp_on_track]' 'params.study_var=ssh'
       'params.method=duacs'
     deps:
+    - path: ../ocb_dc_ose_2021/mods/interp_on_track.py
+      hash: md5
+      md5: c67360c4587837ec9934294bbf766746
+      size: 1475
     - path: ../ocb_dc_ose_2021/pipelines/metrics.py
       hash: md5
       md5: fab002dc2a5d2fde86d26cbe409cd6ce
@@ -560,6 +596,10 @@ stages:
     cmd: ocb-dc_ose_2021-metrics 'to_run=[_04_1_lambdax]' 'params.study_var=rec_ssh'
       'params.method=4dvarnet'
     deps:
+    - path: ../ocb_dc_ose_2021/mods/lambdax.py
+      hash: md5
+      md5: 3d7ccfad8c1beb2327c0a1369bcea377
+      size: 3071
     - path: ../ocb_dc_ose_2021/pipelines/metrics.py
       hash: md5
       md5: fab002dc2a5d2fde86d26cbe409cd6ce
@@ -614,6 +654,10 @@ stages:
   diagnostics/metric_lambdax@duacs:
     cmd: ocb-dc_ose_2021-metrics 'to_run=[_04_1_lambdax]' 'params.study_var=ssh' 'params.method=duacs'
     deps:
+    - path: ../ocb_dc_ose_2021/mods/lambdax.py
+      hash: md5
+      md5: 3d7ccfad8c1beb2327c0a1369bcea377
+      size: 3071
     - path: ../ocb_dc_ose_2021/pipelines/metrics.py
       hash: md5
       md5: fab002dc2a5d2fde86d26cbe409cd6ce
@@ -668,6 +712,10 @@ stages:
   diagnostics/metric_mu@4dvarnet:
     cmd: ocb-dc_ose_2021-metrics 'to_run=[_04_2_mu]' 'params.study_var=rec_ssh' 'params.method=4dvarnet'
     deps:
+    - path: ../ocb_dc_ose_2021/mods/mu.py
+      hash: md5
+      md5: cbdb50ce1eb7606f46e96aab9e282c26
+      size: 1549
     - path: ../ocb_dc_ose_2021/pipelines/metrics.py
       hash: md5
       md5: fab002dc2a5d2fde86d26cbe409cd6ce
@@ -713,6 +761,10 @@ stages:
   diagnostics/metric_mu@duacs:
     cmd: ocb-dc_ose_2021-metrics 'to_run=[_04_2_mu]' 'params.study_var=ssh' 'params.method=duacs'
     deps:
+    - path: ../ocb_dc_ose_2021/mods/mu.py
+      hash: md5
+      md5: cbdb50ce1eb7606f46e96aab9e282c26
+      size: 1549
     - path: ../ocb_dc_ose_2021/pipelines/metrics.py
       hash: md5
       md5: fab002dc2a5d2fde86d26cbe409cd6ce
