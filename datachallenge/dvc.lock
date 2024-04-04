@@ -755,3 +755,155 @@ stages:
       hash: md5
       md5: 282e18bad1816b41ac9b1857271ee87f
       size: 30
+  diagnostics/method_output@bfn:
+    cmd: "mkdir -p data/downloads/method_outputs\nwget https://s3.eu-west-2.wasabisys.com/oceanbench-data-registry/dvc/29/6781b126d905e98b82dac9bcecf57e
+      -nc -O 'data/downloads/method_outputs/bfn.nc'\n"
+    params:
+      methods.toml:
+        methods.bfn:
+          url: 
+            https://s3.eu-west-2.wasabisys.com/oceanbench-data-registry/dvc/29/6781b126d905e98b82dac9bcecf57e
+          var: ssh
+    outs:
+    - path: data/downloads/method_outputs/bfn.nc
+      hash: md5
+      md5: 296781b126d905e98b82dac9bcecf57e
+      size: 700845764
+  diagnostics/interp_on_track@bfn:
+    cmd: ocb-dc_ose_2021-metrics 'to_run=[_03_interp_on_track]' 'params.study_var=ssh'
+      'params.method=bfn'
+    deps:
+    - path: ../ocb_dc_ose_2021/pipelines/metrics.py
+      hash: md5
+      md5: fab002dc2a5d2fde86d26cbe409cd6ce
+      size: 3321
+    - path: data/downloads/method_outputs/bfn.nc
+      hash: md5
+      md5: 296781b126d905e98b82dac9bcecf57e
+      size: 700845764
+    - path: data/prepared/ref/c2.nc
+      hash: md5
+      md5: c7a10e1b022a97856c4f6e5f85f497a6
+      size: 1589616
+    params:
+      full_config.yaml:
+        metrics.stages._03_interp_on_track:
+          _partial_: true
+          _target_: ocb_dc_ose_2021.mods.interp_on_track.interp_on_track
+          grid_paths: data/downloads/method_outputs/default.nc
+          output_path: data/prepared/method_outputs/default_on_track.nc
+          preprocess_grid:
+            _partial_: true
+            _target_: ocb_dc_ose_2021.mods.interp_on_track.preprocess_map
+            ssh_var: ssh
+          preprocess_track:
+          track_paths: data/prepared/ref/c2.nc
+      methods.toml:
+        methods.bfn:
+          url: 
+            https://s3.eu-west-2.wasabisys.com/oceanbench-data-registry/dvc/29/6781b126d905e98b82dac9bcecf57e
+          var: ssh
+    outs:
+    - path: data/prepared/method_outputs/bfn_on_track.nc
+      hash: md5
+      md5: 6342ffac64d439d5202c041b058824e6
+      size: 1581683
+  diagnostics/metric_lambdax@bfn:
+    cmd: ocb-dc_ose_2021-metrics 'to_run=[_04_1_lambdax]' 'params.study_var=ssh' 'params.method=bfn'
+    deps:
+    - path: ../ocb_dc_ose_2021/pipelines/metrics.py
+      hash: md5
+      md5: fab002dc2a5d2fde86d26cbe409cd6ce
+      size: 3321
+    - path: data/prepared/method_outputs/bfn_on_track.nc
+      hash: md5
+      md5: 6342ffac64d439d5202c041b058824e6
+      size: 1581683
+    - path: data/prepared/ref/c2.nc
+      hash: md5
+      md5: c7a10e1b022a97856c4f6e5f85f497a6
+      size: 1589616
+    params:
+      full_config.yaml:
+        metrics.stages._04_1_lambdax:
+          _partial_: true
+          _target_: ocb_dc_ose_2021.mods.lambdax.lambdax
+          delta_t: 0.9434
+          length_scale: 1000.0
+          output_lambdax_path: data/metrics/lambdax_default.json
+          output_psd_path: data/prepared/method_outputs/psd_default.nc
+          preprocess_ref:
+            _target_: aprl.utils.kw2a
+            fn:
+              _target_: hydra_zen.funcs.get_obj
+              path: operator.itemgetter
+            ssh_var: ssh
+          preprocess_study:
+            _target_: aprl.utils.kw2a
+            fn:
+              _target_: hydra_zen.funcs.get_obj
+              path: operator.itemgetter
+            ssh_var: ssh
+          ref_paths: data/prepared/ref/c2.nc
+          segment_overlapping: 0.25
+          study_paths: data/prepared/method_outputs/default_on_track.nc
+          velocity: 6.77
+      methods.toml:
+        methods.bfn:
+          url: 
+            https://s3.eu-west-2.wasabisys.com/oceanbench-data-registry/dvc/29/6781b126d905e98b82dac9bcecf57e
+          var: ssh
+    outs:
+    - path: data/metrics/lambdax_bfn.json
+      hash: md5
+      md5: 8187cc9f8df2bc0c506fd1a7506b6345
+      size: 36
+    - path: data/prepared/method_outputs/psd_bfn.nc
+      hash: md5
+      md5: 0605ef1ba2a23ad02f249333ce532c0b
+      size: 8954
+  diagnostics/metric_mu@bfn:
+    cmd: ocb-dc_ose_2021-metrics 'to_run=[_04_2_mu]' 'params.study_var=ssh' 'params.method=bfn'
+    deps:
+    - path: ../ocb_dc_ose_2021/pipelines/metrics.py
+      hash: md5
+      md5: fab002dc2a5d2fde86d26cbe409cd6ce
+      size: 3321
+    - path: data/prepared/method_outputs/bfn_on_track.nc
+      hash: md5
+      md5: 6342ffac64d439d5202c041b058824e6
+      size: 1581683
+    - path: data/prepared/ref/c2.nc
+      hash: md5
+      md5: c7a10e1b022a97856c4f6e5f85f497a6
+      size: 1589616
+    params:
+      full_config.yaml:
+        metrics.stages._04_2_mu:
+          _partial_: true
+          _target_: ocb_dc_ose_2021.mods.mu.mu
+          output_path: data/metrics/mu_default.json
+          preprocess_ref:
+            _target_: aprl.utils.kw2a
+            fn:
+              _target_: hydra_zen.funcs.get_obj
+              path: operator.itemgetter
+            ssh_var: ssh
+          preprocess_study:
+            _args_:
+            - _target_: hydra_zen.funcs.get_obj
+              path: operator.itemgetter
+            _target_: aprl.utils.kw2a
+            ssh_var: ssh
+          ref_paths: data/prepared/ref/c2.nc
+          study_paths: data/prepared/method_outputs/default_on_track.nc
+      methods.toml:
+        methods.bfn:
+          url: 
+            https://s3.eu-west-2.wasabisys.com/oceanbench-data-registry/dvc/29/6781b126d905e98b82dac9bcecf57e
+          var: ssh
+    outs:
+    - path: data/metrics/mu_bfn.json
+      hash: md5
+      md5: fef8ab691c27a40167cb8cae7bd0c2f9
+      size: 30
