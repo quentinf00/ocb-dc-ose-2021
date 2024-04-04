@@ -390,6 +390,12 @@ stages:
   diagnostics/method_output@4dvarnet:
     cmd: "mkdir -p data/downloads/method_outputs\nwget https://s3.eu-west-2.wasabisys.com/oceanbench-data-registry/dvc/a5/2381e9409cb7c6cf9be980bda9aced
       -nc -O 'data/downloads/method_outputs/4dvarnet.nc'\n"
+    params:
+      methods.toml:
+        methods.4dvarnet:
+          url: 
+            https://s3.eu-west-2.wasabisys.com/oceanbench-data-registry/dvc/a5/2381e9409cb7c6cf9be980bda9aced
+          var: rec_ssh
     outs:
     - path: data/downloads/method_outputs/4dvarnet.nc
       hash: md5
@@ -398,6 +404,12 @@ stages:
   diagnostics/method_output@duacs:
     cmd: "mkdir -p data/downloads/method_outputs\nwget https://s3.eu-west-2.wasabisys.com/oceanbench-data-registry/dvc/95/7d74696fbf5f2b6d0c528757951b8a
       -nc -O 'data/downloads/method_outputs/duacs.nc'\n"
+    params:
+      methods.toml:
+        methods.duacs:
+          url: 
+            https://s3.eu-west-2.wasabisys.com/oceanbench-data-registry/dvc/95/7d74696fbf5f2b6d0c528757951b8a
+          var: ssh
     outs:
     - path: data/downloads/method_outputs/duacs.nc
       hash: md5
@@ -495,10 +507,15 @@ stages:
             ssh_var: ssh
           preprocess_track:
           track_paths: data/prepared/ref/c2.nc
+      methods.toml:
+        methods.4dvarnet:
+          url: 
+            https://s3.eu-west-2.wasabisys.com/oceanbench-data-registry/dvc/a5/2381e9409cb7c6cf9be980bda9aced
+          var: rec_ssh
     outs:
     - path: data/prepared/method_outputs/4dvarnet_on_track.nc
       hash: md5
-      md5: 4de21ad72195ef8a6ba4158a8441f560
+      md5: cda1c0863641113902798b00dac4800e
       size: 1581680
   diagnostics/interp_on_track@duacs:
     cmd: ocb-dc_ose_2021-metrics 'to_run=[_03_interp_on_track]' 'params.study_var=ssh'
@@ -529,10 +546,15 @@ stages:
             ssh_var: ssh
           preprocess_track:
           track_paths: data/prepared/ref/c2.nc
+      methods.toml:
+        methods.duacs:
+          url: 
+            https://s3.eu-west-2.wasabisys.com/oceanbench-data-registry/dvc/95/7d74696fbf5f2b6d0c528757951b8a
+          var: ssh
     outs:
     - path: data/prepared/method_outputs/duacs_on_track.nc
       hash: md5
-      md5: 7125d4765dc3d6dc6dfe4f20259b7cf7
+      md5: c8717b786915caf37192654db187ac64
       size: 1581683
   diagnostics/metric_lambdax@4dvarnet:
     cmd: ocb-dc_ose_2021-metrics 'to_run=[_04_1_lambdax]' 'params.study_var=rec_ssh'
@@ -544,7 +566,7 @@ stages:
       size: 3321
     - path: data/prepared/method_outputs/4dvarnet_on_track.nc
       hash: md5
-      md5: 4de21ad72195ef8a6ba4158a8441f560
+      md5: cda1c0863641113902798b00dac4800e
       size: 1581680
     - path: data/prepared/ref/c2.nc
       hash: md5
@@ -575,6 +597,11 @@ stages:
           segment_overlapping: 0.25
           study_paths: data/prepared/method_outputs/default_on_track.nc
           velocity: 6.77
+      methods.toml:
+        methods.4dvarnet:
+          url: 
+            https://s3.eu-west-2.wasabisys.com/oceanbench-data-registry/dvc/a5/2381e9409cb7c6cf9be980bda9aced
+          var: rec_ssh
     outs:
     - path: data/metrics/lambdax_4dvarnet.json
       hash: md5
@@ -593,7 +620,7 @@ stages:
       size: 3321
     - path: data/prepared/method_outputs/duacs_on_track.nc
       hash: md5
-      md5: 7125d4765dc3d6dc6dfe4f20259b7cf7
+      md5: c8717b786915caf37192654db187ac64
       size: 1581683
     - path: data/prepared/ref/c2.nc
       hash: md5
@@ -624,6 +651,11 @@ stages:
           segment_overlapping: 0.25
           study_paths: data/prepared/method_outputs/default_on_track.nc
           velocity: 6.77
+      methods.toml:
+        methods.duacs:
+          url: 
+            https://s3.eu-west-2.wasabisys.com/oceanbench-data-registry/dvc/95/7d74696fbf5f2b6d0c528757951b8a
+          var: ssh
     outs:
     - path: data/metrics/lambdax_duacs.json
       hash: md5
@@ -642,7 +674,7 @@ stages:
       size: 3321
     - path: data/prepared/method_outputs/4dvarnet_on_track.nc
       hash: md5
-      md5: 4de21ad72195ef8a6ba4158a8441f560
+      md5: cda1c0863641113902798b00dac4800e
       size: 1581680
     - path: data/prepared/ref/c2.nc
       hash: md5
@@ -668,6 +700,11 @@ stages:
             ssh_var: ssh
           ref_paths: data/prepared/ref/c2.nc
           study_paths: data/prepared/method_outputs/default_on_track.nc
+      methods.toml:
+        methods.4dvarnet:
+          url: 
+            https://s3.eu-west-2.wasabisys.com/oceanbench-data-registry/dvc/a5/2381e9409cb7c6cf9be980bda9aced
+          var: rec_ssh
     outs:
     - path: data/metrics/mu_4dvarnet.json
       hash: md5
@@ -682,7 +719,7 @@ stages:
       size: 3321
     - path: data/prepared/method_outputs/duacs_on_track.nc
       hash: md5
-      md5: 7125d4765dc3d6dc6dfe4f20259b7cf7
+      md5: c8717b786915caf37192654db187ac64
       size: 1581683
     - path: data/prepared/ref/c2.nc
       hash: md5
@@ -708,6 +745,11 @@ stages:
             ssh_var: ssh
           ref_paths: data/prepared/ref/c2.nc
           study_paths: data/prepared/method_outputs/default_on_track.nc
+      methods.toml:
+        methods.duacs:
+          url: 
+            https://s3.eu-west-2.wasabisys.com/oceanbench-data-registry/dvc/95/7d74696fbf5f2b6d0c528757951b8a
+          var: ssh
     outs:
     - path: data/metrics/mu_duacs.json
       hash: md5

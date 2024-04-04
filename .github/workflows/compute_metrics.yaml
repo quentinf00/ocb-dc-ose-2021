@@ -40,7 +40,7 @@ jobs:
           echo "Metrics status"
           echo "$METRIC_STAGES" | xargs -t -I{} dvc status {}
           echo "Reproducing"
-          echo "$METRIC_STAGES" | xargs -t -I{} dvc repro -k --allow-missing {}
+          echo "$METRIC_STAGES" | xargs -t -I{} if [[ $(dvc status {} --json) == "{}" ]]; then dvc repro -k --allow-missing {}; fi 
       - name: push new files
         if: ${{ (steps.check_author.outputs.skip == 'false') && steps.stages_to_run.outputs.stages }}
         shell: bash -l {0}

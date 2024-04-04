@@ -57,6 +57,9 @@ stages:
       outs:
       - data/downloads/method_outputs/${key}.nc:
           cache: false
+      params:
+      - methods.toml:
+        - methods.${key}
   diagnostics/filter_and_merge_ref:
     params:
     - full_config.yaml:
@@ -75,6 +78,8 @@ stages:
       params:
       - full_config.yaml:
         - metrics.stages._03_interp_on_track
+      - methods.toml:
+        - methods.${key}
       deps:
       - ../ocb_dc_ose_2021/pipelines/metrics.py
       - data/prepared/ref/c2.nc
@@ -89,6 +94,8 @@ stages:
       params:
       - full_config.yaml:
         - metrics.stages._04_1_lambdax
+      - methods.toml:
+        - methods.${key}
       deps:
       - ../ocb_dc_ose_2021/pipelines/metrics.py
       - data/prepared/ref/c2.nc
@@ -106,6 +113,8 @@ stages:
       params:
       - full_config.yaml:
         - metrics.stages._04_2_mu
+      - methods.toml:
+        - methods.${key}
       deps:
       - ../ocb_dc_ose_2021/pipelines/metrics.py
       - data/prepared/ref/c2.nc
