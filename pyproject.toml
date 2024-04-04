@@ -22,5 +22,5 @@ Repository = "https://github.com/quentinf00/ocb-dc-ose-2021.git"
 ocb-dc_ose_2021-input_data = "ocb_dc_ose_2021.pipelines.input_data:pipeline"
 ocb-dc_ose_2021-metrics = "ocb_dc_ose_2021.pipelines.metrics:pipeline"
 
-[tool.setuptools]
-packages=["ocb_dc_ose_2021"]
+[tool.setuptools.packages]
+find = {}
