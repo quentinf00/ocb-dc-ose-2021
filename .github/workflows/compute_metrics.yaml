@@ -32,14 +32,15 @@ jobs:
         id: reproduce_metrics
         run: |
           cd datachallenge
+          export DIAGNOSTIC_STAGES=$(dvc stage list --name-only | grep 'diagnostics')
           export METRIC_STAGES=$(dvc stage list --name-only | grep 'diagnostics/metric')
           echo $METRIC_STAGES
           echo "Pulling data"
-          echo "$METRIC_STAGES" | xargs -t -I{} dvc pull --allow-missing --with-deps  {}
+          echo "$DIAGNOSTIC_STAGES" | xargs -t -I{} dvc pull --allow-missing --with-deps  {}
           echo "Metrics status"
           echo "$METRIC_STAGES" | xargs -t -I{} dvc status {}
           echo "Reproducing"
-          echo "$METRIC_STAGES" | xargs -t -I{} dvc repro --pull -k --allow-missing {}
+          echo "$METRIC_STAGES" | xargs -t -I{} dvc repro -k --allow-missing {}
       - name: push new files
         if: ${{ (steps.check_author.outputs.skip == 'false') && steps.stages_to_run.outputs.stages }}
         shell: bash -l {0}
