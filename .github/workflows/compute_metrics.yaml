@@ -26,7 +26,6 @@ jobs:
         shell: bash -el {0}
         run: |
           pip install -e .
-          dc_ose_2021-metrics --help
       - name: Reproduce metrics
         if: ${{ steps.check_author.outputs.skip  == 'false' }}
         shell: bash -el {0}
