@@ -35,6 +35,7 @@ stages:
         'to_run=[_02_prepare_track]' params.sat=${item}
       deps:
       - ../ocb_dc_ose_2021/pipelines/input_data.py
+      - ../ocb_dc_ose_2021/mods/prepare_track.py
       - data/downloads/input/${item}
       outs:
       - data/prepared/input/${item}.nc
@@ -67,6 +68,7 @@ stages:
     cmd: ocb-dc_ose_2021-metrics 'to_run=[_02_prepare_track]'
     deps:
     - ../ocb_dc_ose_2021/pipelines/metrics.py
+    - ../ocb_dc_ose_2021/mods/prepare_track.py
     - data/downloads/ref/c2
     outs:
     - data/prepared/ref/c2.nc
@@ -82,6 +84,7 @@ stages:
         - methods.${key}
       deps:
       - ../ocb_dc_ose_2021/pipelines/metrics.py
+      - ../ocb_dc_ose_2021/mods/interp_on_track.py
       - data/prepared/ref/c2.nc
       - data/downloads/method_outputs/${key}.nc
       outs:
@@ -98,6 +101,7 @@ stages:
         - methods.${key}
       deps:
       - ../ocb_dc_ose_2021/pipelines/metrics.py
+      - ../ocb_dc_ose_2021/mods/lambdax.py
       - data/prepared/ref/c2.nc
       - data/prepared/method_outputs/${key}_on_track.nc
       outs:
@@ -117,6 +121,7 @@ stages:
         - methods.${key}
       deps:
       - ../ocb_dc_ose_2021/pipelines/metrics.py
+      - ../ocb_dc_ose_2021/mods/mu.py
       - data/prepared/ref/c2.nc
       - data/prepared/method_outputs/${key}_on_track.nc
       metrics:
