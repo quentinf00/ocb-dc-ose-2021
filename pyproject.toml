@@ -27,4 +27,4 @@ ocb-dc_ose_2021-metrics = "ocb_dc_ose_2021.pipelines.metrics:pipeline"
 find = {}
 
 [tool.setuptools.dynamic]
-version = {attr = "aprl.__version__"}
+version = {attr = "ocb_dc_ose_2021.__version__"}
