@@ -64,6 +64,8 @@ def preprocess_track(
         .pipe(ocnval.validate_ssh)
         .sortby("time")[["ssh"]]
     )
+    log.debug(f"Returning {ds=}")
+    return ds
 
 
 def prepare_track(

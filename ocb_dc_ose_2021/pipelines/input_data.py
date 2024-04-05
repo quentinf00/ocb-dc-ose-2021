@@ -56,18 +56,20 @@ sweep = {
 }
 
 help_msg = """
+Overview:
     Download and prepare data for SSH Mapping (requires CMEMS credentials for download)
     The ssh is computed as "sla_filtered + mdt - lwe"
-    Usage:
-    params.sat=<sat_id> to download a prepare a specific satellite
-    --multirun: Execute the pipeline for each sat in sat_list
-    params.(min|max)_(lon|lat|time)=<bound> to change the bound
 
-    Extend:
-    Store your custom config in a directory conf/overrides/my_conf.yaml
-    run with -cd conf overrides=my_conf
+Basic CLI Usage:
+  *  params.sat=<sat_id> to download a prepare a specific satellite
 
-    Params:
+  *  --multirun: Execute the pipeline for each sat in sat_list
+
+  *  params.(min|max)_(lon|lat|time)=<bound> to change the bound
+
+  *  `-cd conf overrides=my_conf` to load config from conf/aprl/overrides/my_conf.yaml
+
+Params:
     sat (str): altimeter id to download (place holder for multirun)
     sat_list (str): list of satellite to download
     min_time: start of the temporal domain
