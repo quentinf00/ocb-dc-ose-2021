@@ -40,7 +40,7 @@ stages = {
 
 
 params = dict(
-    sat=None,
+    sat="???",
     sat_list=["alg", "h2ag", "j2g", "j2n", "j3", "s3a"],
     min_time="2016-12-01",
     max_time="2018-02-01",
