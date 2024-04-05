@@ -1,4 +1,4 @@
-import aprl.pipeline
+import aprl.appareil
 import aprl.utils
 
 import ocb_dc_ose_2021.mods.cmems_get as cmems_get
@@ -54,6 +54,6 @@ sweep = {
     "params.sat": dict(_target_="builtins.str.join", _args_=[",", "${params.sat_list}"])
 }
 
-pipeline, recipe, params = aprl.pipeline.register(
+pipeline, recipe, params = aprl.appareil.register(
     "dc_ose_2021_inference_data", stages=stages, params=params, default_sweep=sweep
 )

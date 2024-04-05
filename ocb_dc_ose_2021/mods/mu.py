@@ -4,7 +4,8 @@ import operator
 from functools import partial
 from pathlib import Path
 
-import aprl.module
+import aprl.part
+import aprl.utils
 import hydra_zen
 import xarray as xr
 from ocn_tools._src.metrics.stats import nrmse_ds
@@ -19,12 +20,30 @@ def mu(
     preprocess_ref=None,
     preprocess_study=None,
 ):
+    """
+    Compute the normalized RMSE score $mu$ as:
+    $$ mu =  1 - \frac{RMS(ref - study)}{RMS(ref)} $$
+
+    Args:
+        output_path (str): Path where to write the json with the score value
+        preprocess_ref (xr.Dataset -> xr.DataArray): Preprocessing that returns the reference DataArray
+        preprocess_study (xr.Dataset -> xr.DataArray): Preprocessing that returns the analysis DataArray
+        study_paths (str | Path | Sequence): path(s) to netcdf file(s) containing the analysis dataset
+        ref_paths (str | Path | Sequence): path(s) to netcdf file(s) containing the reference dataset
+    """
     log.info("Starting")
     Path(output_path).parent.mkdir(parents=True, exist_ok=True)
 
+    log.debug(f"Opening {study_paths=}")
+    log.debug(f"Applying preprocessing {preprocess_study}")
+    log.debug(f"{getattr(preprocess_study, '__doc__', '')}")
     study_da = xr.open_mfdataset(
         study_paths, preprocess=preprocess_study, combine="nested", concat_dim="time"
     )
+
+    log.debug(f"Opening {ref_paths=}")
+    log.debug(f"Applying preprocessing {preprocess_ref}")
+    log.debug(f"{getattr(preprocess_ref, '__doc__', '')}")
     ref_da = xr.open_mfdataset(
         ref_paths, preprocess=preprocess_ref, combine="nested", concat_dim="time"
     )
@@ -49,11 +68,11 @@ def mu(
 
 
 b = hydra_zen.make_custom_builds_fn()
-run, cfg = aprl.module.register(
+run, cfg = aprl.part.register(
     mu,
     base_args=dict(
         preprocess_ref=b(aprl.utils.kw2a, fn=operator.itemgetter, ssh_var="ssh"),
-        preprocess_study=b(aprl.utils.kw2a, operator.itemgetter, ssh_var="rec_ssh"),
+        preprocess_study=b(aprl.utils.kw2a, fn=operator.itemgetter, ssh_var="rec_ssh"),
     ),
 )
 

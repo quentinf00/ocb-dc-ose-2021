@@ -1,4 +1,4 @@
-import aprl.pipeline
+import aprl.appareil
 
 import ocb_dc_ose_2021.mods.cmems_get as cmems_get
 import ocb_dc_ose_2021.mods.interp_on_track as interp_on_track
@@ -89,6 +89,6 @@ params = dict(
     min_lat=33.0,
     max_lat=43.0,
 )
-pipeline, recipe, params = aprl.pipeline.register(
+pipeline, recipe, params = aprl.appareil.register(
     name="dc_ose_2021_alongtrack_metrics", stages=stages, params=params
 )
