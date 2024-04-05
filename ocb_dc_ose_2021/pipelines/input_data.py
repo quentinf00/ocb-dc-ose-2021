@@ -50,10 +50,37 @@ params = dict(
     max_lat=44.0,
 )
 
+
 sweep = {
     "params.sat": dict(_target_="builtins.str.join", _args_=[",", "${params.sat_list}"])
 }
 
+help_msg = """
+    Download and prepare data for SSH Mapping (requires CMEMS credentials for download)
+    The ssh is computed as "sla_filtered + mdt - lwe"
+    Usage:
+    params.sat=<sat_id> to download a prepare a specific satellite
+    --multirun: Execute the pipeline for each sat in sat_list
+    params.(min|max)_(lon|lat|time)=<bound> to change the bound
+
+    Extend:
+    Store your custom config in a directory conf/overrides/my_conf.yaml
+    run with -cd conf overrides=my_conf
+
+    Params:
+    sat (str): altimeter id to download (place holder for multirun)
+    sat_list (str): list of satellite to download
+    min_time: start of the temporal domain
+    max_time: end of the temporal domain
+    min_lon: lower longitudinal bound
+    max_lon: upper longitudinal bound
+    min_lat: upper meridional bound
+    max_lat: upper meridional bound
+"""
 pipeline, recipe, params = aprl.appareil.register(
-    "dc_ose_2021_inference_data", stages=stages, params=params, default_sweep=sweep
+    "dc_ose_2021_inference_data",
+    stages=stages,
+    params=params,
+    default_sweep=sweep,
+    help_msg=help_msg,
 )
