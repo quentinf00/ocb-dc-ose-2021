@@ -79,7 +79,7 @@ help_msg = """
 """
 pipeline, recipe, params = aprl.appareil.register(
     "dc_ose_2021_inference_data",
-    stages=stages,
+    parts=stages,
     params=params,
     default_sweep=sweep,
     help_msg=help_msg,

@@ -90,5 +90,5 @@ params = dict(
     max_lat=43.0,
 )
 pipeline, recipe, params = aprl.appareil.register(
-    name="dc_ose_2021_alongtrack_metrics", stages=stages, params=params
+    name="dc_ose_2021_alongtrack_metrics", parts=stages, params=params
 )
