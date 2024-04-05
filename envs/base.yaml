@@ -3,3 +3,5 @@ dependencies:
   - pip
   - pyinterp
   - xesmf
+  - pip:
+    - "ocn-tools @ git+https://github.com/jejjohnson/ocn-tools.git#egg=ocn_tools" 
