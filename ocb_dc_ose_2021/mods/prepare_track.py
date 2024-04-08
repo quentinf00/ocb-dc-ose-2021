@@ -97,25 +97,15 @@ def prepare_track(
     log.info("Done")
 
 
-def sorted_glob(pathname: str):
-    """
-
-    Args:
-        pathname: file pattern to select
-
-    Returns: Sorted list of files matching pathname
-
-    """
-    return sorted(glob.glob(pathname=pathname, recursive=True))
-
-
 b = hydra_zen.make_custom_builds_fn(populate_full_signature=True)
 pb = hydra_zen.make_custom_builds_fn(zen_partial=True, populate_full_signature=True)
 
 run, cfg = aprl.part.register(
     prepare_track,
     base_args=dict(
-        input_paths=b(sorted_glob, pathname="data/downloads/ref/**/*.nc"),
+        input_paths=b(
+            glob.iglob, pathname="data/downloads/ref/**/*.nc", recursive=True
+        ),
         output_path="data/prepared/ref/default.nc",
         preprocess=pb(
             preprocess_track,
