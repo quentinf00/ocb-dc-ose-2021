@@ -72,6 +72,7 @@ def prepare_track(
     input_paths: str | Sequence[str],
     output_path: str,
     preprocess: Callable[[xr.Dataset], xr.Dataset],
+    sort_paths: bool = True,
 ):
     """
     Open multifile dataset to be contatenated by time apply processing and write output
@@ -83,6 +84,9 @@ def prepare_track(
     """
     Path(output_path).parent.mkdir(parents=True, exist_ok=True)
     log.info(f"Starting")
+    if sort_paths:
+        log.debug(f"Sorting {input_paths=}")
+        input_paths = sorted(input_paths)
     log.debug(f"Opening {input_paths=}")
     log.debug(f"Applying preprocessing {preprocess}")
     log.debug(f"{getattr(preprocess, '__doc__', '')}")
