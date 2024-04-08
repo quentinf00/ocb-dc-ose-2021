@@ -81,6 +81,7 @@ def prepare_track(
         input_paths (str | Path | Sequence): path(s) to input netcdf file(s)
         output_path (str): path where to write the output
         preprocess (callable): function to apply to each netcdf
+        sort_paths (bool): whether to sort input_paths before concatenation
     """
     Path(output_path).parent.mkdir(parents=True, exist_ok=True)
     log.info(f"Starting")
