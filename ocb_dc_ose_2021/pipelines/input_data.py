@@ -76,8 +76,8 @@ Params:
     max_time: end of the temporal domain
     min_lon: lower longitudinal bound
     max_lon: upper longitudinal bound
-    min_lat: upper meridional bound
-    max_lat: upper meridional bound
+    min_lat: upper latitudinal bound
+    max_lat: upper latitudinal bound
 """
 pipeline, recipe, params = aprl.appareil.register(
     "dc_ose_2021_inference_data",
