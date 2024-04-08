@@ -1,4 +1,4 @@
 dependencies:
   - pip:
-    - "git+https://github.com/quentinf00/ocb-dc-ose-2021"
+    - "ocb-dc-ose-2021"
 
