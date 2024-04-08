@@ -71,7 +71,7 @@ def preprocess_track(
 def prepare_track(
     input_paths: str | Sequence[str],
     output_path: str,
-    preprocess: Callable[xr.Dataset, xr.Dataset],
+    preprocess: Callable[[xr.Dataset], xr.Dataset],
 ):
     """
     Open multifile dataset to be contatenated by time apply processing and write output
@@ -86,12 +86,14 @@ def prepare_track(
     log.debug(f"Opening {input_paths=}")
     log.debug(f"Applying preprocessing {preprocess}")
     log.debug(f"{getattr(preprocess, '__doc__', '')}")
-    xr.open_mfdataset(
+    ds = xr.open_mfdataset(
         input_paths,
         preprocess=preprocess,
         combine="nested",
         concat_dim="time",
-    ).to_netcdf(output_path)
+    )
+    log.debug(f"Writing to {output_path}")
+    ds.to_netcdf(output_path)
     log.info("Done")
 
 
