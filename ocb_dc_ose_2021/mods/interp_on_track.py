@@ -69,8 +69,8 @@ def interp_on_track(
         track_paths, preprocess=preprocess_track, combine="nested", concat_dim="time"
     )
 
-    log.debug(f"Sampling {map} along {track})
-    log.debug(f"Writing results to {output_path})
+    log.debug(f"Sampling {map} along {track}")
+    log.debug(f"Writing results to {output_path}")
     ocngri.grid_to_coord_based(src_grid_ds=map, tgt_coord_based_ds=track).to_netcdf(
         output_path
     )
