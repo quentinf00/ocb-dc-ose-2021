@@ -5,7 +5,7 @@ from functools import partial
 from pathlib import Path
 from typing import Callable, Sequence
 
-import aprl.part
+import aprl
 import hydra_zen
 import numpy as np
 import xarray as xr
@@ -13,6 +13,8 @@ from ocn_tools._src.metrics.power_spectrum import psd_welch_score
 from ocn_tools._src.preprocessing.alongtrack import select_track_segments
 
 log = logging.getLogger(__name__)
+
+b = hydra_zen.make_custom_builds_fn()
 
 
 def min_intersect(ds, threshold=0.5, dvar="score", dim="wavenumber"):
@@ -50,8 +52,12 @@ def lambdax(
     segment_overlapping: float = 0.25,
     output_lambdax_path: str = "data/metrics/lambdax.json",
     output_psd_path: str = "data/method_outputs/psd_score.nc",
-    preprocess_ref: Callable[xr.Dataset, xr.DataArray] = operator.attrgetter("ssh"),
-    preprocess_study: Callable[xr.Dataset, xr.DataArray] = operator.attrgetter("ssh"),
+    preprocess_ref: Callable[[xr.Dataset], xr.DataArray] = b(
+        operator.attrgetter, "ssh"
+    ),
+    preprocess_study: Callable[[xr.Dataset], xr.DataArray] = b(
+        operator.attrgetter, "ssh"
+    ),
 ):
     """
     Compute the PSD of the reference signal and the error and calulate the first wavelength $lambda_x$ at which
@@ -130,7 +136,6 @@ def lambdax(
     log.info("Done")
 
 
-b = hydra_zen.make_custom_builds_fn()
 run, cfg = aprl.part.register(
     lambdax,
     base_args=dict(

@@ -1,6 +1,6 @@
 metrics:
   _partial_: true
-  _target_: aprl.pipeline.run
+  _target_: aprl.appareil.run
   dry: false
   params:
     max_lat: 43.0
@@ -13,7 +13,7 @@ metrics:
     sat: c2
     study_path: data/downloads/method_outputs/default.nc
     study_var: ssh
-  stages:
+  parts:
     _01_dl_track:
       _partial_: true
       _target_: copernicusmarine.python_interface.get.get
@@ -31,8 +31,12 @@ metrics:
       _partial_: true
       _target_: ocb_dc_ose_2021.mods.prepare_track.prepare_track
       input_paths:
-        _target_: ocb_dc_ose_2021.mods.prepare_track.sorted_glob
+        _target_: glob.iglob
+        dir_fd: null
+        include_hidden: false
         pathname: data/downloads/ref/c2/**/*.nc
+        recursive: true
+        root_dir: null
       output_path: data/prepared/ref/c2.nc
       preprocess:
         _partial_: true
@@ -43,6 +47,7 @@ metrics:
         min_lat: 33.0
         min_lon: -65.0
         min_time: '2017-01-01'
+      sort_paths: true
     _03_interp_on_track:
       _partial_: true
       _target_: ocb_dc_ose_2021.mods.interp_on_track.interp_on_track
@@ -88,10 +93,10 @@ metrics:
           path: operator.itemgetter
         ssh_var: ssh
       preprocess_study:
-        _args_:
-        - _target_: hydra_zen.funcs.get_obj
-          path: operator.itemgetter
         _target_: aprl.utils.kw2a
+        fn:
+          _target_: hydra_zen.funcs.get_obj
+          path: operator.itemgetter
         ssh_var: ssh
       ref_paths: data/prepared/ref/c2.nc
       study_paths: data/prepared/method_outputs/default_on_track.nc
@@ -103,7 +108,7 @@ metrics:
   - _04_2_mu
 input_data:
   _partial_: true
-  _target_: aprl.pipeline.run
+  _target_: aprl.appareil.run
   dry: false
   params:
     max_lat: 44.0
@@ -112,7 +117,7 @@ input_data:
     min_lat: 32.0
     min_lon: -66.0
     min_time: '2016-12-01'
-    sat: null
+    sat: ???
     sat_list:
     - alg
     - h2ag
@@ -120,15 +125,15 @@ input_data:
     - j2n
     - j3
     - s3a
-  stages:
+  parts:
     _01_dl_track:
       _partial_: true
       _target_: copernicusmarine.python_interface.get.get
       dataset_id:
         _target_: ocb_dc_ose_2021.mods.cmems_get.duacs_l3
-        sat: null
+        sat: ???
       force_download: true
-      output_directory: data/downloads/input/None
+      output_directory: ???
       overwrite_output_data: true
       regex:
         _target_: ocb_dc_ose_2021.mods.cmems_get.month_regex_from_date
@@ -138,9 +143,13 @@ input_data:
       _partial_: true
       _target_: ocb_dc_ose_2021.mods.prepare_track.prepare_track
       input_paths:
-        _target_: ocb_dc_ose_2021.mods.prepare_track.sorted_glob
-        pathname: data/downloads/input/None/**/*.nc
-      output_path: data/prepared/input/None.nc
+        _target_: glob.iglob
+        dir_fd: null
+        include_hidden: false
+        pathname: ???
+        recursive: true
+        root_dir: null
+      output_path: ???
       preprocess:
         _partial_: true
         _target_: ocb_dc_ose_2021.mods.prepare_track.preprocess_track
@@ -150,6 +159,7 @@ input_data:
         min_lat: 32.0
         min_lon: -66.0
         min_time: '2016-12-01'
+      sort_paths: true
   to_run:
   - _01_dl_track
   - _02_prepare_track

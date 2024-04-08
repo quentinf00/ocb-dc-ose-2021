@@ -17,7 +17,7 @@ stages:
     do:
       params:
       - full_config.yaml:
-        - input_data.stages._01_dl_track
+        - input_data.parts._01_dl_track
       cmd: ocb-dc_ose_2021-input_data 'to_run=[_01_dl_track]' params.sat=${item}
       deps:
         - ../ocb_dc_ose_2021/pipelines/input_data.py
@@ -29,7 +29,7 @@ stages:
     do:
       params:
       - full_config.yaml:
-        - input_data.stages._02_prepare_track
+        - input_data.parts._02_prepare_track
       cmd: >
         ocb-dc_ose_2021-input_data
         'to_run=[_02_prepare_track]' params.sat=${item}
@@ -42,7 +42,7 @@ stages:
   diagnostics/fetch_reference_data:
     params:
     - full_config.yaml:
-      - metrics.stages._01_dl_track
+      - metrics.parts._01_dl_track
     cmd: ocb-dc_ose_2021-metrics 'to_run=[_01_dl_track]'
     deps:
     - ../ocb_dc_ose_2021/pipelines/metrics.py
@@ -64,7 +64,7 @@ stages:
   diagnostics/filter_and_merge_ref:
     params:
     - full_config.yaml:
-      - metrics.stages._02_prepare_track
+      - metrics.parts._02_prepare_track
     cmd: ocb-dc_ose_2021-metrics 'to_run=[_02_prepare_track]'
     deps:
     - ../ocb_dc_ose_2021/pipelines/metrics.py
@@ -79,7 +79,7 @@ stages:
         'params.study_var=${item.var}' 'params.method=${key}'
       params:
       - full_config.yaml:
-        - metrics.stages._03_interp_on_track
+        - metrics.parts._03_interp_on_track
       - methods.toml:
         - methods.${key}
       deps:
@@ -96,7 +96,7 @@ stages:
         'params.study_var=${item.var}' 'params.method=${key}'
       params:
       - full_config.yaml:
-        - metrics.stages._04_1_lambdax
+        - metrics.parts._04_1_lambdax
       - methods.toml:
         - methods.${key}
       deps:
@@ -116,7 +116,7 @@ stages:
         'params.study_var=${item.var}' 'params.method=${key}'
       params:
       - full_config.yaml:
-        - metrics.stages._04_2_mu
+        - metrics.parts._04_2_mu
       - methods.toml:
         - methods.${key}
       deps:
