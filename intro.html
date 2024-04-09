@@ -8,7 +8,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Welcome to your Jupyter Book &#8212; My sample book</title>
+    <title>OceanBench DataChallenge &#8212; My sample book</title>
   
   
   
@@ -60,7 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Markdown Files" href="markdown.html" />
+    <link rel="next" title="Setup" href="installation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -173,14 +173,13 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1 current active">
                 <a class="reference internal" href="#">
-                    Welcome to your Jupyter Book
+                    OceanBench DataChallenge
                 </a>
             </li>
         </ul>
         <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ocb_dc_ose_2021_data.html">Data Access for the Oceanbench v2 datachallenge demo</a></li>
 </ul>
 
     </div>
@@ -353,7 +352,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -364,11 +365,22 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Welcome to your Jupyter Book</h1>
+    <h1>OceanBench DataChallenge</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overall-presentation">Overall presentation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background-on-the-shoulder-of-giants">Background: On the shoulder of Giants:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-showcase">Feature Showcase</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contributing">Contributing</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -378,19 +390,65 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <div class="tex2jax_ignore mathjax_ignore section" id="welcome-to-your-jupyter-book">
-<h1>Welcome to your Jupyter Book<a class="headerlink" href="#welcome-to-your-jupyter-book" title="Permalink to this heading">#</a></h1>
-<p>This is a small sample book to give you a feel for how book content is
-structured.
-It shows off a few of the major file types, as well as some sample content.
-It does not go in-depth into any particular topic - check out <a class="reference external" href="https://jupyterbook.org">the Jupyter Book documentation</a> for more information.</p>
-<p>Check out the content pages bundled with this sample book to see more.</p>
+  <div class="tex2jax_ignore mathjax_ignore section" id="oceanbench-datachallenge">
+<h1>OceanBench DataChallenge<a class="headerlink" href="#oceanbench-datachallenge" title="Permalink to this heading">#</a></h1>
+<div class="section" id="overall-presentation">
+<h2>Overall presentation<a class="headerlink" href="#overall-presentation" title="Permalink to this heading">#</a></h2>
+<p>We provide here the documentation and example notebooks associated with  <code class="docutils literal notranslate"><span class="pre">https://github.com/quentinf00/ocb-dc-ose-2021.git</span></code>.
+This aims at laying foundations for building an ecosystem to facilitate the development and application of ocean observation science</p>
+<p>This work is built upon existing work that you should check out !</p>
+</div>
+<div class="section" id="background-on-the-shoulder-of-giants">
+<h2>Background: On the shoulder of Giants:<a class="headerlink" href="#background-on-the-shoulder-of-giants" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong><a class="reference external" href="https://ocean-data-challenges.github.io/">Ocean-data-challenges</a></strong> provide:</p>
+<ul>
+<li><p>well thought evaluation use cases</p></li>
+<li><p>input data download instructions</p></li>
+<li><p>metrics code and notebooks to evaluate methods</p></li>
+</ul>
+</li>
+<li><p><strong><a class="reference external" href="https://jejjohnson.github.io/oceanbench/content/overview.html">OceanBench</a></strong> provide:</p>
+<ul>
+<li><p>suite of tools  and configuration for developing ML application</p></li>
+</ul>
+</li>
+<li><p><strong><a class="reference external" href="https://hydra.cc/docs/intro/">Hydra</a> and <a class="reference external" href="https://mit-ll-responsible-ai.github.io/hydra-zen/">Hydra-zen</a></strong> provide:</p>
+<ul>
+<li><p>Python &lt;-&gt; Configuration workflow (share code, adapt config)</p></li>
+<li><p>CLI integration</p></li>
+<li><p>easy // computing (local, cluster), logging</p></li>
+</ul>
+</li>
+<li><p><strong><a class="reference external" href="https://dvc.org/doc/use-cases">DVC</a></strong> provides:</p>
+<ul>
+<li><p>data versioning (git for data)</p></li>
+<li><p>pipeline parameters and artefacts description and orchestration (make for data science)</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="feature-showcase">
+<h2>Feature Showcase<a class="headerlink" href="#feature-showcase" title="Permalink to this heading">#</a></h2>
+<p>We provide through the following notebooks and associated 5 min walkthrough videos demonstrations on the new features brought by this implementations
+<img alt="" src="_images/contrib_doc.png" /></p>
+<ul class="simple">
+<li><p>Versioned data access and reproduction for data challenges</p></li>
+<li><p>Metrics computation and automated leaderboard update</p></li>
+<li><p>Configuring new usecases and scaling to operations</p></li>
+</ul>
+</div>
+<div class="section" id="contributing">
+<h2>Contributing<a class="headerlink" href="#contributing" title="Permalink to this heading">#</a></h2>
+<p>The idea of this project is to define the guidelines so that different actors can add their brick to the ecosystem while providing good interoperability with exitings components.
+The following examples aims at clarifying how to do so:
+<em>To be continued</em></p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ocb_dc_ose_2021_data.html">Data Access for the Oceanbench v2 datachallenge demo</a></li>
 </ul>
+</div>
 </div>
 </div>
 
@@ -425,11 +483,11 @@ It does not go in-depth into any particular topic - check out <a class="referenc
                   
 <div class="prev-next-area">
     <a class="right-next"
-       href="markdown.html"
+       href="installation.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Markdown Files</p>
+        <p class="prev-next-title">Setup</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -440,7 +498,23 @@ It does not go in-depth into any particular topic - check out <a class="referenc
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overall-presentation">Overall presentation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background-on-the-shoulder-of-giants">Background: On the shoulder of Giants:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-showcase">Feature Showcase</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contributing">Contributing</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
