@@ -4,6 +4,7 @@ from pathlib import Path
 
 import aprl.part
 import hydra_zen
+import numpy as np
 import ocn_tools._src.geoprocessing.gridding as ocngri
 import ocn_tools._src.geoprocessing.validation as ocnval
 import xarray as xr
@@ -58,7 +59,7 @@ def interp_on_track(
     log.debug(f"Opening {grid_paths=}")
     log.debug(f"Applying preprocessing {preprocess_grid}")
     log.debug(f"{getattr(preprocess_grid, '__doc__', '')}")
-    map = xr.open_mfdataset(
+    map_ds = xr.open_mfdataset(
         grid_paths, preprocess=preprocess_grid, combine="nested", concat_dim="time"
     )
 
@@ -69,11 +70,13 @@ def interp_on_track(
         track_paths, preprocess=preprocess_track, combine="nested", concat_dim="time"
     )
 
-    log.debug(f"Sampling {map} along {track}")
+    log.debug(f"Sampling {map_ds.coords} along {track.coords}")
     log.debug(f"Writing results to {output_path}")
-    ocngri.grid_to_coord_based(src_grid_ds=map, tgt_coord_based_ds=track).to_netcdf(
-        output_path
+    out_ds = ocngri.grid_to_coord_based(src_grid_ds=map_ds, tgt_coord_based_ds=track)
+    log.debug(
+        f"{out_ds.pipe(np.isfinite).sum()=}, {out_ds.pipe(np.isnan).sum()=} (Check map and track coordinates)"
     )
+    out_ds.to_netcdf(output_path)
     log.info(f"Done")
 
 
