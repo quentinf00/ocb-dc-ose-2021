@@ -70,7 +70,8 @@ ocb-dc_ose_2021-input_data -m \
       +overrides@params=global \
       hydra/launcher=joblib \
       hydra.launcher.n_jobs=4 \
-      hydra.launcher.backend=multiprocessing
+      hydra.launcher.backend=threading \
+      hydra.launcher.prefer=threads
 
 ```
 
@@ -107,7 +108,7 @@ hvfig = to_plot.hvplot(
     kind='quadmesh',
     geo=True,
     coastline=True,
-    width=700,
+    width=1000,
     cmap='RdYlBu_r'
 )
 bokfig = hvplot.render(hvfig, backend='matplotlib')
@@ -147,8 +148,8 @@ outgrid = oi(
         ),
     ),
     patcher_cls=partial(XRDAPatcher,
-        patches=dict(time=1, lat=80, lon=360),
-        strides=dict(time=1, lat=80, lon=360)
+        patches=dict(time=1, lat=80, lon=80),
+        strides=dict(time=1, lat=80, lon=80)
     ),
     obs=obs.load(),
     lt=pd.to_timedelta('7D'), lx=1., ly=1.,
@@ -177,7 +178,7 @@ hvfig = out_plot.hvplot(
     kind='quadmesh',
     geo=True,
     coastline=True,
-    width=700,
+    width=1000,
     cmap='RdYlBu_r'
 )
 bokfig = hvplot.render(hvfig, backend='matplotlib')
@@ -201,7 +202,7 @@ hvfig = (
 ).ke.hvplot(
     kind='quadmesh',
     geo=True,
-    width=700,
+    width=1000,
     cmap='viridis',
     clim=(0, 0.3)
 )

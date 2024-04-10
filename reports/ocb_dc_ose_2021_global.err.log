@@ -27,145 +27,152 @@ ocb-dc_ose_2021-input_data -m \
     'hydra.searchpath=[file://conf]' \
       +overrides@params=global \
       hydra/launcher=joblib \
-      hydra.launcher.n_jobs=4
+      hydra.launcher.n_jobs=4 \
+      hydra.launcher.backend=threading
 ------------------
 
 ----- stdout -----
-[2024-04-10 16:17:27,583][HYDRA] Joblib.Parallel(n_jobs=4,backend=loky,prefer=processes,require=None,verbose=0,timeout=None,pre_dispatch=2*n_jobs,batch_size=auto,temp_folder=None,max_nbytes=None,mmap_mode=r) is launching 4 jobs
+[2024-04-10 16:54:00,545][HYDRA] Joblib.Parallel(n_jobs=4,backend=loky,prefer=processes,require=None,verbose=0,timeout=None,pre_dispatch=2*n_jobs,batch_size=auto,temp_folder=None,max_nbytes=None,mmap_mode=r) is launching 4 jobs
 ----- stdout -----
-[2024-04-10 16:17:27,583][HYDRA] Launching jobs, sweep output dir : multirun/2024-04-10/16-17-27
+[2024-04-10 16:54:00,545][HYDRA] Launching jobs, sweep output dir : multirun/2024-04-10/16-54-00
 ----- stdout -----
-[2024-04-10 16:17:27,583][HYDRA] 	#0 : params.sat=j3 +overrides@params=global
+[2024-04-10 16:54:00,545][HYDRA] 	#0 : params.sat=j3 +overrides@params=global
 ----- stdout -----
-[2024-04-10 16:17:27,583][HYDRA] 	#1 : params.sat=s3b +overrides@params=global
+[2024-04-10 16:54:00,545][HYDRA] 	#1 : params.sat=s3b +overrides@params=global
 ----- stdout -----
-[2024-04-10 16:17:27,583][HYDRA] 	#2 : params.sat=h2ag +overrides@params=global
+[2024-04-10 16:54:00,545][HYDRA] 	#2 : params.sat=h2ag +overrides@params=global
 ----- stdout -----
-[2024-04-10 16:17:27,583][HYDRA] 	#3 : params.sat=c2 +overrides@params=global
+[2024-04-10 16:54:00,545][HYDRA] 	#3 : params.sat=c2 +overrides@params=global
 ----- stdout -----
-[2024-04-10 16:17:28,569][aprl.appareil][INFO] - Starting
+[2024-04-10 16:54:01,525][aprl.appareil][INFO] - Starting
 ----- stdout -----
-[2024-04-10 16:17:28,570][aprl.appareil][INFO] - Running part _01_dl_track
+[2024-04-10 16:54:01,525][aprl.appareil][INFO] - Running part _01_dl_track
 ----- stdout -----
-[2024-04-10 16:17:28,573][aprl.appareil][INFO] - Starting
+[2024-04-10 16:54:01,541][aprl.appareil][INFO] - Starting
 ----- stdout -----
-[2024-04-10 16:17:28,573][aprl.appareil][INFO] - Running part _01_dl_track
+[2024-04-10 16:54:01,541][aprl.appareil][INFO] - Running part _01_dl_track
 ----- stdout -----
-[2024-04-10 16:17:28,579][aprl.appareil][INFO] - Starting
+[2024-04-10 16:54:01,563][aprl.appareil][INFO] - Starting
 ----- stdout -----
-[2024-04-10 16:17:28,579][aprl.appareil][INFO] - Starting
+[2024-04-10 16:54:01,563][aprl.appareil][INFO] - Running part _01_dl_track
 ----- stdout -----
-[2024-04-10 16:17:28,579][aprl.appareil][INFO] - Running part _01_dl_track
+[2024-04-10 16:54:01,583][aprl.appareil][INFO] - Starting
 ----- stdout -----
-[2024-04-10 16:17:28,579][aprl.appareil][INFO] - Running part _01_dl_track
+[2024-04-10 16:54:01,584][aprl.appareil][INFO] - Running part _01_dl_track
 ----- stdout -----
-INFO - 2024-04-10T16:17:28Z - Dataset version was not specified, the latest one was selected: "202112"
+INFO - 2024-04-10T16:54:01Z - Dataset version was not specified, the latest one was selected: "202112"
 ----- stdout -----
-[2024-04-10 16:17:28,970][copernicus_marine_root_logger][INFO] - Dataset version was not specified, the latest one was selected: "202112"
+[2024-04-10 16:54:01,933][copernicus_marine_root_logger][INFO] - Dataset version was not specified, the latest one was selected: "202112"
 ----- stdout -----
-INFO - 2024-04-10T16:17:28Z - Dataset part was not specified, the first one was selected: "default"
+INFO - 2024-04-10T16:54:01Z - Dataset part was not specified, the first one was selected: "default"
 ----- stdout -----
-[2024-04-10 16:17:28,970][copernicus_marine_root_logger][INFO] - Dataset part was not specified, the first one was selected: "default"
+[2024-04-10 16:54:01,934][copernicus_marine_root_logger][INFO] - Dataset part was not specified, the first one was selected: "default"
 ----- stdout -----
-INFO - 2024-04-10T16:17:28Z - Service was not specified, the default one was selected: "original-files"
+INFO - 2024-04-10T16:54:01Z - Service was not specified, the default one was selected: "original-files"
 ----- stdout -----
-[2024-04-10 16:17:28,970][copernicus_marine_root_logger][INFO] - Service was not specified, the default one was selected: "original-files"
+[2024-04-10 16:54:01,934][copernicus_marine_root_logger][INFO] - Service was not specified, the default one was selected: "original-files"
 ----- stdout -----
-INFO - 2024-04-10T16:17:28Z - Downloading using service original-files...
+INFO - 2024-04-10T16:54:01Z - Downloading using service original-files...
 ----- stdout -----
-[2024-04-10 16:17:28,970][copernicus_marine_root_logger][INFO] - Downloading using service original-files...
+[2024-04-10 16:54:01,934][copernicus_marine_root_logger][INFO] - Downloading using service original-files...
 ----- stdout -----
-INFO - 2024-04-10T16:17:29Z - Dataset version was not specified, the latest one was selected: "202112"
+INFO - 2024-04-10T16:54:02Z - Dataset version was not specified, the latest one was selected: "202112"
 ----- stdout -----
-[2024-04-10 16:17:29,223][copernicus_marine_root_logger][INFO] - Dataset version was not specified, the latest one was selected: "202112"
+[2024-04-10 16:54:02,218][copernicus_marine_root_logger][INFO] - Dataset version was not specified, the latest one was selected: "202112"
 ----- stdout -----
-INFO - 2024-04-10T16:17:29Z - Dataset part was not specified, the first one was selected: "default"
+INFO - 2024-04-10T16:54:02Z - Dataset part was not specified, the first one was selected: "default"
 ----- stdout -----
-[2024-04-10 16:17:29,224][copernicus_marine_root_logger][INFO] - Dataset part was not specified, the first one was selected: "default"
+[2024-04-10 16:54:02,219][copernicus_marine_root_logger][INFO] - Dataset part was not specified, the first one was selected: "default"
 ----- stdout -----
-INFO - 2024-04-10T16:17:29Z - Service was not specified, the default one was selected: "original-files"
+INFO - 2024-04-10T16:54:02Z - Service was not specified, the default one was selected: "original-files"
 ----- stdout -----
-[2024-04-10 16:17:29,224][copernicus_marine_root_logger][INFO] - Service was not specified, the default one was selected: "original-files"
+[2024-04-10 16:54:02,219][copernicus_marine_root_logger][INFO] - Service was not specified, the default one was selected: "original-files"
 ----- stdout -----
-INFO - 2024-04-10T16:17:29Z - Downloading using service original-files...
+INFO - 2024-04-10T16:54:02Z - Downloading using service original-files...
 ----- stdout -----
-[2024-04-10 16:17:29,224][copernicus_marine_root_logger][INFO] - Downloading using service original-files...
+[2024-04-10 16:54:02,219][copernicus_marine_root_logger][INFO] - Downloading using service original-files...
 ----- stdout -----
-INFO - 2024-04-10T16:17:29Z - Dataset version was not specified, the latest one was selected: "202112"
+INFO - 2024-04-10T16:54:02Z - Dataset version was not specified, the latest one was selected: "202112"
 ----- stdout -----
-[2024-04-10 16:17:29,543][copernicus_marine_root_logger][INFO] - Dataset version was not specified, the latest one was selected: "202112"
+[2024-04-10 16:54:02,497][copernicus_marine_root_logger][INFO] - Dataset version was not specified, the latest one was selected: "202112"
 ----- stdout -----
-INFO - 2024-04-10T16:17:29Z - Dataset part was not specified, the first one was selected: "default"
+INFO - 2024-04-10T16:54:02Z - Dataset part was not specified, the first one was selected: "default"
 ----- stdout -----
-[2024-04-10 16:17:29,543][copernicus_marine_root_logger][INFO] - Dataset part was not specified, the first one was selected: "default"
+[2024-04-10 16:54:02,497][copernicus_marine_root_logger][INFO] - Dataset part was not specified, the first one was selected: "default"
 ----- stdout -----
-INFO - 2024-04-10T16:17:29Z - Service was not specified, the default one was selected: "original-files"
+INFO - 2024-04-10T16:54:02Z - Service was not specified, the default one was selected: "original-files"
 ----- stdout -----
-[2024-04-10 16:17:29,543][copernicus_marine_root_logger][INFO] - Service was not specified, the default one was selected: "original-files"
+[2024-04-10 16:54:02,497][copernicus_marine_root_logger][INFO] - Service was not specified, the default one was selected: "original-files"
 ----- stdout -----
-INFO - 2024-04-10T16:17:29Z - Downloading using service original-files...
+INFO - 2024-04-10T16:54:02Z - Downloading using service original-files...
 ----- stdout -----
-[2024-04-10 16:17:29,543][copernicus_marine_root_logger][INFO] - Downloading using service original-files...
+[2024-04-10 16:54:02,497][copernicus_marine_root_logger][INFO] - Downloading using service original-files...
 ----- stdout -----
-INFO - 2024-04-10T16:17:30Z - Dataset version was not specified, the latest one was selected: "202112"
+INFO - 2024-04-10T16:54:02Z - Dataset version was not specified, the latest one was selected: "202112"
 ----- stdout -----
-[2024-04-10 16:17:30,041][copernicus_marine_root_logger][INFO] - Dataset version was not specified, the latest one was selected: "202112"
+[2024-04-10 16:54:02,816][copernicus_marine_root_logger][INFO] - Dataset version was not specified, the latest one was selected: "202112"
 ----- stdout -----
-INFO - 2024-04-10T16:17:30Z - Dataset part was not specified, the first one was selected: "default"
+INFO - 2024-04-10T16:54:02Z - Dataset part was not specified, the first one was selected: "default"
 ----- stdout -----
-[2024-04-10 16:17:30,041][copernicus_marine_root_logger][INFO] - Dataset part was not specified, the first one was selected: "default"
+[2024-04-10 16:54:02,816][copernicus_marine_root_logger][INFO] - Dataset part was not specified, the first one was selected: "default"
 ----- stdout -----
-INFO - 2024-04-10T16:17:30Z - Service was not specified, the default one was selected: "original-files"
+INFO - 2024-04-10T16:54:02Z - Service was not specified, the default one was selected: "original-files"
 ----- stdout -----
-[2024-04-10 16:17:30,041][copernicus_marine_root_logger][INFO] - Service was not specified, the default one was selected: "original-files"
+[2024-04-10 16:54:02,816][copernicus_marine_root_logger][INFO] - Service was not specified, the default one was selected: "original-files"
 ----- stdout -----
-INFO - 2024-04-10T16:17:30Z - Downloading using service original-files...
+INFO - 2024-04-10T16:54:02Z - Downloading using service original-files...
 ----- stdout -----
-[2024-04-10 16:17:30,041][copernicus_marine_root_logger][INFO] - Downloading using service original-files...
+[2024-04-10 16:54:02,816][copernicus_marine_root_logger][INFO] - Downloading using service original-files...
 ----- stderr -----
-  0%|          | 0/31 [00:00<?, ?it/s]  0%|          | 0/31 [00:00<?, ?it/s]  0%|          | 0/31 [00:00<?, ?it/s]  0%|          | 0/31 [00:00<?, ?it/s]  3%|▎         | 1/31 [00:06<03:26,  6.87s/it] 48%|████▊     | 15/31 [00:06<00:05,  2.99it/s]100%|██████████| 31/31 [00:07<00:00,  4.41it/s]
+  0%|          | 0/31 [00:00<?, ?it/s]  0%|          | 0/31 [00:00<?, ?it/s]  0%|          | 0/31 [00:00<?, ?it/s]  0%|          | 0/31 [00:00<?, ?it/s]  3%|▎         | 1/31 [00:07<03:36,  7.21s/it]  3%|▎         | 1/31 [00:06<03:26,  6.89s/it]100%|██████████| 31/31 [00:07<00:00,  4.26it/s]
 ----- stdout -----
-[2024-04-10 16:17:36,867][aprl.appareil][INFO] - part _01_dl_track done
+[2024-04-10 16:54:10,220][aprl.appareil][INFO] - part _01_dl_track done
 ----- stdout -----
-[2024-04-10 16:17:36,867][aprl.appareil][INFO] - Running part _02_prepare_track
+[2024-04-10 16:54:10,220][aprl.appareil][INFO] - Running part _02_prepare_track
 ----- stdout -----
-[2024-04-10 16:17:36,868][ocb_dc_ose_2021.mods.prepare_track][INFO] - Starting
+[2024-04-10 16:54:10,220][ocb_dc_ose_2021.mods.prepare_track][INFO] - Starting
 ----- stderr -----
-  3%|▎         | 1/31 [00:07<03:34,  7.15s/it] 13%|█▎        | 4/31 [00:07<00:38,  1.42s/it]100%|██████████| 31/31 [00:07<00:00,  4.17it/s]
+ 65%|██████▍   | 20/31 [00:06<00:02,  4.00it/s]100%|██████████| 31/31 [00:06<00:00,  4.44it/s]
 ----- stdout -----
-[2024-04-10 16:17:37,618][aprl.appareil][INFO] - part _01_dl_track done
+[2024-04-10 16:54:10,279][aprl.appareil][INFO] - part _01_dl_track done
 ----- stdout -----
-[2024-04-10 16:17:37,618][aprl.appareil][INFO] - Running part _02_prepare_track
+[2024-04-10 16:54:10,279][aprl.appareil][INFO] - Running part _02_prepare_track
 ----- stdout -----
-[2024-04-10 16:17:37,618][ocb_dc_ose_2021.mods.prepare_track][INFO] - Starting
+[2024-04-10 16:54:10,279][ocb_dc_ose_2021.mods.prepare_track][INFO] - Starting
 ----- stderr -----
-  3%|▎         | 1/31 [00:06<03:14,  6.50s/it]  6%|▋         | 2/31 [00:06<01:19,  2.74s/it] 94%|█████████▎| 29/31 [00:06<00:00,  8.37it/s]100%|██████████| 31/31 [00:06<00:00,  4.62it/s]
+  3%|▎         | 1/31 [00:07<03:39,  7.33s/it]  3%|▎         | 1/31 [00:07<03:41,  7.38s/it]100%|██████████| 31/31 [00:07<00:00,  4.17it/s]
 ----- stdout -----
-[2024-04-10 16:17:38,094][aprl.appareil][INFO] - part _01_dl_track done
+[2024-04-10 16:54:11,027][aprl.appareil][INFO] - part _01_dl_track done
 ----- stdout -----
-[2024-04-10 16:17:38,094][aprl.appareil][INFO] - Running part _02_prepare_track
+[2024-04-10 16:54:11,027][aprl.appareil][INFO] - Running part _02_prepare_track
 ----- stdout -----
-[2024-04-10 16:17:38,094][ocb_dc_ose_2021.mods.prepare_track][INFO] - Starting
+[2024-04-10 16:54:11,027][ocb_dc_ose_2021.mods.prepare_track][INFO] - Starting
 ----- stderr -----
-  3%|▎         | 1/31 [00:07<03:59,  7.99s/it] 16%|█▌        | 5/31 [00:08<00:31,  1.23s/it]100%|██████████| 31/31 [00:08<00:00,  3.78it/s]
+  6%|▋         | 2/31 [00:07<01:29,  3.10s/it] 97%|█████████▋| 30/31 [00:07<00:00,  7.64it/s]100%|██████████| 31/31 [00:07<00:00,  4.08it/s]
 ----- stdout -----
-[2024-04-10 16:17:38,839][aprl.appareil][INFO] - part _01_dl_track done
+[2024-04-10 16:54:11,214][aprl.appareil][INFO] - part _01_dl_track done
 ----- stdout -----
-[2024-04-10 16:17:38,839][aprl.appareil][INFO] - Running part _02_prepare_track
+[2024-04-10 16:54:11,214][aprl.appareil][INFO] - Running part _02_prepare_track
 ----- stdout -----
-[2024-04-10 16:17:38,839][ocb_dc_ose_2021.mods.prepare_track][INFO] - Starting
+[2024-04-10 16:54:11,214][ocb_dc_ose_2021.mods.prepare_track][INFO] - Starting
 ----- stdout -----
-[2024-04-10 16:17:43,944][ocb_dc_ose_2021.mods.prepare_track][INFO] - Done
+[2024-04-10 16:54:15,310][ocb_dc_ose_2021.mods.prepare_track][INFO] - Done
 ----- stdout -----
-[2024-04-10 16:17:43,965][aprl.appareil][INFO] - part _02_prepare_track done
+[2024-04-10 16:54:15,324][aprl.appareil][INFO] - part _02_prepare_track done
 ----- stdout -----
-[2024-04-10 16:17:43,965][aprl.appareil][INFO] - Done
+[2024-04-10 16:54:15,324][aprl.appareil][INFO] - Done
 ----- stdout -----
-[2024-04-10 16:17:44,394][ocb_dc_ose_2021.mods.prepare_track][INFO] - Done
+[2024-04-10 16:54:16,372][ocb_dc_ose_2021.mods.prepare_track][INFO] - Done
 ----- stdout -----
-[2024-04-10 16:17:44,409][aprl.appareil][INFO] - part _02_prepare_track done
+[2024-04-10 16:54:16,388][aprl.appareil][INFO] - part _02_prepare_track done
 ----- stdout -----
-[2024-04-10 16:17:44,409][aprl.appareil][INFO] - Done
+[2024-04-10 16:54:16,388][aprl.appareil][INFO] - Done
+----- stdout -----
+[2024-04-10 16:54:17,003][ocb_dc_ose_2021.mods.prepare_track][INFO] - Done
+----- stdout -----
+[2024-04-10 16:54:17,019][aprl.appareil][INFO] - part _02_prepare_track done
+----- stdout -----
+[2024-04-10 16:54:17,019][aprl.appareil][INFO] - Done
 ----- stderr -----
 Traceback (most recent call last):
 ----- stderr -----
@@ -239,7 +246,7 @@ joblib.externals.loky.process_executor.TerminatedWorkerError: A worker process m
 ----- stderr -----
 The exit codes of the workers are {SIGTERM(-15)}
 ----- stderr -----
-/raid/localscratch/qfebvre/ocb/ocb-docs/lib/python3.11/multiprocessing/resource_tracker.py:224: UserWarning: resource_tracker: There appear to be 4 leaked semaphore objects to clean up at shutdown
+/raid/localscratch/qfebvre/ocb/ocb-docs/lib/python3.11/multiprocessing/resource_tracker.py:224: UserWarning: resource_tracker: There appear to be 8 leaked semaphore objects to clean up at shutdown
 ----- stderr -----
   warnings.warn('resource_tracker: There appear to be %d '
 ------------------
@@ -247,7 +254,7 @@ The exit codes of the workers are {SIGTERM(-15)}
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mCalledProcessError[0m                        Traceback (most recent call last)
 Cell [0;32mIn[6], line 1[0m
-[0;32m----> 1[0m [43mget_ipython[49m[43m([49m[43m)[49m[38;5;241;43m.[39;49m[43mrun_cell_magic[49m[43m([49m[38;5;124;43m'[39;49m[38;5;124;43mbash[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[38;5;124;43m'[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[38;5;124;43m"[39;49m[38;5;124;43mocb-dc_ose_2021-input_data -m [39;49m[38;5;130;43;01m\\[39;49;00m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m    [39;49m[38;5;124;43m'[39;49m[38;5;124;43mhydra.searchpath=[file://conf][39;49m[38;5;124;43m'[39;49m[38;5;124;43m [39;49m[38;5;130;43;01m\\[39;49;00m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m      +overrides@params=global [39;49m[38;5;130;43;01m\\[39;49;00m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m      hydra/launcher=joblib [39;49m[38;5;130;43;01m\\[39;49;00m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m      hydra.launcher.n_jobs=4[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m"[39;49m[43m)[49m
+[0;32m----> 1[0m [43mget_ipython[49m[43m([49m[43m)[49m[38;5;241;43m.[39;49m[43mrun_cell_magic[49m[43m([49m[38;5;124;43m'[39;49m[38;5;124;43mbash[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[38;5;124;43m'[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[38;5;124;43m"[39;49m[38;5;124;43mocb-dc_ose_2021-input_data -m [39;49m[38;5;130;43;01m\\[39;49;00m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m    [39;49m[38;5;124;43m'[39;49m[38;5;124;43mhydra.searchpath=[file://conf][39;49m[38;5;124;43m'[39;49m[38;5;124;43m [39;49m[38;5;130;43;01m\\[39;49;00m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m      +overrides@params=global [39;49m[38;5;130;43;01m\\[39;49;00m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m      hydra/launcher=joblib [39;49m[38;5;130;43;01m\\[39;49;00m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m      hydra.launcher.n_jobs=4 [39;49m[38;5;130;43;01m\\[39;49;00m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m      hydra.launcher.backend=threading[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m"[39;49m[43m)[49m
 
 File [0;32m/raid/localscratch/qfebvre/ocb/ocb-docs/lib/python3.11/site-packages/IPython/core/interactiveshell.py:2541[0m, in [0;36mInteractiveShell.run_cell_magic[0;34m(self, magic_name, line, cell)[0m
 [1;32m   2539[0m [38;5;28;01mwith[39;00m [38;5;28mself[39m[38;5;241m.[39mbuiltin_trap:
@@ -271,5 +278,5 @@ File [0;32m/raid/localscratch/qfebvre/ocb/ocb-docs/lib/python3.11/site-packages
 [1;32m    314[0m     rc [38;5;241m=[39m p[38;5;241m.[39mreturncode [38;5;129;01mor[39;00m [38;5;241m-[39m[38;5;241m9[39m
 [0;32m--> 315[0m     [38;5;28;01mraise[39;00m CalledProcessError(rc, cell)
 
-[0;31mCalledProcessError[0m: Command 'b"ocb-dc_ose_2021-input_data -m \\\n    'hydra.searchpath=[file://conf]' \\\n      +overrides@params=global \\\n      hydra/launcher=joblib \\\n      hydra.launcher.n_jobs=4\n"' returned non-zero exit status 1.
+[0;31mCalledProcessError[0m: Command 'b"ocb-dc_ose_2021-input_data -m \\\n    'hydra.searchpath=[file://conf]' \\\n      +overrides@params=global \\\n      hydra/launcher=joblib \\\n      hydra.launcher.n_jobs=4 \\\n      hydra.launcher.backend=threading\n"' returned non-zero exit status 1.
 
