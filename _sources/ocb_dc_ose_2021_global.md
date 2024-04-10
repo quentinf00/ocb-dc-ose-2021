@@ -78,6 +78,7 @@ tags:
 ---
 import hvplot.xarray
 import hvplot
+hvplot.extension('matplotlib')
 
 bin_size = 0.25
 to_plot = (obs.where((obs.time>pd.to_datetime('2019-05-15')) & (obs.time<pd.to_datetime('2019-05-16')) )
@@ -95,7 +96,6 @@ hvfig = to_plot.hvplot(
     geo=True,
     coastline=True,
     width=700,
-    height=50,
     cmap='RdYlBu_r'
 )
 bokfig = hvplot.render(hvfig, backend='matplotlib')
@@ -160,7 +160,6 @@ hvfig = out_plot.hvplot(
     geo=True,
     coastline=True,
     width=700,
-    height=50,
     cmap='RdYlBu_r'
 )
 bokfig = hvplot.render(hvfig, backend='matplotlib')
@@ -185,7 +184,6 @@ hvfig = (
     kind='quadmesh',
     geo=True,
     width=700,
-    height=50,
     cmap='viridis',
     clim=(0, 0.3)
 )
