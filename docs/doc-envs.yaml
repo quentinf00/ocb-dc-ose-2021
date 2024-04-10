@@ -1,0 +1,15 @@
+dependencies:
+- cartopy
+- dvc
+- geoviews
+- hvplot
+- pip
+- pyinterp
+- python<=3.11
+- xesmf
+- pip:
+  - awscli
+  - global-land-mask
+  - ocb-dc-ose-2021
+  - ocn-tools @ git+https://github.com/jejjohnson/ocn-tools.git#egg=ocn_tools
+  - xrpatcher

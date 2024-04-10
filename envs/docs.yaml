@@ -1,0 +1,8 @@
+dependencies:
+    - cartopy
+    - geoviews
+    - hvplot
+    - pip:
+        - xrpatcher
+        - awscli
+        - global-land-mask
