@@ -76,6 +76,9 @@ tags:
 ---
 import hvplot.xarray
 import hvplot
+from bokeh.plotting import figure, show, output_notebook
+output_notebook()
+
 bin_size = 0.25
 to_plot = (obs.where((obs.time>pd.to_datetime('2019-05-15')) & (obs.time<pd.to_datetime('2019-05-16')) )
 .drop_vars('time').assign(
@@ -95,8 +98,8 @@ hvfig = to_plot.hvplot(
     height=500,
     cmap='RdYlBu_r'
 )
-mplfig = hvplot.render(hvfig, backend='matplotlib')
-mplfig
+bokfig = hvplot.render(hvfig, backend='bokeh')
+show(bokfig)
 ```
 
 ```{code-cell}
@@ -160,8 +163,8 @@ hvfig = out_plot.hvplot(
     height=500,
     cmap='RdYlBu_r'
 )
-mplfig = hvplot.render(hvfig, backend='matplotlib')
-mplfig
+bokfig = hvplot.render(hvfig, backend='bokeh')
+show(bokfig)
 ```
 
 ```{code-cell}
@@ -186,8 +189,8 @@ hvfig = (
     cmap='viridis',
     clim=(0, 0.3)
 )
-mplfig = hvplot.render(hvfig, backend='matplotlib')
-mplfig
+bokfig = hvplot.render(hvfig, backend='bokeh')
+show(bokfig)
 ```
 
 ```{code-cell}
