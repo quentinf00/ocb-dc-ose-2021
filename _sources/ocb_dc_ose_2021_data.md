@@ -17,7 +17,7 @@ kernelspec:
 ## Reusing processing steps and reproducing data preparation
 
 ### Use the configured `ocb-dc_ose_2021-input_data` pipeline
-![](data_doc.png)
+![](imgs/data_doc.png)
 
 #### Reproduce processing of single satellite
 

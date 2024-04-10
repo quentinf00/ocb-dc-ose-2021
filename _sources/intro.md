@@ -25,7 +25,7 @@ This work is built upon existing work that you should check out !
 
 ## Feature Showcase
 We provide through the following notebooks and associated 5 min walkthrough videos demonstrations on the new features brought by this implementations
-![](contrib_doc.png)
+![](imgs/contrib_doc.png)
 - Versioned data access and reproduction for data challenges
 - Metrics computation and automated leaderboard update
 - Configuring new usecases and scaling to operations
