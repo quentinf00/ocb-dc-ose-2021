@@ -177,6 +177,4 @@ git push origin leaderboard/submit-oi-demo -f
 !cat "Pull request here: https://github.com/quentinf00/ocb-dc-ose-2021/compare/leaderboard/submit-oi-demo?expand=1"
 ```
 
-<iframe src=https://github.com/quentinf00/ocb-dc-ose-2021/pull/4/commits/af4c6084cb93089742fe0b563877f8996e2afc08#diff-62cd5b9a69ab1e4203f56d494c890b0b301b8c5eee9bd59e3a87ea36e2a3b3ec></iframe>
-
 ### Leaderboard is automatically updated
