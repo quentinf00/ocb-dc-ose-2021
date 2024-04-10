@@ -9,5 +9,4 @@ dependencies:
     - tree
     - pip:
         - xrpatcher
-        - awscli
         - global-land-mask

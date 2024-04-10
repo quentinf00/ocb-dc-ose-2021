@@ -6,3 +6,5 @@ root: intro
 chapters:
 - file: installation
 - file: ocb_dc_ose_2021_data
+- file: ocb_dc_ose_2021_oi
+- file: ocb_dc_ose_2021_global
