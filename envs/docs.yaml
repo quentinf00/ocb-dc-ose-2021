@@ -1,7 +1,12 @@
+channels:
+    - nvidia
 dependencies:
     - cartopy
     - geoviews
     - hvplot
+    - pytorch::pytorch
+    - pytorch::pytorch-cuda
+    - tree
     - pip:
         - xrpatcher
         - awscli
