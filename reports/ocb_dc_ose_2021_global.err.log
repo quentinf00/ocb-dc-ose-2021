@@ -1,0 +1,275 @@
+Traceback (most recent call last):
+  File "/raid/localscratch/qfebvre/ocb/ocb-docs/lib/python3.11/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/raid/localscratch/qfebvre/ocb/ocb-docs/lib/python3.11/site-packages/nbclient/client.py", line 1314, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/raid/localscratch/qfebvre/ocb/ocb-docs/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/raid/localscratch/qfebvre/ocb/ocb-docs/lib/python3.11/asyncio/base_events.py", line 650, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/raid/localscratch/qfebvre/ocb/ocb-docs/lib/python3.11/contextlib.py", line 222, in __aexit__
+    await self.gen.athrow(typ, value, traceback)
+  File "/raid/localscratch/qfebvre/ocb/ocb-docs/lib/python3.11/site-packages/nbclient/client.py", line 654, in async_setup_kernel
+    yield
+  File "/raid/localscratch/qfebvre/ocb/ocb-docs/lib/python3.11/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "/raid/localscratch/qfebvre/ocb/ocb-docs/lib/python3.11/site-packages/nbclient/client.py", line 1062, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/raid/localscratch/qfebvre/ocb/ocb-docs/lib/python3.11/site-packages/nbclient/client.py", line 918, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+%%bash
+ocb-dc_ose_2021-input_data -m \
+    'hydra.searchpath=[file://conf]' \
+      +overrides@params=global \
+      hydra/launcher=joblib \
+      hydra.launcher.n_jobs=4
+------------------
+
+----- stdout -----
+[2024-04-10 16:17:27,583][HYDRA] Joblib.Parallel(n_jobs=4,backend=loky,prefer=processes,require=None,verbose=0,timeout=None,pre_dispatch=2*n_jobs,batch_size=auto,temp_folder=None,max_nbytes=None,mmap_mode=r) is launching 4 jobs
+----- stdout -----
+[2024-04-10 16:17:27,583][HYDRA] Launching jobs, sweep output dir : multirun/2024-04-10/16-17-27
+----- stdout -----
+[2024-04-10 16:17:27,583][HYDRA] 	#0 : params.sat=j3 +overrides@params=global
+----- stdout -----
+[2024-04-10 16:17:27,583][HYDRA] 	#1 : params.sat=s3b +overrides@params=global
+----- stdout -----
+[2024-04-10 16:17:27,583][HYDRA] 	#2 : params.sat=h2ag +overrides@params=global
+----- stdout -----
+[2024-04-10 16:17:27,583][HYDRA] 	#3 : params.sat=c2 +overrides@params=global
+----- stdout -----
+[2024-04-10 16:17:28,569][aprl.appareil][INFO] - Starting
+----- stdout -----
+[2024-04-10 16:17:28,570][aprl.appareil][INFO] - Running part _01_dl_track
+----- stdout -----
+[2024-04-10 16:17:28,573][aprl.appareil][INFO] - Starting
+----- stdout -----
+[2024-04-10 16:17:28,573][aprl.appareil][INFO] - Running part _01_dl_track
+----- stdout -----
+[2024-04-10 16:17:28,579][aprl.appareil][INFO] - Starting
+----- stdout -----
+[2024-04-10 16:17:28,579][aprl.appareil][INFO] - Starting
+----- stdout -----
+[2024-04-10 16:17:28,579][aprl.appareil][INFO] - Running part _01_dl_track
+----- stdout -----
+[2024-04-10 16:17:28,579][aprl.appareil][INFO] - Running part _01_dl_track
+----- stdout -----
+INFO - 2024-04-10T16:17:28Z - Dataset version was not specified, the latest one was selected: "202112"
+----- stdout -----
+[2024-04-10 16:17:28,970][copernicus_marine_root_logger][INFO] - Dataset version was not specified, the latest one was selected: "202112"
+----- stdout -----
+INFO - 2024-04-10T16:17:28Z - Dataset part was not specified, the first one was selected: "default"
+----- stdout -----
+[2024-04-10 16:17:28,970][copernicus_marine_root_logger][INFO] - Dataset part was not specified, the first one was selected: "default"
+----- stdout -----
+INFO - 2024-04-10T16:17:28Z - Service was not specified, the default one was selected: "original-files"
+----- stdout -----
+[2024-04-10 16:17:28,970][copernicus_marine_root_logger][INFO] - Service was not specified, the default one was selected: "original-files"
+----- stdout -----
+INFO - 2024-04-10T16:17:28Z - Downloading using service original-files...
+----- stdout -----
+[2024-04-10 16:17:28,970][copernicus_marine_root_logger][INFO] - Downloading using service original-files...
+----- stdout -----
+INFO - 2024-04-10T16:17:29Z - Dataset version was not specified, the latest one was selected: "202112"
+----- stdout -----
+[2024-04-10 16:17:29,223][copernicus_marine_root_logger][INFO] - Dataset version was not specified, the latest one was selected: "202112"
+----- stdout -----
+INFO - 2024-04-10T16:17:29Z - Dataset part was not specified, the first one was selected: "default"
+----- stdout -----
+[2024-04-10 16:17:29,224][copernicus_marine_root_logger][INFO] - Dataset part was not specified, the first one was selected: "default"
+----- stdout -----
+INFO - 2024-04-10T16:17:29Z - Service was not specified, the default one was selected: "original-files"
+----- stdout -----
+[2024-04-10 16:17:29,224][copernicus_marine_root_logger][INFO] - Service was not specified, the default one was selected: "original-files"
+----- stdout -----
+INFO - 2024-04-10T16:17:29Z - Downloading using service original-files...
+----- stdout -----
+[2024-04-10 16:17:29,224][copernicus_marine_root_logger][INFO] - Downloading using service original-files...
+----- stdout -----
+INFO - 2024-04-10T16:17:29Z - Dataset version was not specified, the latest one was selected: "202112"
+----- stdout -----
+[2024-04-10 16:17:29,543][copernicus_marine_root_logger][INFO] - Dataset version was not specified, the latest one was selected: "202112"
+----- stdout -----
+INFO - 2024-04-10T16:17:29Z - Dataset part was not specified, the first one was selected: "default"
+----- stdout -----
+[2024-04-10 16:17:29,543][copernicus_marine_root_logger][INFO] - Dataset part was not specified, the first one was selected: "default"
+----- stdout -----
+INFO - 2024-04-10T16:17:29Z - Service was not specified, the default one was selected: "original-files"
+----- stdout -----
+[2024-04-10 16:17:29,543][copernicus_marine_root_logger][INFO] - Service was not specified, the default one was selected: "original-files"
+----- stdout -----
+INFO - 2024-04-10T16:17:29Z - Downloading using service original-files...
+----- stdout -----
+[2024-04-10 16:17:29,543][copernicus_marine_root_logger][INFO] - Downloading using service original-files...
+----- stdout -----
+INFO - 2024-04-10T16:17:30Z - Dataset version was not specified, the latest one was selected: "202112"
+----- stdout -----
+[2024-04-10 16:17:30,041][copernicus_marine_root_logger][INFO] - Dataset version was not specified, the latest one was selected: "202112"
+----- stdout -----
+INFO - 2024-04-10T16:17:30Z - Dataset part was not specified, the first one was selected: "default"
+----- stdout -----
+[2024-04-10 16:17:30,041][copernicus_marine_root_logger][INFO] - Dataset part was not specified, the first one was selected: "default"
+----- stdout -----
+INFO - 2024-04-10T16:17:30Z - Service was not specified, the default one was selected: "original-files"
+----- stdout -----
+[2024-04-10 16:17:30,041][copernicus_marine_root_logger][INFO] - Service was not specified, the default one was selected: "original-files"
+----- stdout -----
+INFO - 2024-04-10T16:17:30Z - Downloading using service original-files...
+----- stdout -----
+[2024-04-10 16:17:30,041][copernicus_marine_root_logger][INFO] - Downloading using service original-files...
+----- stderr -----
+  0%|          | 0/31 [00:00<?, ?it/s]  0%|          | 0/31 [00:00<?, ?it/s]  0%|          | 0/31 [00:00<?, ?it/s]  0%|          | 0/31 [00:00<?, ?it/s]  3%|▎         | 1/31 [00:06<03:26,  6.87s/it] 48%|████▊     | 15/31 [00:06<00:05,  2.99it/s]100%|██████████| 31/31 [00:07<00:00,  4.41it/s]
+----- stdout -----
+[2024-04-10 16:17:36,867][aprl.appareil][INFO] - part _01_dl_track done
+----- stdout -----
+[2024-04-10 16:17:36,867][aprl.appareil][INFO] - Running part _02_prepare_track
+----- stdout -----
+[2024-04-10 16:17:36,868][ocb_dc_ose_2021.mods.prepare_track][INFO] - Starting
+----- stderr -----
+  3%|▎         | 1/31 [00:07<03:34,  7.15s/it] 13%|█▎        | 4/31 [00:07<00:38,  1.42s/it]100%|██████████| 31/31 [00:07<00:00,  4.17it/s]
+----- stdout -----
+[2024-04-10 16:17:37,618][aprl.appareil][INFO] - part _01_dl_track done
+----- stdout -----
+[2024-04-10 16:17:37,618][aprl.appareil][INFO] - Running part _02_prepare_track
+----- stdout -----
+[2024-04-10 16:17:37,618][ocb_dc_ose_2021.mods.prepare_track][INFO] - Starting
+----- stderr -----
+  3%|▎         | 1/31 [00:06<03:14,  6.50s/it]  6%|▋         | 2/31 [00:06<01:19,  2.74s/it] 94%|█████████▎| 29/31 [00:06<00:00,  8.37it/s]100%|██████████| 31/31 [00:06<00:00,  4.62it/s]
+----- stdout -----
+[2024-04-10 16:17:38,094][aprl.appareil][INFO] - part _01_dl_track done
+----- stdout -----
+[2024-04-10 16:17:38,094][aprl.appareil][INFO] - Running part _02_prepare_track
+----- stdout -----
+[2024-04-10 16:17:38,094][ocb_dc_ose_2021.mods.prepare_track][INFO] - Starting
+----- stderr -----
+  3%|▎         | 1/31 [00:07<03:59,  7.99s/it] 16%|█▌        | 5/31 [00:08<00:31,  1.23s/it]100%|██████████| 31/31 [00:08<00:00,  3.78it/s]
+----- stdout -----
+[2024-04-10 16:17:38,839][aprl.appareil][INFO] - part _01_dl_track done
+----- stdout -----
+[2024-04-10 16:17:38,839][aprl.appareil][INFO] - Running part _02_prepare_track
+----- stdout -----
+[2024-04-10 16:17:38,839][ocb_dc_ose_2021.mods.prepare_track][INFO] - Starting
+----- stdout -----
+[2024-04-10 16:17:43,944][ocb_dc_ose_2021.mods.prepare_track][INFO] - Done
+----- stdout -----
+[2024-04-10 16:17:43,965][aprl.appareil][INFO] - part _02_prepare_track done
+----- stdout -----
+[2024-04-10 16:17:43,965][aprl.appareil][INFO] - Done
+----- stdout -----
+[2024-04-10 16:17:44,394][ocb_dc_ose_2021.mods.prepare_track][INFO] - Done
+----- stdout -----
+[2024-04-10 16:17:44,409][aprl.appareil][INFO] - part _02_prepare_track done
+----- stdout -----
+[2024-04-10 16:17:44,409][aprl.appareil][INFO] - Done
+----- stderr -----
+Traceback (most recent call last):
+----- stderr -----
+  File "/raid/localscratch/qfebvre/ocb/ocb-docs/lib/python3.11/site-packages/hydra/_internal/utils.py", line 220, in run_and_report
+----- stderr -----
+    return func()
+----- stderr -----
+           ^^^^^^
+----- stderr -----
+  File "/raid/localscratch/qfebvre/ocb/ocb-docs/lib/python3.11/site-packages/hydra/_internal/utils.py", line 466, in <lambda>
+----- stderr -----
+    lambda: hydra.multirun(
+----- stderr -----
+            ^^^^^^^^^^^^^^^
+----- stderr -----
+  File "/raid/localscratch/qfebvre/ocb/ocb-docs/lib/python3.11/site-packages/hydra/_internal/hydra.py", line 162, in multirun
+----- stderr -----
+    ret = sweeper.sweep(arguments=task_overrides)
+----- stderr -----
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----- stderr -----
+  File "/raid/localscratch/qfebvre/ocb/ocb-docs/lib/python3.11/site-packages/hydra/_internal/core_plugins/basic_sweeper.py", line 177, in sweep
+----- stderr -----
+    results = self.launcher.launch(batch, initial_job_idx=initial_job_idx)
+----- stderr -----
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----- stderr -----
+  File "/raid/localscratch/qfebvre/ocb/ocb-docs/lib/python3.11/site-packages/hydra_plugins/hydra_joblib_launcher/joblib_launcher.py", line 45, in launch
+----- stderr -----
+    return _core.launch(
+----- stderr -----
+           ^^^^^^^^^^^^^
+----- stderr -----
+  File "/raid/localscratch/qfebvre/ocb/ocb-docs/lib/python3.11/site-packages/hydra_plugins/hydra_joblib_launcher/_core.py", line 103, in launch
+----- stderr -----
+    runs = Parallel(**joblib_cfg)(
+----- stderr -----
+           ^^^^^^^^^^^^^^^^^^^^^^^
+----- stderr -----
+  File "/raid/localscratch/qfebvre/ocb/ocb-docs/lib/python3.11/site-packages/joblib/parallel.py", line 2007, in __call__
+----- stderr -----
+    return output if self.return_generator else list(output)
+----- stderr -----
+                                                ^^^^^^^^^^^^
+----- stderr -----
+  File "/raid/localscratch/qfebvre/ocb/ocb-docs/lib/python3.11/site-packages/joblib/parallel.py", line 1650, in _get_outputs
+----- stderr -----
+    yield from self._retrieve()
+----- stderr -----
+  File "/raid/localscratch/qfebvre/ocb/ocb-docs/lib/python3.11/site-packages/joblib/parallel.py", line 1754, in _retrieve
+----- stderr -----
+    self._raise_error_fast()
+----- stderr -----
+  File "/raid/localscratch/qfebvre/ocb/ocb-docs/lib/python3.11/site-packages/joblib/parallel.py", line 1789, in _raise_error_fast
+----- stderr -----
+    error_job.get_result(self.timeout)
+----- stderr -----
+  File "/raid/localscratch/qfebvre/ocb/ocb-docs/lib/python3.11/site-packages/joblib/parallel.py", line 745, in get_result
+----- stderr -----
+    return self._return_or_raise()
+----- stderr -----
+           ^^^^^^^^^^^^^^^^^^^^^^^
+----- stderr -----
+  File "/raid/localscratch/qfebvre/ocb/ocb-docs/lib/python3.11/site-packages/joblib/parallel.py", line 763, in _return_or_raise
+----- stderr -----
+    raise self._result
+----- stderr -----
+joblib.externals.loky.process_executor.TerminatedWorkerError: A worker process managed by the executor was unexpectedly terminated. This could be caused by a segmentation fault while calling the function or by an excessive memory usage causing the Operating System to kill the worker.
+----- stderr -----
+
+----- stderr -----
+The exit codes of the workers are {SIGTERM(-15)}
+----- stderr -----
+/raid/localscratch/qfebvre/ocb/ocb-docs/lib/python3.11/multiprocessing/resource_tracker.py:224: UserWarning: resource_tracker: There appear to be 4 leaked semaphore objects to clean up at shutdown
+----- stderr -----
+  warnings.warn('resource_tracker: There appear to be %d '
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mCalledProcessError[0m                        Traceback (most recent call last)
+Cell [0;32mIn[6], line 1[0m
+[0;32m----> 1[0m [43mget_ipython[49m[43m([49m[43m)[49m[38;5;241;43m.[39;49m[43mrun_cell_magic[49m[43m([49m[38;5;124;43m'[39;49m[38;5;124;43mbash[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[38;5;124;43m'[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[38;5;124;43m"[39;49m[38;5;124;43mocb-dc_ose_2021-input_data -m [39;49m[38;5;130;43;01m\\[39;49;00m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m    [39;49m[38;5;124;43m'[39;49m[38;5;124;43mhydra.searchpath=[file://conf][39;49m[38;5;124;43m'[39;49m[38;5;124;43m [39;49m[38;5;130;43;01m\\[39;49;00m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m      +overrides@params=global [39;49m[38;5;130;43;01m\\[39;49;00m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m      hydra/launcher=joblib [39;49m[38;5;130;43;01m\\[39;49;00m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m      hydra.launcher.n_jobs=4[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m"[39;49m[43m)[49m
+
+File [0;32m/raid/localscratch/qfebvre/ocb/ocb-docs/lib/python3.11/site-packages/IPython/core/interactiveshell.py:2541[0m, in [0;36mInteractiveShell.run_cell_magic[0;34m(self, magic_name, line, cell)[0m
+[1;32m   2539[0m [38;5;28;01mwith[39;00m [38;5;28mself[39m[38;5;241m.[39mbuiltin_trap:
+[1;32m   2540[0m     args [38;5;241m=[39m (magic_arg_s, cell)
+[0;32m-> 2541[0m     result [38;5;241m=[39m [43mfn[49m[43m([49m[38;5;241;43m*[39;49m[43margs[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+[1;32m   2543[0m [38;5;66;03m# The code below prevents the output from being displayed[39;00m
+[1;32m   2544[0m [38;5;66;03m# when using magics with decorator @output_can_be_silenced[39;00m
+[1;32m   2545[0m [38;5;66;03m# when the last Python token in the expression is a ';'.[39;00m
+[1;32m   2546[0m [38;5;28;01mif[39;00m [38;5;28mgetattr[39m(fn, magic[38;5;241m.[39mMAGIC_OUTPUT_CAN_BE_SILENCED, [38;5;28;01mFalse[39;00m):
+
+File [0;32m/raid/localscratch/qfebvre/ocb/ocb-docs/lib/python3.11/site-packages/IPython/core/magics/script.py:155[0m, in [0;36mScriptMagics._make_script_magic.<locals>.named_script_magic[0;34m(line, cell)[0m
+[1;32m    153[0m [38;5;28;01melse[39;00m:
+[1;32m    154[0m     line [38;5;241m=[39m script
+[0;32m--> 155[0m [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mshebang[49m[43m([49m[43mline[49m[43m,[49m[43m [49m[43mcell[49m[43m)[49m
+
+File [0;32m/raid/localscratch/qfebvre/ocb/ocb-docs/lib/python3.11/site-packages/IPython/core/magics/script.py:315[0m, in [0;36mScriptMagics.shebang[0;34m(self, line, cell)[0m
+[1;32m    310[0m [38;5;28;01mif[39;00m args[38;5;241m.[39mraise_error [38;5;129;01mand[39;00m p[38;5;241m.[39mreturncode [38;5;241m!=[39m [38;5;241m0[39m:
+[1;32m    311[0m     [38;5;66;03m# If we get here and p.returncode is still None, we must have[39;00m
+[1;32m    312[0m     [38;5;66;03m# killed it but not yet seen its return code. We don't wait for it,[39;00m
+[1;32m    313[0m     [38;5;66;03m# in case it's stuck in uninterruptible sleep. -9 = SIGKILL[39;00m
+[1;32m    314[0m     rc [38;5;241m=[39m p[38;5;241m.[39mreturncode [38;5;129;01mor[39;00m [38;5;241m-[39m[38;5;241m9[39m
+[0;32m--> 315[0m     [38;5;28;01mraise[39;00m CalledProcessError(rc, cell)
+
+[0;31mCalledProcessError[0m: Command 'b"ocb-dc_ose_2021-input_data -m \\\n    'hydra.searchpath=[file://conf]' \\\n      +overrides@params=global \\\n      hydra/launcher=joblib \\\n      hydra.launcher.n_jobs=4\n"' returned non-zero exit status 1.
+
