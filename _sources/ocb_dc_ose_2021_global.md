@@ -59,7 +59,9 @@ tags:
 %%bash
 ocb-dc_ose_2021-input_data -m \
     'hydra.searchpath=[file://conf]' \
-      +overrides@params=global
+      +overrides@params=global \
+      hydra/launcher=joblib \
+      hydra.launcher.n_jobs=2
 ```
 
 ```{code-cell}
@@ -76,6 +78,7 @@ tags:
 ---
 import hvplot.xarray
 import hvplot
+
 bin_size = 0.25
 to_plot = (obs.where((obs.time>pd.to_datetime('2019-05-15')) & (obs.time<pd.to_datetime('2019-05-16')) )
 .drop_vars('time').assign(
@@ -91,12 +94,12 @@ hvfig = to_plot.hvplot(
     kind='quadmesh',
     geo=True,
     coastline=True,
-    width=7000,
-    height=500,
+    width=700,
+    height=50,
     cmap='RdYlBu_r'
 )
-mplfig = hvplot.render(hvfig, backend='matplotlib')
-mplfig
+bokfig = hvplot.render(hvfig, backend='matplotlib')
+bokfig
 ```
 
 ```{code-cell}
@@ -126,8 +129,8 @@ outgrid = oi(
         ),
     ),
     patcher_cls=partial(XRDAPatcher,
-        patches=dict(time=1, lat=40, lon=80),
-        strides=dict(time=1, lat=40, lon=80)
+        patches=dict(time=1, lat=80, lon=120),
+        strides=dict(time=1, lat=80, lon=120)
     ),
     obs=obs.load(),
     lt=pd.to_timedelta('7D'), lx=1., ly=1.,
@@ -156,12 +159,12 @@ hvfig = out_plot.hvplot(
     kind='quadmesh',
     geo=True,
     coastline=True,
-    width=7000,
-    height=500,
+    width=700,
+    height=50,
     cmap='RdYlBu_r'
 )
-mplfig = hvplot.render(hvfig, backend='matplotlib')
-mplfig
+bokfig = hvplot.render(hvfig, backend='matplotlib')
+bokfig
 ```
 
 ```{code-cell}
@@ -181,13 +184,13 @@ hvfig = (
 ).ke.hvplot(
     kind='quadmesh',
     geo=True,
-    width=7000,
-    height=500,
+    width=700,
+    height=50,
     cmap='viridis',
     clim=(0, 0.3)
 )
-mplfig = hvplot.render(hvfig, backend='matplotlib')
-mplfig
+bokfig = hvplot.render(hvfig, backend='matplotlib')
+bokfig
 ```
 
 ```{code-cell}
