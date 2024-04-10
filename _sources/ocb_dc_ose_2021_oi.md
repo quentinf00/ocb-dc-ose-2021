@@ -146,15 +146,20 @@ ocb-dc_ose_2021-metrics params.study_path=output.nc \
     'to_run=[_03_interp_on_track,_04_1_lambdax,_04_2_mu]'
 ```
 
+```{code-cell}
+import pandas as pd
+import glob
+print(pd.concat([pd.read_json(p, typ='series') for p in glob.glob('data/metrics/*.json')]).to_markdown())
+```
 
 ## Submit method to datachallenge
 
-
+### Make your reconstruction public through a http link
 ```bash
 aws s3 cp output.nc s3://melody/quentin_cloud/ocb_oi_demo.nc --acl public-read
 ```
 
-
+### Push a branch `leaderboard/<>` adding your method
 ```bash
 git clone https://$GTOKEN@github.com/quentinf00/ocb-dc-ose-2021.git
 cd ocb-dc-ose-2021
@@ -172,3 +177,6 @@ git push origin leaderboard/submit-oi-demo -f
 !cat "Pull request here: https://github.com/quentinf00/ocb-dc-ose-2021/compare/leaderboard/submit-oi-demo?expand=1"
 ```
 
+<iframe src=https://github.com/quentinf00/ocb-dc-ose-2021/pull/4/commits/af4c6084cb93089742fe0b563877f8996e2afc08#diff-62cd5b9a69ab1e4203f56d494c890b0b301b8c5eee9bd59e3a87ea36e2a3b3ec></iframe>
+
+### Leaderboard is automatically updated

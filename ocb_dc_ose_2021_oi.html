@@ -432,7 +432,12 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-the-configured-ocb-dc-ose-2021-metrics">Use the configured <code class="docutils literal notranslate"><span class="pre">ocb-dc_ose_2021-metrics</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submit-method-to-datachallenge">Submit method to datachallenge</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submit-method-to-datachallenge">Submit method to datachallenge</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#make-your-reconstruction-public-through-a-http-link">Make your reconstruction public through a http link</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#push-a-branch-leaderboard-adding-your-method">Push a branch <code class="docutils literal notranslate"><span class="pre">leaderboard/&lt;&gt;</span></code> adding your method</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#leaderboard-is-automatically-updated">Leaderboard is automatically updated</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -460,15 +465,15 @@ document.write(`
 Cloning ocb-dc-ose-2021.git|                        |0.00/? [00:00,      ?obj/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cloning ocb-dc-ose-2021.git|           | Counting |1.00/476 [00:00,   2.09obj/s]
-Cloning ocb-dc-ose-2021.git|           | Counting |1.00/476 [00:00,   2.09obj/s]
-Cloning ocb-dc-ose-2021.git|████████████| Counting |476/476 [00:00,   2.09obj/s]
-Cloning ocb-dc-ose-2021.git|████████████| Counting |476/476 [00:00,   2.09obj/s]
-Cloning ocb-dc-ose-2021.git| | Compressing | Compressing objects:   1% (3/243) |
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cloning ocb-dc-ose-2021.git|           | Counting |1.00/483 [00:00,   2.07obj/s]
+Cloning ocb-dc-ose-2021.git|           | Counting |1.00/483 [00:00,   2.07obj/s]
+Cloning ocb-dc-ose-2021.git|████████████| Counting |483/483 [00:00,   2.07obj/s]
+Cloning ocb-dc-ose-2021.git|████████████| Counting |483/483 [00:00,   2.07obj/s]
+Cloning ocb-dc-ose-2021.git| | Compressing | Compressing objects:   1% (3/248) |
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cloning ocb-dc-ose-2021.git|█████████| Compressing |243/243 [00:00,   2.09obj/s]
-Cloning ocb-dc-ose-2021.git|█████████| Compressing |243/243 [00:00,   2.09obj/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cloning ocb-dc-ose-2021.git|█████████| Compressing |248/248 [00:00,   2.07obj/s]
+Cloning ocb-dc-ose-2021.git|█████████| Compressing |248/248 [00:00,   2.07obj/s]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                                
@@ -487,26 +492,16 @@ datachallenge/data/prepared/input/.gitignore          |0.00 [00:00,        ?B/s]
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>!
 
   0%|          |datachallenge/data/prepared/inpu0.00/454k [00:00&lt;?,        ?B/s]
-
-
-!
-
-
-  0%|          |datachallenge/data/prepared/inp0.00/2.65M [00:00&lt;?,        ?B/s]
-
-
-
-!
-
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>!
 
 
   0%|          |datachallenge/data/prepared/inpu0.00/703k [00:00&lt;?,        ?B/s]
 
 
 
-
 !
-
 
 
 
@@ -515,24 +510,26 @@ datachallenge/data/prepared/input/.gitignore          |0.00 [00:00,        ?B/s]
 
 
 
-
 !
 
 
 
 
+  0%|          |datachallenge/data/prepared/inp0.00/2.65M [00:00&lt;?,        ?B/s]
+
+                                                                                
+ 29% Downloading input|███████▏                 |2/7 [00:00&lt;00:00,  8.58files/s]
+
+!
 
   0%|          |datachallenge/data/prepared/inp0.00/2.39M [00:00&lt;?,        ?B/s]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                                
- 29% Downloading input|███████▏                 |2/7 [00:00&lt;00:02,  2.20files/s]
 
-
-
-                                                                                
 
 !
+
 
   0%|          |datachallenge/data/prepared/inp0.00/2.22M [00:00&lt;?,        ?B/s]
 </pre></div>
@@ -544,15 +541,11 @@ datachallenge/data/prepared/input/.gitignore          |0.00 [00:00,        ?B/s]
 
                                                                                 
 
-
-
-
-
                                                                                 
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                                
-100% Downloading input|█████████████████████████|7/7 [00:01&lt;00:00,  8.65files/s]
+100% Downloading input|█████████████████████████|7/7 [00:00&lt;00:00, 20.01files/s]
                                                                                 
 </pre></div>
 </div>
@@ -586,7 +579,7 @@ datachallenge/data/prepared/input/.gitignore          |0.00 [00:00,        ?B/s]
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7f1e30728250&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7fb4e5d24f50&gt;
 </pre></div>
 </div>
 <img alt="_images/aee7c14f1b87468638e0d5acbc061552f98c0d7ace0b249a601109d41839965d.png" src="_images/aee7c14f1b87468638e0d5acbc061552f98c0d7ace0b249a601109d41839965d.png" />
@@ -608,27 +601,23 @@ datachallenge/data/prepared/input/.gitignore          |0.00 [00:00,        ?B/s]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2024-04-10 09:32:09--  https://gist.githubusercontent.com/quentinf00/2d034392ee9b385fb4de3c8628bfc844/raw/4afecfce184a6e668def7ec3a99cb6cd4d612bdc/patcher_oi_torch.py
-Resolving gist.githubusercontent.com (gist.githubusercontent.com)... 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2024-04-10 09:45:57--  https://gist.githubusercontent.com/quentinf00/2d034392ee9b385fb4de3c8628bfc844/raw/4afecfce184a6e668def7ec3a99cb6cd4d612bdc/patcher_oi_torch.py
+Resolving gist.githubusercontent.com (gist.githubusercontent.com)... 185.199.108.133, 185.199.110.133, 185.199.109.133, ...
+Connecting to gist.githubusercontent.com (gist.githubusercontent.com)|185.199.108.133|:443... connected.
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>185.199.108.133, 185.199.110.133, 185.199.109.133, ...
-Connecting to gist.githubusercontent.com (gist.githubusercontent.com)|185.199.108.133|:443... 
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>connected.
-HTTP request sent, awaiting response... 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HTTP request sent, awaiting response... 
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200 OK
 Length: 4247 (4,1K) [text/plain]
 Saving to: ‘patcher_oi_torch.py’
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>patcher_oi_torch.py   0%[                    ]       0  --.-KB/s               
+
+
+patcher_oi_torch.py   0%[                    ]       0  --.-KB/s               
 patcher_oi_torch.py 100%[===================&gt;]   4,15K  --.-KB/s    in 0s      
 
-2024-04-10 09:32:10 (44,4 MB/s) - ‘patcher_oi_torch.py’ saved [4247/4247]
+2024-04-10 09:45:57 (59,0 MB/s) - ‘patcher_oi_torch.py’ saved [4247/4247]
 </pre></div>
 </div>
 </div>
@@ -670,70 +659,70 @@ patcher_oi_torch.py 100%[===================&gt;]   4,15K  --.-KB/s    in 0s
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|                                                                                                                                                                                         | 0/73 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  1%|██▍                                                                                                                                                                              | 1/73 [00:03&lt;03:53,  3.24s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  1%|██▍                                                                                                                                                                              | 1/73 [00:03&lt;03:59,  3.33s/it]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  3%|████▊                                                                                                                                                                            | 2/73 [00:03&lt;01:48,  1.53s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  3%|████▊                                                                                                                                                                            | 2/73 [00:03&lt;01:51,  1.56s/it]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  4%|███████▎                                                                                                                                                                         | 3/73 [00:03&lt;01:07,  1.03it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  4%|███████▎                                                                                                                                                                         | 3/73 [00:03&lt;01:09,  1.01it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  5%|█████████▋                                                                                                                                                                       | 4/73 [00:04&lt;00:48,  1.41it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  5%|█████████▋                                                                                                                                                                       | 4/73 [00:04&lt;00:49,  1.39it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  7%|████████████                                                                                                                                                                     | 5/73 [00:04&lt;00:38,  1.78it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  7%|████████████                                                                                                                                                                     | 5/73 [00:04&lt;00:38,  1.75it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  8%|██████████████▌                                                                                                                                                                  | 6/73 [00:04&lt;00:31,  2.10it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  8%|██████████████▌                                                                                                                                                                  | 6/73 [00:04&lt;00:32,  2.07it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 10%|████████████████▉                                                                                                                                                                | 7/73 [00:05&lt;00:27,  2.39it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 10%|████████████████▉                                                                                                                                                                | 7/73 [00:05&lt;00:27,  2.36it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 11%|███████████████████▍                                                                                                                                                             | 8/73 [00:05&lt;00:24,  2.61it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 11%|███████████████████▍                                                                                                                                                             | 8/73 [00:05&lt;00:25,  2.59it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 12%|█████████████████████▊                                                                                                                                                           | 9/73 [00:05&lt;00:22,  2.78it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 12%|█████████████████████▊                                                                                                                                                           | 9/73 [00:05&lt;00:23,  2.76it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 14%|████████████████████████                                                                                                                                                        | 10/73 [00:06&lt;00:21,  2.91it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 14%|████████████████████████                                                                                                                                                        | 10/73 [00:06&lt;00:21,  2.89it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 15%|██████████████████████████▌                                                                                                                                                     | 11/73 [00:06&lt;00:20,  3.02it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 15%|██████████████████████████▌                                                                                                                                                     | 11/73 [00:06&lt;00:20,  2.99it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 16%|████████████████████████████▉                                                                                                                                                   | 12/73 [00:06&lt;00:19,  3.09it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 16%|████████████████████████████▉                                                                                                                                                   | 12/73 [00:06&lt;00:19,  3.07it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 18%|███████████████████████████████▎                                                                                                                                                | 13/73 [00:06&lt;00:19,  3.14it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 18%|███████████████████████████████▎                                                                                                                                                | 13/73 [00:07&lt;00:19,  3.12it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 19%|█████████████████████████████████▊                                                                                                                                              | 14/73 [00:07&lt;00:17,  3.29it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 21%|████████████████████████████████████▏                                                                                                                                           | 15/73 [00:07&lt;00:16,  3.50it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 21%|████████████████████████████████████▏                                                                                                                                           | 15/73 [00:07&lt;00:16,  3.47it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 22%|██████████████████████████████████████▌                                                                                                                                         | 16/73 [00:07&lt;00:15,  3.72it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 22%|██████████████████████████████████████▌                                                                                                                                         | 16/73 [00:07&lt;00:15,  3.70it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 23%|████████████████████████████████████████▉                                                                                                                                       | 17/73 [00:07&lt;00:13,  4.02it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 23%|████████████████████████████████████████▉                                                                                                                                       | 17/73 [00:07&lt;00:13,  4.01it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 25%|███████████████████████████████████████████▍                                                                                                                                    | 18/73 [00:08&lt;00:12,  4.27it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 25%|███████████████████████████████████████████▍                                                                                                                                    | 18/73 [00:08&lt;00:12,  4.30it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 26%|█████████████████████████████████████████████▊                                                                                                                                  | 19/73 [00:08&lt;00:11,  4.53it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 26%|█████████████████████████████████████████████▊                                                                                                                                  | 19/73 [00:08&lt;00:11,  4.56it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 27%|████████████████████████████████████████████████▏                                                                                                                               | 20/73 [00:08&lt;00:11,  4.73it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 27%|████████████████████████████████████████████████▏                                                                                                                               | 20/73 [00:08&lt;00:11,  4.75it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 29%|██████████████████████████████████████████████████▋                                                                                                                             | 21/73 [00:08&lt;00:10,  4.87it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 29%|██████████████████████████████████████████████████▋                                                                                                                             | 21/73 [00:08&lt;00:10,  4.89it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 30%|█████████████████████████████████████████████████████                                                                                                                           | 22/73 [00:08&lt;00:10,  4.90it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 30%|█████████████████████████████████████████████████████                                                                                                                           | 22/73 [00:08&lt;00:10,  4.93it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 32%|███████████████████████████████████████████████████████▍                                                                                                                        | 23/73 [00:09&lt;00:10,  4.93it/s]
@@ -742,154 +731,154 @@ patcher_oi_torch.py 100%[===================&gt;]   4,15K  --.-KB/s    in 0s
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 33%|█████████████████████████████████████████████████████████▊                                                                                                                      | 24/73 [00:09&lt;00:09,  4.91it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 34%|████████████████████████████████████████████████████████████▎                                                                                                                   | 25/73 [00:09&lt;00:09,  4.93it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 34%|████████████████████████████████████████████████████████████▎                                                                                                                   | 25/73 [00:09&lt;00:09,  4.91it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 36%|██████████████████████████████████████████████████████████████▋                                                                                                                 | 26/73 [00:09&lt;00:09,  4.92it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 36%|██████████████████████████████████████████████████████████████▋                                                                                                                 | 26/73 [00:09&lt;00:09,  4.90it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 37%|█████████████████████████████████████████████████████████████████                                                                                                               | 27/73 [00:09&lt;00:09,  4.91it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 37%|█████████████████████████████████████████████████████████████████                                                                                                               | 27/73 [00:09&lt;00:09,  4.85it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 38%|███████████████████████████████████████████████████████████████████▌                                                                                                            | 28/73 [00:10&lt;00:09,  4.85it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 38%|███████████████████████████████████████████████████████████████████▌                                                                                                            | 28/73 [00:10&lt;00:09,  4.80it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 40%|█████████████████████████████████████████████████████████████████████▉                                                                                                          | 29/73 [00:10&lt;00:09,  4.82it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 40%|█████████████████████████████████████████████████████████████████████▉                                                                                                          | 29/73 [00:10&lt;00:09,  4.78it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 41%|████████████████████████████████████████████████████████████████████████▎                                                                                                       | 30/73 [00:10&lt;00:08,  4.79it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 41%|████████████████████████████████████████████████████████████████████████▎                                                                                                       | 30/73 [00:10&lt;00:09,  4.76it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 42%|██████████████████████████████████████████████████████████████████████████▋                                                                                                     | 31/73 [00:10&lt;00:08,  4.81it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 42%|██████████████████████████████████████████████████████████████████████████▋                                                                                                     | 31/73 [00:10&lt;00:08,  4.79it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 44%|█████████████████████████████████████████████████████████████████████████████▏                                                                                                  | 32/73 [00:10&lt;00:08,  4.77it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 44%|█████████████████████████████████████████████████████████████████████████████▏                                                                                                  | 32/73 [00:11&lt;00:08,  4.75it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 45%|███████████████████████████████████████████████████████████████████████████████▌                                                                                                | 33/73 [00:11&lt;00:08,  4.75it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 45%|███████████████████████████████████████████████████████████████████████████████▌                                                                                                | 33/73 [00:11&lt;00:08,  4.74it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 47%|█████████████████████████████████████████████████████████████████████████████████▉                                                                                              | 34/73 [00:11&lt;00:08,  4.77it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 47%|█████████████████████████████████████████████████████████████████████████████████▉                                                                                              | 34/73 [00:11&lt;00:08,  4.76it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 48%|████████████████████████████████████████████████████████████████████████████████████▍                                                                                           | 35/73 [00:11&lt;00:07,  4.80it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 48%|████████████████████████████████████████████████████████████████████████████████████▍                                                                                           | 35/73 [00:11&lt;00:07,  4.79it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 49%|██████████████████████████████████████████████████████████████████████████████████████▊                                                                                         | 36/73 [00:11&lt;00:07,  4.72it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 49%|██████████████████████████████████████████████████████████████████████████████████████▊                                                                                         | 36/73 [00:11&lt;00:07,  4.71it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 51%|█████████████████████████████████████████████████████████████████████████████████████████▏                                                                                      | 37/73 [00:11&lt;00:07,  4.61it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 51%|█████████████████████████████████████████████████████████████████████████████████████████▏                                                                                      | 37/73 [00:12&lt;00:07,  4.53it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 52%|███████████████████████████████████████████████████████████████████████████████████████████▌                                                                                    | 38/73 [00:12&lt;00:07,  4.43it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 52%|███████████████████████████████████████████████████████████████████████████████████████████▌                                                                                    | 38/73 [00:12&lt;00:08,  4.35it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 53%|██████████████████████████████████████████████████████████████████████████████████████████████                                                                                  | 39/73 [00:12&lt;00:08,  4.24it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 53%|██████████████████████████████████████████████████████████████████████████████████████████████                                                                                  | 39/73 [00:12&lt;00:08,  4.12it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 55%|████████████████████████████████████████████████████████████████████████████████████████████████▍                                                                               | 40/73 [00:12&lt;00:08,  3.95it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 55%|████████████████████████████████████████████████████████████████████████████████████████████████▍                                                                               | 40/73 [00:12&lt;00:08,  3.81it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 56%|██████████████████████████████████████████████████████████████████████████████████████████████████▊                                                                             | 41/73 [00:13&lt;00:08,  3.71it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 56%|██████████████████████████████████████████████████████████████████████████████████████████████████▊                                                                             | 41/73 [00:13&lt;00:08,  3.57it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 58%|█████████████████████████████████████████████████████████████████████████████████████████████████████▎                                                                          | 42/73 [00:13&lt;00:08,  3.50it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 58%|█████████████████████████████████████████████████████████████████████████████████████████████████████▎                                                                          | 42/73 [00:13&lt;00:09,  3.37it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 59%|███████████████████████████████████████████████████████████████████████████████████████████████████████▋                                                                        | 43/73 [00:13&lt;00:08,  3.40it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 59%|███████████████████████████████████████████████████████████████████████████████████████████████████████▋                                                                        | 43/73 [00:13&lt;00:09,  3.32it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 60%|██████████████████████████████████████████████████████████████████████████████████████████████████████████                                                                      | 44/73 [00:14&lt;00:08,  3.34it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 60%|██████████████████████████████████████████████████████████████████████████████████████████████████████████                                                                      | 44/73 [00:14&lt;00:08,  3.27it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 62%|████████████████████████████████████████████████████████████████████████████████████████████████████████████▍                                                                   | 45/73 [00:14&lt;00:08,  3.28it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 62%|████████████████████████████████████████████████████████████████████████████████████████████████████████████▍                                                                   | 45/73 [00:14&lt;00:08,  3.23it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 63%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████▉                                                                 | 46/73 [00:14&lt;00:08,  3.25it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 63%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████▉                                                                 | 46/73 [00:14&lt;00:08,  3.21it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 64%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎                                                              | 47/73 [00:14&lt;00:08,  3.23it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 64%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎                                                              | 47/73 [00:15&lt;00:08,  3.19it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 66%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████▋                                                            | 48/73 [00:15&lt;00:07,  3.22it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 66%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████▋                                                            | 48/73 [00:15&lt;00:07,  3.19it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 67%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▏                                                         | 49/73 [00:15&lt;00:07,  3.22it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 67%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▏                                                         | 49/73 [00:15&lt;00:07,  3.20it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 68%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌                                                       | 50/73 [00:15&lt;00:07,  3.25it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 68%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌                                                       | 50/73 [00:16&lt;00:07,  3.23it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 70%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▉                                                     | 51/73 [00:16&lt;00:06,  3.36it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 70%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▉                                                     | 51/73 [00:16&lt;00:06,  3.34it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 71%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎                                                  | 52/73 [00:16&lt;00:05,  3.50it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 71%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎                                                  | 52/73 [00:16&lt;00:06,  3.48it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 73%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▊                                                | 53/73 [00:16&lt;00:05,  3.65it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 73%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▊                                                | 53/73 [00:16&lt;00:05,  3.63it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 74%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▏                                             | 54/73 [00:16&lt;00:04,  3.88it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 74%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▏                                             | 54/73 [00:17&lt;00:04,  3.85it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 75%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌                                           | 55/73 [00:17&lt;00:04,  4.10it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 75%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌                                           | 55/73 [00:17&lt;00:04,  4.07it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 77%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                                         | 56/73 [00:17&lt;00:03,  4.28it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 77%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                                         | 56/73 [00:17&lt;00:03,  4.25it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 78%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▍                                      | 57/73 [00:17&lt;00:03,  4.37it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 78%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▍                                      | 57/73 [00:17&lt;00:03,  4.35it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 79%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▊                                    | 58/73 [00:17&lt;00:03,  4.51it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 79%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▊                                    | 58/73 [00:17&lt;00:03,  4.49it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 81%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▏                                 | 59/73 [00:17&lt;00:03,  4.54it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 81%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▏                                 | 59/73 [00:18&lt;00:03,  4.52it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 82%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▋                               | 60/73 [00:18&lt;00:02,  4.60it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 82%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▋                               | 60/73 [00:18&lt;00:02,  4.59it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 84%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                             | 61/73 [00:18&lt;00:02,  4.64it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 84%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                             | 61/73 [00:18&lt;00:02,  4.63it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 85%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▍                          | 62/73 [00:18&lt;00:02,  4.65it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 85%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▍                          | 62/73 [00:18&lt;00:02,  4.64it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 86%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▉                        | 63/73 [00:18&lt;00:02,  4.68it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 86%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▉                        | 63/73 [00:19&lt;00:02,  4.67it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 88%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎                     | 64/73 [00:19&lt;00:01,  4.79it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 88%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎                     | 64/73 [00:19&lt;00:01,  4.78it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 89%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▋                   | 65/73 [00:19&lt;00:01,  4.82it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 89%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▋                   | 65/73 [00:19&lt;00:01,  4.81it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 90%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                 | 66/73 [00:19&lt;00:01,  4.85it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 90%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████                 | 66/73 [00:19&lt;00:01,  4.84it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 92%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌              | 67/73 [00:19&lt;00:01,  4.90it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 92%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌              | 67/73 [00:19&lt;00:01,  4.88it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 93%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▉            | 68/73 [00:19&lt;00:01,  4.93it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 93%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▉            | 68/73 [00:20&lt;00:01,  4.92it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 95%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎         | 69/73 [00:20&lt;00:00,  4.86it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 95%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▎         | 69/73 [00:20&lt;00:00,  4.85it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 96%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▊       | 70/73 [00:20&lt;00:00,  4.87it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 96%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▊       | 70/73 [00:20&lt;00:00,  4.84it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 97%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▏    | 71/73 [00:20&lt;00:00,  4.82it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 97%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▏    | 71/73 [00:20&lt;00:00,  4.79it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 99%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌  | 72/73 [00:20&lt;00:00,  4.86it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 99%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████▌  | 72/73 [00:20&lt;00:00,  4.84it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 73/73 [00:20&lt;00:00,  4.87it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 73/73 [00:21&lt;00:00,  4.87it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 73/73 [00:20&lt;00:00,  3.50it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 73/73 [00:21&lt;00:00,  3.46it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -900,7 +889,12 @@ patcher_oi_torch.py 100%[===================&gt;]   4,15K  --.-KB/s    in 0s
 </section>
 <section id="visualize-results">
 <h3>Visualize results<a class="headerlink" href="#visualize-results" title="Link to this heading">#</a></h3>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ocn_tools._src.geoprocessing.geostrophic</span> <span class="k">as</span> <span class="nn">geo</span>
 <span class="p">(</span>
@@ -913,8 +907,9 @@ patcher_oi_torch.py 100%[===================&gt;]   4,15K  --.-KB/s    in 0s
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.plot.facetgrid.FacetGrid at 0x7f1d2c858110&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.plot.facetgrid.FacetGrid at 0x7fb3e9191350&gt;
 </pre></div>
 </div>
 <img alt="_images/43237c123bcb53a0fb85e2419ffbee0657f89b999d90f72ed96b4bda993b2aac.png" src="_images/43237c123bcb53a0fb85e2419ffbee0657f89b999d90f72ed96b4bda993b2aac.png" />
@@ -955,52 +950,69 @@ ocb-dc_ose_2021-metrics params.study_path=output.nc \
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-10 09:32:38,705][aprl.appareil][INFO] - Starting
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-10 09:46:26,197][aprl.appareil][INFO] - Starting
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-10 09:32:38,705][aprl.appareil][INFO] - Running part _03_interp_on_track
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-10 09:46:26,197][aprl.appareil][INFO] - Running part _03_interp_on_track
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-10 09:32:38,705][ocb_dc_ose_2021.mods.interp_on_track][INFO] - Starting
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-10 09:46:26,198][ocb_dc_ose_2021.mods.interp_on_track][INFO] - Starting
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-10 09:32:39,659][ocb_dc_ose_2021.mods.interp_on_track][INFO] - Done
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-10 09:46:27,134][ocb_dc_ose_2021.mods.interp_on_track][INFO] - Done
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-10 09:32:39,660][aprl.appareil][INFO] - part _03_interp_on_track done
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-10 09:46:27,135][aprl.appareil][INFO] - part _03_interp_on_track done
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-10 09:32:39,660][aprl.appareil][INFO] - Running part _04_1_lambdax
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-10 09:46:27,135][aprl.appareil][INFO] - Running part _04_1_lambdax
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-10 09:32:39,660][ocb_dc_ose_2021.mods.lambdax][INFO] - Starting
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-10 09:46:27,135][ocb_dc_ose_2021.mods.lambdax][INFO] - Starting
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-10 09:32:39,736][ocb_dc_ose_2021.mods.lambdax][INFO] - Effective scale resolved (interpolated at score 0.5) 143.37
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-10 09:46:27,212][ocb_dc_ose_2021.mods.lambdax][INFO] - Effective scale resolved (interpolated at score 0.5) 143.37
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-10 09:32:39,750][ocb_dc_ose_2021.mods.lambdax][INFO] - Done
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-10 09:46:27,222][ocb_dc_ose_2021.mods.lambdax][INFO] - Done
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-10 09:32:39,751][aprl.appareil][INFO] - part _04_1_lambdax done
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-10 09:46:27,223][aprl.appareil][INFO] - part _04_1_lambdax done
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-10 09:32:39,751][aprl.appareil][INFO] - Running part _04_2_mu
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-10 09:46:27,223][aprl.appareil][INFO] - Running part _04_2_mu
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-10 09:32:39,751][ocb_dc_ose_2021.mods.mu][INFO] - Starting
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-10 09:46:27,223][ocb_dc_ose_2021.mods.mu][INFO] - Starting
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-10 09:32:39,793][ocb_dc_ose_2021.mods.mu][INFO] - Mu score: 0.8818722045815395
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-10 09:46:27,260][ocb_dc_ose_2021.mods.mu][INFO] - Mu score: 0.8818722045815395
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-10 09:32:39,793][ocb_dc_ose_2021.mods.mu][INFO] - Done
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-10 09:46:27,261][ocb_dc_ose_2021.mods.mu][INFO] - Done
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-10 09:32:39,793][aprl.appareil][INFO] - part _04_2_mu done
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-10 09:46:27,261][aprl.appareil][INFO] - part _04_2_mu done
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-10 09:32:39,793][aprl.appareil][INFO] - Done
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-10 09:46:27,261][aprl.appareil][INFO] - Done
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">glob</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">typ</span><span class="o">=</span><span class="s1">&#39;series&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;data/metrics/*.json&#39;</span><span class="p">)])</span><span class="o">.</span><span class="n">to_markdown</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|             |          0 |
+|:------------|-----------:|
+| $\mu$       |   0.881872 |
+| $\lambda_x$ | 143.366    |
 </pre></div>
 </div>
 </div>
@@ -1009,9 +1021,14 @@ ocb-dc_ose_2021-metrics params.study_path=output.nc \
 </section>
 <section id="submit-method-to-datachallenge">
 <h2>Submit method to datachallenge<a class="headerlink" href="#submit-method-to-datachallenge" title="Link to this heading">#</a></h2>
+<section id="make-your-reconstruction-public-through-a-http-link">
+<h3>Make your reconstruction public through a http link<a class="headerlink" href="#make-your-reconstruction-public-through-a-http-link" title="Link to this heading">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>aws<span class="w"> </span>s3<span class="w"> </span>cp<span class="w"> </span>output.nc<span class="w"> </span>s3://melody/quentin_cloud/ocb_oi_demo.nc<span class="w"> </span>--acl<span class="w"> </span>public-read
 </pre></div>
 </div>
+</section>
+<section id="push-a-branch-leaderboard-adding-your-method">
+<h3>Push a branch <code class="docutils literal notranslate"><span class="pre">leaderboard/&lt;&gt;</span></code> adding your method<a class="headerlink" href="#push-a-branch-leaderboard-adding-your-method" title="Link to this heading">#</a></h3>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://<span class="nv">$GTOKEN</span>@github.com/quentinf00/ocb-dc-ose-2021.git
 <span class="nb">cd</span><span class="w"> </span>ocb-dc-ose-2021
 git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>leaderboard/submit-oi-demo
@@ -1028,6 +1045,11 @@ git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </
 !cat<span class="w"> </span><span class="s2">&quot;Pull request here: https://github.com/quentinf00/ocb-dc-ose-2021/compare/leaderboard/submit-oi-demo?expand=1&quot;</span>
 </pre></div>
 </div>
+<iframe src=https://github.com/quentinf00/ocb-dc-ose-2021/pull/4/commits/af4c6084cb93089742fe0b563877f8996e2afc08#diff-62cd5b9a69ab1e4203f56d494c890b0b301b8c5eee9bd59e3a87ea36e2a3b3ec></iframe>
+</section>
+<section id="leaderboard-is-automatically-updated">
+<h3>Leaderboard is automatically updated<a class="headerlink" href="#leaderboard-is-automatically-updated" title="Link to this heading">#</a></h3>
+</section>
 </section>
 </section>
 
@@ -1096,7 +1118,12 @@ git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-the-configured-ocb-dc-ose-2021-metrics">Use the configured <code class="docutils literal notranslate"><span class="pre">ocb-dc_ose_2021-metrics</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submit-method-to-datachallenge">Submit method to datachallenge</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submit-method-to-datachallenge">Submit method to datachallenge</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#make-your-reconstruction-public-through-a-http-link">Make your reconstruction public through a http link</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#push-a-branch-leaderboard-adding-your-method">Push a branch <code class="docutils literal notranslate"><span class="pre">leaderboard/&lt;&gt;</span></code> adding your method</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#leaderboard-is-automatically-updated">Leaderboard is automatically updated</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
