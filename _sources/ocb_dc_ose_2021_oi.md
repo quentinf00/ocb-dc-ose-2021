@@ -17,10 +17,18 @@ kernelspec:
 
 More detail in [](./ocb_dc_ose_2021_data.md)
 ```{code-cell}
-!dvc get -q https://github.com/quentinf00/ocb-dc-ose-2021.git datachallenge/data/prepared/input
+---
+tags:
+  - scroll-output
+---
+!dvc get https://github.com/quentinf00/ocb-dc-ose-2021.git datachallenge/data/prepared/input
 ```
 
 ```{code-cell}
+---
+tags:
+  - hide-input
+---
 import xarray as xr
 obs = xr.open_mfdataset('input/*.nc', combine='nested',concat_dim='time')
 bin_size = 1/20
@@ -43,19 +51,23 @@ bin_size = 1/20
 ![oi shema](imgs/oi_doc.png)
 
 ```{code-cell}
+---
+tags:
+  - hide-cell
+---
 # GIST: https://gist.github.com/quentinf00/2d034392ee9b385fb4de3c8628bfc8cache44
 !wget https://gist.githubusercontent.com/quentinf00/2d034392ee9b385fb4de3c8628bfc844/raw/4afecfce184a6e668def7ec3a99cb6cd4d612bdc/patcher_oi_torch.py
 ```
 
 <script src="https://gist.github.com/quentinf00/2d034392ee9b385fb4de3c8628bfc844.js"></script>
 
-```{code-cell}
-from patcher_oi_torch import oi
-oi
-```
 
 
 ```{code-cell}
+---
+tags:
+  - scroll-output
+---
 import numpy as np
 import xarray as xr
 import pandas as pd
@@ -88,6 +100,10 @@ outgrid = oi(
 ### Visualize results
 
 ```{code-cell}
+---
+tags:
+  - hide-input
+---
 import ocn_tools._src.geoprocessing.geostrophic as geo
 (
     outgrid.to_dataset(name='ssh')
@@ -103,8 +119,12 @@ import ocn_tools._src.geoprocessing.geostrophic as geo
 ### Fetch reference data
 
 ```{code-cell}
+---
+tags:
+  - scroll-output
+---
 %%bash
-dvc get --quiet https://github.com/quentinf00/ocb-dc-ose-2021.git \
+dvc get  https://github.com/quentinf00/ocb-dc-ose-2021.git \
   datachallenge/data/prepared/ref \
   -o data/prepared/ref
 ```
@@ -117,6 +137,10 @@ outgrid.to_dataset(name='ssh').to_netcdf('output.nc')
 ```
 
 ```{code-cell}
+---
+tags:
+  - scroll-output
+---
 %%bash
 ocb-dc_ose_2021-metrics params.study_path=output.nc \
     'to_run=[_03_interp_on_track,_04_1_lambdax,_04_2_mu]'
