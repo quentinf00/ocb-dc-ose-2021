@@ -1,2 +1,3 @@
 dependencies:
   - dvc
+  - dvc-s3

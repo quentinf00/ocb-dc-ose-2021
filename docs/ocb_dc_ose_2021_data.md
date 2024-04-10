@@ -67,8 +67,7 @@ bin_size = 1/20
 
 ```{code-cell}
 # Listing and pretty printing all files of the datachallenge
-!dvc ls -R $DC_REPO datachallenge/data \
-| tree --fromfile
+!dvc ls -R $DC_REPO datachallenge/data | tree --fromfile
 ```
 
 ### Downloading prepared input data
