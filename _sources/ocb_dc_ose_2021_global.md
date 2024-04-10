@@ -10,12 +10,22 @@ kernelspec:
   name: ocb-docs
 ---
 
-## Reusing the datachallenge implementation for exploring global usecase with different constellation
-## Downloading versioned and preprocessed data
+# Reusing the datachallenge implementation for exploring global usecase with different constellation
 
+## Creating novel input data configuration
+
+### Visualizing the fields and their explanations
 ```{code-cell}
 !ocb-dc_ose_2021-input_data --cfg job -p params
 ```
+
+```{code-cell}
+!ocb-dc_ose_2021-input_data --help
+```
+
+### Writing new file
+
+
 
 ```{code-cell}
 !mkdir -p conf/aprl/overrides
@@ -35,13 +45,19 @@ max_lat: 90
 ```
 
 ```{code-cell}
-!ocb-dc_ose_2021-input_data -m \
+%%bash
+ocb-dc_ose_2021-input_data -m \
     'hydra.searchpath=[file://conf]'  +overrides@params=global\
      dry=True
 ```
 
 ```{code-cell}
-!ocb-dc_ose_2021-input_data -m \
+---
+tags:
+  - scroll-output
+---
+%%bash
+ocb-dc_ose_2021-input_data -m \
     'hydra.searchpath=[file://conf]' \
       +overrides@params=global
 ```
@@ -54,9 +70,12 @@ obs = xr.open_mfdataset('data/prepared/input/*.nc', combine='nested',concat_dim=
 ```
 
 ```{code-cell}
+---
+tags:
+  - hide-input
+---
 import hvplot.xarray
 import hvplot
-hvplot.extension('matplotlib')
 bin_size = 0.25
 to_plot = (obs.where((obs.time>pd.to_datetime('2019-05-15')) & (obs.time<pd.to_datetime('2019-05-16')) )
 .drop_vars('time').assign(
@@ -68,7 +87,7 @@ to_plot = (obs.where((obs.time>pd.to_datetime('2019-05-15')) & (obs.time<pd.to_d
     .groupby(['lat', 'lon']).mean()
     .to_xarray()
 ).ssh
-to_plot.hvplot(
+hvfig = to_plot.hvplot(
     kind='quadmesh',
     geo=True,
     coastline=True,
@@ -76,9 +95,15 @@ to_plot.hvplot(
     height=500,
     cmap='RdYlBu_r'
 )
+mplfig = hvplot.render(hvfig, backend='matplotlib')
+mplfig
 ```
 
 ```{code-cell}
+---
+tags:
+  - hide-cell
+---
 !wget https://gist.githubusercontent.com/quentinf00/2d034392ee9b385fb4de3c8628bfc844/raw/aaeaed8ce5a1559507be8dd52e37c134f777192c/patcher_oi_torch.py
 ```
 
@@ -113,6 +138,10 @@ outgrid = oi(
 ```
 
 ```{code-cell}
+---
+tags:
+  - hide-input
+---
 from global_land_mask import globe
 lat = outgrid.lat.values
 lon = outgrid.lon.values
@@ -123,10 +152,7 @@ out_plot = (
     .pipe(lambda ds: ds.where(ds <3))
     .pipe(lambda ds: ds.where(ds >-3))
 )
-```
-
-```{code-cell}
-out_plot.hvplot(
+hvfig = out_plot.hvplot(
     kind='quadmesh',
     geo=True,
     coastline=True,
@@ -134,12 +160,18 @@ out_plot.hvplot(
     height=500,
     cmap='RdYlBu_r'
 )
+mplfig = hvplot.render(hvfig, backend='matplotlib')
+mplfig
 ```
 
 ```{code-cell}
+---
+tags:
+  - hide-input
+---
 import ocn_tools._src.geoprocessing.geostrophic as geo
 import ocn_tools._src.geoprocessing.validation as val
-(
+hvfig = (
     out_plot
     .where(np.abs(out_plot.lat)>10)
     .to_dataset(name='ssh')
@@ -153,8 +185,9 @@ import ocn_tools._src.geoprocessing.validation as val
     height=500,
     cmap='viridis',
     clim=(0, 0.3)
-
 )
+mplfig = hvplot.render(hvfig, backend='matplotlib')
+mplfig
 ```
 
 ```{code-cell}
@@ -177,7 +210,8 @@ max_lat: 90
 ```
 
 ```{code-cell}
-!ocb-dc_ose_2021-metrics -m \
+%%bash
+ocb-dc_ose_2021-metrics -m \
     'hydra.searchpath=[file://conf]' \
       +overrides@params=global_eval \
       dry=True
@@ -185,20 +219,22 @@ max_lat: 90
 
 ```{code-cell}
 dt, t = pd.to_timedelta("1D"), pd.to_datetime('2019-05-15')
-out_grid = outgrid.pipe(val.validate_latlon).ssh.pad(time=1, mode='edge').assign_coords(
+out_grid = outgrid.pipe(val.validate_latlon).pad(time=1, mode='edge').assign_coords(
     time=pd.date_range(t-dt, t+dt, freq=dt)
 ).to_dataset(name='ssh')
 out_grid.to_netcdf('output.nc')
 ```
 
 ```{code-cell}
-!ocb-dc_ose_2021-metrics \
-    'hydra.searchpath=[file://conf]' \
-      +overrides@params=global_eval dry=True
+%%bash
+ocb-dc_ose_2021-metrics \
+  'hydra.searchpath=[file://conf]' \
+    +overrides@params=global_eval dry=True
 ```
 
 ```{code-cell}
-!ocb-dc_ose_2021-metrics\
+%%bash
+ocb-dc_ose_2021-metrics\
     'hydra.searchpath=[file://conf]' \
      +overrides@params=global_eval
 ```
