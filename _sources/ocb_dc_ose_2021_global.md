@@ -69,10 +69,7 @@ ocb-dc_ose_2021-input_data -m \
     'hydra.searchpath=[file://conf]' \
       +overrides@params=global \
       hydra/launcher=joblib \
-      hydra.launcher.n_jobs=4 \
-      hydra.launcher.backend=threading \
-      hydra.launcher.prefer=threads
-
+      hydra.launcher.n_jobs=4 
 ```
 
 ```{code-cell}

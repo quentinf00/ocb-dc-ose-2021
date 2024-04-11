@@ -27,6 +27,8 @@ This work is built upon existing work that you should check out !
 We provide through the following notebooks and associated 5 min walkthrough videos demonstrations on the new features brought by this implementations
 ![](imgs/contrib_doc.png)
 - Versioned data access and reproduction for data challenges
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9sMfMNRIaJA?si=2r3As5ZdwhrWZkPk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 - Metrics computation and automated leaderboard update
 - Configuring new usecases and scaling to operations
 
