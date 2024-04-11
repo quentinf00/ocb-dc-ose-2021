@@ -14,8 +14,8 @@ stages:
     deps:
     - path: ../ocb_dc_ose_2021/pipelines/input_data.py
       hash: md5
-      md5: 23f434163139eaba79aecda0228557fc
-      size: 2614
+      md5: 5fd8b174b83d56fcc0a9b7770638baf9
+      size: 2616
     params:
       full_config.yaml:
         input_data.parts._01_dl_track:
@@ -42,8 +42,8 @@ stages:
     deps:
     - path: ../ocb_dc_ose_2021/pipelines/input_data.py
       hash: md5
-      md5: 23f434163139eaba79aecda0228557fc
-      size: 2614
+      md5: 5fd8b174b83d56fcc0a9b7770638baf9
+      size: 2616
     params:
       full_config.yaml:
         input_data.parts._01_dl_track:
@@ -70,8 +70,8 @@ stages:
     deps:
     - path: ../ocb_dc_ose_2021/pipelines/input_data.py
       hash: md5
-      md5: 23f434163139eaba79aecda0228557fc
-      size: 2614
+      md5: 5fd8b174b83d56fcc0a9b7770638baf9
+      size: 2616
     params:
       full_config.yaml:
         input_data.parts._01_dl_track:
@@ -98,8 +98,8 @@ stages:
     deps:
     - path: ../ocb_dc_ose_2021/pipelines/input_data.py
       hash: md5
-      md5: 23f434163139eaba79aecda0228557fc
-      size: 2614
+      md5: 5fd8b174b83d56fcc0a9b7770638baf9
+      size: 2616
     params:
       full_config.yaml:
         input_data.parts._01_dl_track:
@@ -126,8 +126,8 @@ stages:
     deps:
     - path: ../ocb_dc_ose_2021/pipelines/input_data.py
       hash: md5
-      md5: 23f434163139eaba79aecda0228557fc
-      size: 2614
+      md5: 5fd8b174b83d56fcc0a9b7770638baf9
+      size: 2616
     params:
       full_config.yaml:
         input_data.parts._01_dl_track:
@@ -154,8 +154,8 @@ stages:
     deps:
     - path: ../ocb_dc_ose_2021/pipelines/input_data.py
       hash: md5
-      md5: 23f434163139eaba79aecda0228557fc
-      size: 2614
+      md5: 5fd8b174b83d56fcc0a9b7770638baf9
+      size: 2616
     params:
       full_config.yaml:
         input_data.parts._01_dl_track:
@@ -182,12 +182,12 @@ stages:
     deps:
     - path: ../ocb_dc_ose_2021/mods/prepare_track.py
       hash: md5
-      md5: 8bba6fc4f31bcf09adec680d01fac434
-      size: 3667
+      md5: 1a56cecde52c34b8f7a60764efcb92e6
+      size: 3674
     - path: ../ocb_dc_ose_2021/pipelines/input_data.py
       hash: md5
-      md5: 23f434163139eaba79aecda0228557fc
-      size: 2614
+      md5: 5fd8b174b83d56fcc0a9b7770638baf9
+      size: 2616
     - path: data/downloads/input/alg
       hash: md5
       md5: 866ba8fa07117cb1402a10d96b468414.dir
@@ -219,19 +219,19 @@ stages:
     outs:
     - path: data/prepared/input/alg.nc
       hash: md5
-      md5: 4c50d94ddc382dd5b8a7342f8b9287ee
-      size: 2511152
+      md5: af7f1e9513afbb5d28b47fc9bc6e4cc5
+      size: 2511317
   input_data/filter_and_merge@h2ag:
     cmd: "ocb-dc_ose_2021-input_data 'to_run=[_02_prepare_track]' params.sat=h2ag\n"
     deps:
     - path: ../ocb_dc_ose_2021/mods/prepare_track.py
       hash: md5
-      md5: 8bba6fc4f31bcf09adec680d01fac434
-      size: 3667
+      md5: 1a56cecde52c34b8f7a60764efcb92e6
+      size: 3674
     - path: ../ocb_dc_ose_2021/pipelines/input_data.py
       hash: md5
-      md5: 23f434163139eaba79aecda0228557fc
-      size: 2614
+      md5: 5fd8b174b83d56fcc0a9b7770638baf9
+      size: 2616
     - path: data/downloads/input/h2ag
       hash: md5
       md5: 8a0b36d0aaa0631b071c0175e19aeab4.dir
@@ -263,19 +263,19 @@ stages:
     outs:
     - path: data/prepared/input/h2ag.nc
       hash: md5
-      md5: e35f672af560b4ff29b99db36db69d02
-      size: 2324333
+      md5: b366217720edf8ac9c5cc2fe90d95daf
+      size: 2324498
   input_data/filter_and_merge@j2g:
     cmd: "ocb-dc_ose_2021-input_data 'to_run=[_02_prepare_track]' params.sat=j2g\n"
     deps:
     - path: ../ocb_dc_ose_2021/mods/prepare_track.py
       hash: md5
-      md5: 8bba6fc4f31bcf09adec680d01fac434
-      size: 3667
+      md5: 1a56cecde52c34b8f7a60764efcb92e6
+      size: 3674
     - path: ../ocb_dc_ose_2021/pipelines/input_data.py
       hash: md5
-      md5: 23f434163139eaba79aecda0228557fc
-      size: 2614
+      md5: 5fd8b174b83d56fcc0a9b7770638baf9
+      size: 2616
     - path: data/downloads/input/j2g
       hash: md5
       md5: fa0c07ef89946f75f8c3e70e097a4f95.dir
@@ -307,19 +307,19 @@ stages:
     outs:
     - path: data/prepared/input/j2g.nc
       hash: md5
-      md5: faa820faab2c9f2bfbef69c6aabae77e
-      size: 465072
+      md5: 48e5976a1b6e39f87087d0d6b15f8f5c
+      size: 465237
   input_data/filter_and_merge@j2n:
     cmd: "ocb-dc_ose_2021-input_data 'to_run=[_02_prepare_track]' params.sat=j2n\n"
     deps:
     - path: ../ocb_dc_ose_2021/mods/prepare_track.py
       hash: md5
-      md5: 8bba6fc4f31bcf09adec680d01fac434
-      size: 3667
+      md5: 1a56cecde52c34b8f7a60764efcb92e6
+      size: 3674
     - path: ../ocb_dc_ose_2021/pipelines/input_data.py
       hash: md5
-      md5: 23f434163139eaba79aecda0228557fc
-      size: 2614
+      md5: 5fd8b174b83d56fcc0a9b7770638baf9
+      size: 2616
     - path: data/downloads/input/j2n
       hash: md5
       md5: c362563b0c734fe15e964e2d0e9c4162.dir
@@ -351,19 +351,19 @@ stages:
     outs:
     - path: data/prepared/input/j2n.nc
       hash: md5
-      md5: ea743b0b527698cc1ed1690e5deb0f28
-      size: 719878
+      md5: c18bf69ae5d543384ce05ee7583cfece
+      size: 720043
   input_data/filter_and_merge@j3:
     cmd: "ocb-dc_ose_2021-input_data 'to_run=[_02_prepare_track]' params.sat=j3\n"
     deps:
     - path: ../ocb_dc_ose_2021/mods/prepare_track.py
       hash: md5
-      md5: 8bba6fc4f31bcf09adec680d01fac434
-      size: 3667
+      md5: 1a56cecde52c34b8f7a60764efcb92e6
+      size: 3674
     - path: ../ocb_dc_ose_2021/pipelines/input_data.py
       hash: md5
-      md5: 23f434163139eaba79aecda0228557fc
-      size: 2614
+      md5: 5fd8b174b83d56fcc0a9b7770638baf9
+      size: 2616
     - path: data/downloads/input/j3
       hash: md5
       md5: cf2d2fd113f6ff0a3454acb87fb25ee8.dir
@@ -395,19 +395,19 @@ stages:
     outs:
     - path: data/prepared/input/j3.nc
       hash: md5
-      md5: cdaf7d35672d583804b0f4dc1f94ea1e
-      size: 2773776
+      md5: 44942ede409cb7de39ad21fb45b04c0d
+      size: 2773941
   input_data/filter_and_merge@s3a:
     cmd: "ocb-dc_ose_2021-input_data 'to_run=[_02_prepare_track]' params.sat=s3a\n"
     deps:
     - path: ../ocb_dc_ose_2021/mods/prepare_track.py
       hash: md5
-      md5: 8bba6fc4f31bcf09adec680d01fac434
-      size: 3667
+      md5: 1a56cecde52c34b8f7a60764efcb92e6
+      size: 3674
     - path: ../ocb_dc_ose_2021/pipelines/input_data.py
       hash: md5
-      md5: 23f434163139eaba79aecda0228557fc
-      size: 2614
+      md5: 5fd8b174b83d56fcc0a9b7770638baf9
+      size: 2616
     - path: data/downloads/input/s3a
       hash: md5
       md5: 5f8834f5f811bbe275036b9649e48de6.dir
@@ -439,8 +439,8 @@ stages:
     outs:
     - path: data/prepared/input/s3a.nc
       hash: md5
-      md5: 5a4206428e0b95266821587918c76b63
-      size: 2602448
+      md5: 43a9aeb5e60409025150d341457a4b5d
+      size: 2602613
   diagnostics/method_output@4dvarnet:
     cmd: "mkdir -p data/downloads/method_outputs\nwget https://s3.eu-west-2.wasabisys.com/oceanbench-data-registry/dvc/a5/2381e9409cb7c6cf9be980bda9aced
       -nc -O 'data/downloads/method_outputs/4dvarnet.nc'\n"
@@ -502,8 +502,8 @@ stages:
     deps:
     - path: ../ocb_dc_ose_2021/mods/prepare_track.py
       hash: md5
-      md5: 8bba6fc4f31bcf09adec680d01fac434
-      size: 3667
+      md5: 1a56cecde52c34b8f7a60764efcb92e6
+      size: 3674
     - path: ../ocb_dc_ose_2021/pipelines/metrics.py
       hash: md5
       md5: cd9272589a50578a33b6037867ef0c90
@@ -539,16 +539,16 @@ stages:
     outs:
     - path: data/prepared/ref/c2.nc
       hash: md5
-      md5: c7a10e1b022a97856c4f6e5f85f497a6
-      size: 1589616
+      md5: 888055307c12551cb187bd39ad1651f4
+      size: 1589781
   diagnostics/interp_on_track@4dvarnet:
     cmd: ocb-dc_ose_2021-metrics 'to_run=[_03_interp_on_track]' 'params.study_var=rec_ssh'
       'params.method=4dvarnet'
     deps:
     - path: ../ocb_dc_ose_2021/mods/interp_on_track.py
       hash: md5
-      md5: 303f8bab59c98399972dce5a5011e465
-      size: 3044
+      md5: ca8252bb760d00854798072988e249eb
+      size: 3224
     - path: ../ocb_dc_ose_2021/pipelines/metrics.py
       hash: md5
       md5: cd9272589a50578a33b6037867ef0c90
@@ -559,8 +559,8 @@ stages:
       size: 590300748
     - path: data/prepared/ref/c2.nc
       hash: md5
-      md5: c7a10e1b022a97856c4f6e5f85f497a6
-      size: 1589616
+      md5: 888055307c12551cb187bd39ad1651f4
+      size: 1589781
     params:
       full_config.yaml:
         metrics.parts._03_interp_on_track:
@@ -582,16 +582,16 @@ stages:
     outs:
     - path: data/prepared/method_outputs/4dvarnet_on_track.nc
       hash: md5
-      md5: cda1c0863641113902798b00dac4800e
-      size: 1581680
+      md5: 121ef7511a4edc2f4cb8b3e39ce3db6d
+      size: 1581683
   diagnostics/interp_on_track@duacs:
     cmd: ocb-dc_ose_2021-metrics 'to_run=[_03_interp_on_track]' 'params.study_var=ssh'
       'params.method=duacs'
     deps:
     - path: ../ocb_dc_ose_2021/mods/interp_on_track.py
       hash: md5
-      md5: 303f8bab59c98399972dce5a5011e465
-      size: 3044
+      md5: ca8252bb760d00854798072988e249eb
+      size: 3224
     - path: ../ocb_dc_ose_2021/pipelines/metrics.py
       hash: md5
       md5: cd9272589a50578a33b6037867ef0c90
@@ -602,8 +602,8 @@ stages:
       size: 4684262
     - path: data/prepared/ref/c2.nc
       hash: md5
-      md5: c7a10e1b022a97856c4f6e5f85f497a6
-      size: 1589616
+      md5: 888055307c12551cb187bd39ad1651f4
+      size: 1589781
     params:
       full_config.yaml:
         metrics.parts._03_interp_on_track:
@@ -625,7 +625,7 @@ stages:
     outs:
     - path: data/prepared/method_outputs/duacs_on_track.nc
       hash: md5
-      md5: c8717b786915caf37192654db187ac64
+      md5: 0e6c410f4f978eb9321fd113201be183
       size: 1581683
   diagnostics/metric_lambdax@4dvarnet:
     cmd: ocb-dc_ose_2021-metrics 'to_run=[_04_1_lambdax]' 'params.study_var=rec_ssh'
@@ -641,12 +641,12 @@ stages:
       size: 3320
     - path: data/prepared/method_outputs/4dvarnet_on_track.nc
       hash: md5
-      md5: cda1c0863641113902798b00dac4800e
-      size: 1581680
+      md5: 121ef7511a4edc2f4cb8b3e39ce3db6d
+      size: 1581683
     - path: data/prepared/ref/c2.nc
       hash: md5
-      md5: c7a10e1b022a97856c4f6e5f85f497a6
-      size: 1589616
+      md5: 888055307c12551cb187bd39ad1651f4
+      size: 1589781
     params:
       full_config.yaml:
         metrics.parts._04_1_lambdax:
@@ -684,8 +684,8 @@ stages:
       size: 36
     - path: data/prepared/method_outputs/psd_4dvarnet.nc
       hash: md5
-      md5: 79f4b93c4c922b496e0c17bb27a16c8e
-      size: 8954
+      md5: 82889fbd35e79e405b296dbe70e26695
+      size: 8942
   diagnostics/metric_lambdax@duacs:
     cmd: ocb-dc_ose_2021-metrics 'to_run=[_04_1_lambdax]' 'params.study_var=ssh' 'params.method=duacs'
     deps:
@@ -699,12 +699,12 @@ stages:
       size: 3320
     - path: data/prepared/method_outputs/duacs_on_track.nc
       hash: md5
-      md5: c8717b786915caf37192654db187ac64
+      md5: 0e6c410f4f978eb9321fd113201be183
       size: 1581683
     - path: data/prepared/ref/c2.nc
       hash: md5
-      md5: c7a10e1b022a97856c4f6e5f85f497a6
-      size: 1589616
+      md5: 888055307c12551cb187bd39ad1651f4
+      size: 1589781
     params:
       full_config.yaml:
         metrics.parts._04_1_lambdax:
@@ -742,8 +742,8 @@ stages:
       size: 36
     - path: data/prepared/method_outputs/psd_duacs.nc
       hash: md5
-      md5: bb2a5a598b19cfa31fabd6636fdef624
-      size: 8954
+      md5: 4e84e14d53d52341b3e88a2f5accd73e
+      size: 8942
   diagnostics/metric_mu@4dvarnet:
     cmd: ocb-dc_ose_2021-metrics 'to_run=[_04_2_mu]' 'params.study_var=rec_ssh' 'params.method=4dvarnet'
     deps:
@@ -757,12 +757,12 @@ stages:
       size: 3320
     - path: data/prepared/method_outputs/4dvarnet_on_track.nc
       hash: md5
-      md5: cda1c0863641113902798b00dac4800e
-      size: 1581680
+      md5: 121ef7511a4edc2f4cb8b3e39ce3db6d
+      size: 1581683
     - path: data/prepared/ref/c2.nc
       hash: md5
-      md5: c7a10e1b022a97856c4f6e5f85f497a6
-      size: 1589616
+      md5: 888055307c12551cb187bd39ad1651f4
+      size: 1589781
     params:
       full_config.yaml:
         metrics.parts._04_2_mu:
@@ -806,12 +806,12 @@ stages:
       size: 3320
     - path: data/prepared/method_outputs/duacs_on_track.nc
       hash: md5
-      md5: c8717b786915caf37192654db187ac64
+      md5: 0e6c410f4f978eb9321fd113201be183
       size: 1581683
     - path: data/prepared/ref/c2.nc
       hash: md5
-      md5: c7a10e1b022a97856c4f6e5f85f497a6
-      size: 1589616
+      md5: 888055307c12551cb187bd39ad1651f4
+      size: 1589781
     params:
       full_config.yaml:
         metrics.parts._04_2_mu:
