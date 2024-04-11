@@ -934,6 +934,7 @@ dvc get  https://github.com/quentinf00/ocb-dc-ose-2021.git \
 </section>
 <section id="use-the-configured-ocb-dc-ose-2021-metrics">
 <h3>Use the configured <code class="docutils literal notranslate"><span class="pre">ocb-dc_ose_2021-metrics</span></code><a class="headerlink" href="#use-the-configured-ocb-dc-ose-2021-metrics" title="Link to this heading">#</a></h3>
+<p><img alt="metrics pipeline" src="_images/metrics_doc.png" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">outgrid</span><span class="o">.</span><span class="n">to_dataset</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;ssh&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">to_netcdf</span><span class="p">(</span><span class="s1">&#39;output.nc&#39;</span><span class="p">)</span>

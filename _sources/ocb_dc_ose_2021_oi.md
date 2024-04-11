@@ -132,6 +132,7 @@ dvc get  https://github.com/quentinf00/ocb-dc-ose-2021.git \
 
 ### Use the configured `ocb-dc_ose_2021-metrics`
 
+![metrics pipeline](imgs/metrics_doc.png)
 ```{code-cell}
 outgrid.to_dataset(name='ssh').to_netcdf('output.nc')
 ```
