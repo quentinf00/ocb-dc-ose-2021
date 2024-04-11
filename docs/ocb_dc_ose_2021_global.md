@@ -20,6 +20,10 @@ kernelspec:
 ```
 
 ```{code-cell}
+---
+tags:
+  - scroll-output
+---
 !ocb-dc_ose_2021-input_data --help
 ```
 
@@ -45,6 +49,10 @@ max_lat: 90
 ```
 
 ```{code-cell}
+---
+tags:
+  - scroll-output
+---
 %%bash
 ocb-dc_ose_2021-input_data -m \
     'hydra.searchpath=[file://conf]'  +overrides@params=global\
@@ -59,7 +67,12 @@ tags:
 %%bash
 ocb-dc_ose_2021-input_data -m \
     'hydra.searchpath=[file://conf]' \
-      +overrides@params=global
+      +overrides@params=global \
+      hydra/launcher=joblib \
+      hydra.launcher.n_jobs=4 \
+      hydra.launcher.backend=threading \
+      hydra.launcher.prefer=threads
+
 ```
 
 ```{code-cell}
@@ -67,6 +80,7 @@ import xarray as xr
 import pandas as pd
 
 obs = xr.open_mfdataset('data/prepared/input/*.nc', combine='nested',concat_dim='time')
+obs
 ```
 
 ```{code-cell}
@@ -76,8 +90,8 @@ tags:
 ---
 import hvplot.xarray
 import hvplot
-from bokeh.plotting import figure, show, output_notebook
-output_notebook()
+hvplot.extension('matplotlib')
+%matplotlib inline
 
 bin_size = 0.25
 to_plot = (obs.where((obs.time>pd.to_datetime('2019-05-15')) & (obs.time<pd.to_datetime('2019-05-16')) )
@@ -94,12 +108,11 @@ hvfig = to_plot.hvplot(
     kind='quadmesh',
     geo=True,
     coastline=True,
-    width=7000,
-    height=500,
+    width=1000,
     cmap='RdYlBu_r'
 )
-bokfig = hvplot.render(hvfig, backend='bokeh')
-show(bokfig)
+bokfig = hvplot.render(hvfig, backend='matplotlib')
+bokfig
 ```
 
 ```{code-cell}
@@ -110,7 +123,13 @@ tags:
 !wget https://gist.githubusercontent.com/quentinf00/2d034392ee9b385fb4de3c8628bfc844/raw/aaeaed8ce5a1559507be8dd52e37c134f777192c/patcher_oi_torch.py
 ```
 
+<script src="https://gist.github.com/quentinf00/2d034392ee9b385fb4de3c8628bfc844.js"></script>
+
 ```{code-cell}
+---
+tags:
+  - scroll-output
+---
 import numpy as np
 import xarray as xr
 import pandas as pd
@@ -129,8 +148,8 @@ outgrid = oi(
         ),
     ),
     patcher_cls=partial(XRDAPatcher,
-        patches=dict(time=1, lat=40, lon=80),
-        strides=dict(time=1, lat=40, lon=80)
+        patches=dict(time=1, lat=80, lon=80),
+        strides=dict(time=1, lat=80, lon=80)
     ),
     obs=obs.load(),
     lt=pd.to_timedelta('7D'), lx=1., ly=1.,
@@ -159,12 +178,11 @@ hvfig = out_plot.hvplot(
     kind='quadmesh',
     geo=True,
     coastline=True,
-    width=7000,
-    height=500,
+    width=1000,
     cmap='RdYlBu_r'
 )
-bokfig = hvplot.render(hvfig, backend='bokeh')
-show(bokfig)
+bokfig = hvplot.render(hvfig, backend='matplotlib')
+bokfig
 ```
 
 ```{code-cell}
@@ -184,13 +202,12 @@ hvfig = (
 ).ke.hvplot(
     kind='quadmesh',
     geo=True,
-    width=7000,
-    height=500,
+    width=1000,
     cmap='viridis',
     clim=(0, 0.3)
 )
-bokfig = hvplot.render(hvfig, backend='bokeh')
-show(bokfig)
+bokfig = hvplot.render(hvfig, backend='matplotlib')
+bokfig
 ```
 
 ```{code-cell}
@@ -213,6 +230,10 @@ max_lat: 90
 ```
 
 ```{code-cell}
+---
+tags:
+  - scroll-output
+---
 %%bash
 ocb-dc_ose_2021-metrics -m \
     'hydra.searchpath=[file://conf]' \
@@ -229,6 +250,10 @@ out_grid.to_netcdf('output.nc')
 ```
 
 ```{code-cell}
+---
+tags:
+  - scroll-output
+---
 %%bash
 ocb-dc_ose_2021-metrics \
   'hydra.searchpath=[file://conf]' \
@@ -236,6 +261,10 @@ ocb-dc_ose_2021-metrics \
 ```
 
 ```{code-cell}
+---
+tags:
+  - scroll-output
+---
 %%bash
 ocb-dc_ose_2021-metrics\
     'hydra.searchpath=[file://conf]' \
@@ -248,8 +277,3 @@ import glob
 print(pd.concat([pd.read_json(p, typ='series') for p in glob.glob('data/metrics/*.json')]).to_markdown())
 ```
 
-```{code-cell}
-:id: bi8wPscYzCJz
-
-
-```
