@@ -136,6 +136,18 @@ dvc get  https://github.com/quentinf00/ocb-dc-ose-2021.git \
 outgrid.to_dataset(name='ssh').to_netcdf('output.nc')
 ```
 
+```{code-cell} ipython3
+!ocb-dc_ose_2021-metrics --cfg job -p params
+```
+
+```{code-cell} ipython3
+---
+tags:
+  - scroll-output
+---
+!ocb-dc_ose_2021-metrics dry=True
+```
+
 ```{code-cell}
 ---
 tags:
