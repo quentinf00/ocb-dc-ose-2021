@@ -172,22 +172,11 @@ print(pd.concat([pd.read_json(p, typ='series') for p in glob.glob('data/metrics/
 aws s3 cp output.nc s3://melody/quentin_cloud/ocb_oi_demo.nc --acl public-read
 ```
 
-### Push a branch `leaderboard/<>` adding your method
-```bash
-git clone https://$GTOKEN@github.com/quentinf00/ocb-dc-ose-2021.git
-cd ocb-dc-ose-2021
-git checkout -b leaderboard/submit-oi-demo
-
-echo '' >> datachallenge/methods.toml
-echo '[methods.oi_demo]' >> datachallenge/methods.toml
-echo 'url = "https://s3.eu-west-2.wasabisys.com/melody/quentin_cloud/ocb_oi_demo.nc"' >> datachallenge/methods.toml
-echo 'var = "ssh"' >> datachallenge/methods.toml
-
-git add .
-git commit -m "Demo OI Submission"
-git push origin leaderboard/submit-oi-demo -f
-
-!cat "Pull request here: https://github.com/quentinf00/ocb-dc-ose-2021/compare/leaderboard/submit-oi-demo?expand=1"
-```
+### Commit to a branch `leaderboard/*` adding your method
+![](imgs/workflow_commit.png)
 
 ### Leaderboard is automatically updated
+![](imgs/workflow_actions.png)
+![](imgs/workflow_lb.png)
+
+### Open your pull request

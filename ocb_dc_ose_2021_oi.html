@@ -436,8 +436,9 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submit-method-to-datachallenge">Submit method to datachallenge</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#make-your-reconstruction-public-through-a-http-link">Make your reconstruction public through a http link</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#push-a-branch-leaderboard-adding-your-method">Push a branch <code class="docutils literal notranslate"><span class="pre">leaderboard/&lt;&gt;</span></code> adding your method</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#commit-to-a-branch-leaderboard-adding-your-method">Commit to a branch <code class="docutils literal notranslate"><span class="pre">leaderboard/*</span></code> adding your method</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#leaderboard-is-automatically-updated">Leaderboard is automatically updated</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-your-pull-request">Open your pull request</a></li>
 </ul>
 </li>
 </ul>
@@ -1070,27 +1071,17 @@ ocb-dc_ose_2021-metrics params.study_path=output.nc \
 </pre></div>
 </div>
 </section>
-<section id="push-a-branch-leaderboard-adding-your-method">
-<h3>Push a branch <code class="docutils literal notranslate"><span class="pre">leaderboard/&lt;&gt;</span></code> adding your method<a class="headerlink" href="#push-a-branch-leaderboard-adding-your-method" title="Link to this heading">#</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://<span class="nv">$GTOKEN</span>@github.com/quentinf00/ocb-dc-ose-2021.git
-<span class="nb">cd</span><span class="w"> </span>ocb-dc-ose-2021
-git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>leaderboard/submit-oi-demo
-
-<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>datachallenge/methods.toml
-<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;[methods.oi_demo]&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>datachallenge/methods.toml
-<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;url = &quot;https://s3.eu-west-2.wasabisys.com/melody/quentin_cloud/ocb_oi_demo.nc&quot;&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>datachallenge/methods.toml
-<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;var = &quot;ssh&quot;&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>datachallenge/methods.toml
-
-git<span class="w"> </span>add<span class="w"> </span>.
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Demo OI Submission&quot;</span>
-git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>leaderboard/submit-oi-demo<span class="w"> </span>-f
-
-!cat<span class="w"> </span><span class="s2">&quot;Pull request here: https://github.com/quentinf00/ocb-dc-ose-2021/compare/leaderboard/submit-oi-demo?expand=1&quot;</span>
-</pre></div>
-</div>
+<section id="commit-to-a-branch-leaderboard-adding-your-method">
+<h3>Commit to a branch <code class="docutils literal notranslate"><span class="pre">leaderboard/*</span></code> adding your method<a class="headerlink" href="#commit-to-a-branch-leaderboard-adding-your-method" title="Link to this heading">#</a></h3>
+<p><img alt="" src="_images/workflow_commit.png" /></p>
 </section>
 <section id="leaderboard-is-automatically-updated">
 <h3>Leaderboard is automatically updated<a class="headerlink" href="#leaderboard-is-automatically-updated" title="Link to this heading">#</a></h3>
+<p><img alt="" src="_images/workflow_actions.png" />
+<img alt="" src="_images/workflow_lb.png" /></p>
+</section>
+<section id="open-your-pull-request">
+<h3>Open your pull request<a class="headerlink" href="#open-your-pull-request" title="Link to this heading">#</a></h3>
 </section>
 </section>
 </section>
@@ -1171,8 +1162,9 @@ git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submit-method-to-datachallenge">Submit method to datachallenge</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#make-your-reconstruction-public-through-a-http-link">Make your reconstruction public through a http link</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#push-a-branch-leaderboard-adding-your-method">Push a branch <code class="docutils literal notranslate"><span class="pre">leaderboard/&lt;&gt;</span></code> adding your method</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#commit-to-a-branch-leaderboard-adding-your-method">Commit to a branch <code class="docutils literal notranslate"><span class="pre">leaderboard/*</span></code> adding your method</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#leaderboard-is-automatically-updated">Leaderboard is automatically updated</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-your-pull-request">Open your pull request</a></li>
 </ul>
 </li>
 </ul>
