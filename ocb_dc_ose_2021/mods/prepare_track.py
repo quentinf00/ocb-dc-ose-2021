@@ -46,7 +46,7 @@ def preprocess_track(
         f"Processing {ds}, using ssh_var {(min_lon, max_lon, min_lat, max_lat, min_time, max_time)}"
     )
     ds = (
-        ds.rename(longitude="lon", latitude="lat")
+        ds.load().rename(longitude="lon", latitude="lat")
         .pipe(ocnval.validate_latlon)
         .pipe(ocnval.validate_time)
         .pipe(
