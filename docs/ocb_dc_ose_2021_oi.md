@@ -173,10 +173,10 @@ aws s3 cp output.nc s3://melody/quentin_cloud/ocb_oi_demo.nc --acl public-read
 ```
 
 ### Commit to a branch `leaderboard/*` adding your method
-![](imgs/workflow_commit.png)
+![commit](imgs/workflow_commit.png)
 
 ### Leaderboard is automatically updated
-![](imgs/workflow_actions.png)
-![](imgs/workflow_lb.png)
+![action](imgs/workflow_actions.png)
+![lb](imgs/workflow_lb.png)
 
 ### Open your pull request

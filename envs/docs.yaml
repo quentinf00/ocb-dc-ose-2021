@@ -10,3 +10,4 @@ dependencies:
     - pip:
         - xrpatcher
         - global-land-mask
+        - hydra-joblib-launcher
