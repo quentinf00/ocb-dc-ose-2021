@@ -1,7 +1,7 @@
 import aprl.appareil
 import aprl.utils
-import oost.mods.cmems_get as cmems_get
-import oost.mods.prepare_track as prepare_track
+import oost_dc_ose_2021.mods.cmems_get as cmems_get
+import oost_dc_ose_2021.mods.prepare_track as prepare_track
 
 cmems_get_cfg = aprl.utils.make_partial(cmems_get.cfg)
 dataset_id_cfg = cmems_get.cfg.dataset_id

@@ -15,7 +15,7 @@ kernelspec:
 
 ## Fetching the input data
 
-More detail in [](./oost.md)
+More detail in [](./oost_dc_ose_2021_data.md)
 ```{code-cell}
 ---
 tags:
@@ -169,7 +169,7 @@ print(pd.concat([pd.read_json(p, typ='series') for p in glob.glob('data/metrics/
 
 ### Make your reconstruction public through a http link
 ```bash
-aws s3 cp output.nc s3://melody/quentin_cloud/oost.nc --acl public-read
+aws s3 cp output.nc s3://melody/quentin_cloud/oost_oi_demo.nc --acl public-read
 ```
 
 ### Commit to a branch `leaderboard/*` adding your method
