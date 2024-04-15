@@ -11,7 +11,7 @@ kernelspec:
 ---
 
 
-# Participating to the data challenge: applying, evaluating and submitting a method 
+# Datachallenge participation: Metrics computation and automated leaderboard update
 
 ## Fetching the input data
 
@@ -21,7 +21,7 @@ More detail in [](./oost_dc_ose_2021_data.md)
 tags:
   - scroll-output
 ---
-!dvc get https://github.com/quentinf00/oost-dc-ose-2021.git datachallenge/data/prepared/input
+!dvc get https://github.com/quentinf00/oost-demo-ssh-dc.git datachallenge/data/prepared/input
 ```
 
 ```{code-cell}
@@ -124,7 +124,7 @@ tags:
   - scroll-output
 ---
 %%bash
-dvc get  https://github.com/quentinf00/oost-dc-ose-2021.git \
+dvc get  https://github.com/quentinf00/oost-demo-ssh-dc.git \
   datachallenge/data/prepared/ref \
   -o data/prepared/ref
 ```

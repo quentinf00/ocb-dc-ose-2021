@@ -29,12 +29,12 @@ latex:
 
 # Information about where the book exists on the web
 repository:
-  url: https://github.com/quentinf00/oost-dc-ose-2021
+  url: https://github.com/quentinf00/oost-demo-ssh-dc
   path_to_book: docs  # Optional path to your book, relative to the repository root
   branch: main  # Which branch of the repository should be used when creating links (optional)
 
-launch_buttons:
-  colab_url: "https://colab.research.google.com"
+# launch_buttons:
+#   colab_url: "https://colab.research.google.com"
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:

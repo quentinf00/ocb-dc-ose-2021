@@ -11,7 +11,7 @@ kernelspec:
   name: oost-docs
 ---
 
-# Versioned data download and reproduction
+# Versioned data access and reproduction
 
 
 ## Reusing processing steps and reproducing data preparation
@@ -65,7 +65,7 @@ bin_size = 1/20
 
 ```{code-cell} ipython3
 # Storing the repo url for convenience
-%env DC_REPO=https://github.com/quentinf00/oost-dc-ose-2021.git
+%env DC_REPO=https://github.com/quentinf00/oost-demo-ssh-dc.git
 ```
 
 ```{code-cell} ipython3

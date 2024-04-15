@@ -10,7 +10,7 @@ kernelspec:
   name: oost-docs
 ---
 
-# Reusing the datachallenge implementation for exploring global usecase with different constellation
+# Reusing the pipelines for a global usecase
 
 ## Creating novel input data configuration
 

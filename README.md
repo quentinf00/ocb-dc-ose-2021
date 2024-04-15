@@ -8,14 +8,14 @@ mamba, conda-merge
 
 ### Usage: Download prepared input data
 ```
-wget -nc https://raw.githubusercontent.com/quentinf00/oost-dc-ose-2021/envs/dvc-s3.yaml
+wget -nc https://raw.githubusercontent.com/quentinf00/oost-demo-ssh-dc/envs/dvc-s3.yaml
 mamba env create --quiet -n dvc-s3 -f dvc-s3.yaml
-dvc get https://github.com/quentinf00/oost-dc-ose-2021.git datachallenge/data
+dvc get https://github.com/quentinf00/oost-demo-ssh-dc/data
 ```
 
 ### Usage: Reuse pipelines
 ```
-wget -nc https://raw.githubusercontent.com/quentinf00/oost-dc-ose-2021/envs/{base,dc}.yaml
+wget -nc https://raw.githubusercontent.com/quentinf00/oost-demo-ssh-dc/envs/{base,dc}.yaml
 conda merge {base,dc}.yaml > env.yaml
 mamba env create --quiet -n dc-base -f env.yaml
 
@@ -23,8 +23,7 @@ mamba env create --quiet -n dc-base -f env.yaml
 
 ### Usage: Full repro with dvc install
 ```
-git clone https://github.com/quentinf00/oost-dc-ose-2021.git
-conda merge envs/{base,dc,dvc-s3}.yaml > env.yaml
+git clone https://github.com/quentinf00/oost-demo-ssh-dc/{base,dc,dvc-s3}.yaml > env.yaml
 mamba env create --quiet -n dc-dvc -f env.yaml
 
 # login to cmems for data access
@@ -36,8 +35,7 @@ dvc repro
 
 ### Usage: Development (editable)
 ```
-git clone https://github.com/quentinf00/oost-dc-ose-2021.git
-conda merge envs/{base,dc-dev,dvc-s3}.yaml > env.yaml
+git clone https://github.com/quentinf00/oost-demo-ssh-dc/{base,dc-dev,dvc-s3}.yaml > env.yaml
 !mamba env create --quiet -n dc-dev -f env.yaml
 
 
