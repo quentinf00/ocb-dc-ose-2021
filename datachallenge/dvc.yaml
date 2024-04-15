@@ -20,7 +20,7 @@ stages:
         - input_data.parts._01_dl_track
       cmd: oost-dc_ose_2021-input_data 'to_run=[_01_dl_track]' params.sat=${item}
       deps:
-        - ../oost/pipelines/input_data.py
+        - ../oost_dc_ose_2021/pipelines/input_data.py
       outs:
       - data/downloads/input/${item}:
           cache: false
@@ -34,8 +34,8 @@ stages:
         oost-dc_ose_2021-input_data
         'to_run=[_02_prepare_track]' params.sat=${item}
       deps:
-      - ../oost/pipelines/input_data.py
-      - ../oost/mods/prepare_track.py
+      - ../oost_dc_ose_2021/pipelines/input_data.py
+      - ../oost_dc_ose_2021/mods/prepare_track.py
       - data/downloads/input/${item}
       outs:
       - data/prepared/input/${item}.nc
@@ -45,7 +45,7 @@ stages:
       - metrics.parts._01_dl_track
     cmd: oost-dc_ose_2021-metrics 'to_run=[_01_dl_track]'
     deps:
-    - ../oost/pipelines/metrics.py
+    - ../oost_dc_ose_2021/pipelines/metrics.py
     outs:
     - data/downloads/ref/c2:
         cache: false
@@ -67,8 +67,8 @@ stages:
       - metrics.parts._02_prepare_track
     cmd: oost-dc_ose_2021-metrics 'to_run=[_02_prepare_track]'
     deps:
-    - ../oost/pipelines/metrics.py
-    - ../oost/mods/prepare_track.py
+    - ../oost_dc_ose_2021/pipelines/metrics.py
+    - ../oost_dc_ose_2021/mods/prepare_track.py
     - data/downloads/ref/c2
     outs:
     - data/prepared/ref/c2.nc
@@ -83,8 +83,8 @@ stages:
       - methods.toml:
         - methods.${key}
       deps:
-      - ../oost/pipelines/metrics.py
-      - ../oost/mods/interp_on_track.py
+      - ../oost_dc_ose_2021/pipelines/metrics.py
+      - ../oost_dc_ose_2021/mods/interp_on_track.py
       - data/prepared/ref/c2.nc
       - data/downloads/method_outputs/${key}.nc
       outs:
@@ -100,8 +100,8 @@ stages:
       - methods.toml:
         - methods.${key}
       deps:
-      - ../oost/pipelines/metrics.py
-      - ../oost/mods/lambdax.py
+      - ../oost_dc_ose_2021/pipelines/metrics.py
+      - ../oost_dc_ose_2021/mods/lambdax.py
       - data/prepared/ref/c2.nc
       - data/prepared/method_outputs/${key}_on_track.nc
       outs:
@@ -120,8 +120,8 @@ stages:
       - methods.toml:
         - methods.${key}
       deps:
-      - ../oost/pipelines/metrics.py
-      - ../oost/mods/mu.py
+      - ../oost_dc_ose_2021/pipelines/metrics.py
+      - ../oost_dc_ose_2021/mods/mu.py
       - data/prepared/ref/c2.nc
       - data/prepared/method_outputs/${key}_on_track.nc
       metrics:
