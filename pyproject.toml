@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 dynamic = ["version"]
-name = "oost-demo-ssh-dc"
+name = "oost-dc-ose-2021"
 authors=[
   {name = "Quentin Febvre", email = "quentin.febvre@gmail.com"},
 ]
