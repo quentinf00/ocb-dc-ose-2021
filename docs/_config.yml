@@ -29,7 +29,7 @@ latex:
 
 # Information about where the book exists on the web
 repository:
-  url: https://github.com/quentinf00/ocb-dc-ose-2021
+  url: https://github.com/quentinf00/oost-dc-ose-2021
   path_to_book: docs  # Optional path to your book, relative to the repository root
   branch: main  # Which branch of the repository should be used when creating links (optional)
 

@@ -1,10 +1,9 @@
 import aprl.appareil
-
-import ocb_dc_ose_2021.mods.cmems_get as cmems_get
-import ocb_dc_ose_2021.mods.interp_on_track as interp_on_track
-import ocb_dc_ose_2021.mods.lambdax as lambdax
-import ocb_dc_ose_2021.mods.mu as mu
-import ocb_dc_ose_2021.mods.prepare_track as prepare_track
+import oost.mods.cmems_get as cmems_get
+import oost.mods.interp_on_track as interp_on_track
+import oost.mods.lambdax as lambdax
+import oost.mods.mu as mu
+import oost.mods.prepare_track as prepare_track
 
 dataset_id_cfg = cmems_get.cfg.dataset_id
 regex_cfg = cmems_get.cfg.regex

@@ -12,22 +12,22 @@ Prerequisites:
 
 The installation requires conda.
 Depending on you usage you may not need a full install.
-The dependencies have therefore been splitted in different files in the envs folder of the repository https://github.com/quentinf00/ocb-dc-ose-2021.git.
+The dependencies have therefore been splitted in different files in the envs folder of the repository https://github.com/quentinf00/oost-dc-ose-2021.git.
 The installation relies on conda-merge to compile multiple file into one environment file suited to your need.
 Below an example of a full install to reproduce the demo
 
 ### Without cloning
 ```
-wget -nc https://raw.githubusercontent.com/quentinf00/ocb-dc-ose-2021/envs/{docs,base,dc,dvc-s3}.yaml
+wget -nc https://raw.githubusercontent.com/quentinf00/oost-dc-ose-2021/envs/{docs,base,dc,dvc-s3}.yaml
 conda merge {docs,base,dc,dvc-s3}.yaml > env.yaml
-mamba env create --quiet -n ocb-docs -f env.yaml
+mamba env create --quiet -n oost-docs -f env.yaml
 ```
 
 ### With cloning
 ```
-git clone https://github.com/quentinf00/ocb-dc-ose-2021.git
-conda merge ocb-dc-ose-2021/envs/{docs,base,dc,dvc-s3}.yaml > env.yaml
-mamba env create --quiet -n ocb-docs -f env.yaml
+git clone https://github.com/quentinf00/oost-dc-ose-2021.git
+conda merge oost-dc-ose-2021/envs/{docs,base,dc,dvc-s3}.yaml > env.yaml
+mamba env create --quiet -n oost-docs -f env.yaml
 ```
 
 ### On colab

@@ -10,6 +10,6 @@ dependencies:
 - pip:
   - awscli
   - global-land-mask
-  - ocb-dc-ose-2021
+  - oost-dc-ose-2021
   - ocn-tools @ git+https://github.com/jejjohnson/ocn-tools.git#egg=ocn_tools
   - xrpatcher

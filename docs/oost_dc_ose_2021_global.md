@@ -6,8 +6,8 @@ jupytext:
     format_version: 0.13
     jupytext_version: 1.16.1
 kernelspec:
-  display_name: OcbDocs
-  name: ocb-docs
+  display_name: oost
+  name: oost-docs
 ---
 
 # Reusing the datachallenge implementation for exploring global usecase with different constellation
@@ -16,7 +16,7 @@ kernelspec:
 
 ### Visualizing the fields and their explanations
 ```{code-cell}
-!ocb-dc_ose_2021-input_data --cfg job -p params
+!oost-dc_ose_2021-input_data --cfg job -p params
 ```
 
 ```{code-cell}
@@ -24,7 +24,7 @@ kernelspec:
 tags:
   - scroll-output
 ---
-!ocb-dc_ose_2021-input_data --help
+!oost-dc_ose_2021-input_data --help
 ```
 
 ### Writing new file
@@ -54,7 +54,7 @@ tags:
   - scroll-output
 ---
 %%bash
-ocb-dc_ose_2021-input_data -m \
+oost-dc_ose_2021-input_data -m \
     'hydra.searchpath=[file://conf]'  +overrides@params=global\
      dry=True
 ```
@@ -65,7 +65,7 @@ tags:
   - scroll-output
 ---
 %%bash
-ocb-dc_ose_2021-input_data -m \
+oost-dc_ose_2021-input_data -m \
     'hydra.searchpath=[file://conf]' \
       +overrides@params=global \
       hydra/launcher=joblib \
@@ -208,7 +208,7 @@ bokfig
 ```
 
 ```{code-cell}
-!ocb-dc_ose_2021-metrics --cfg job -p params
+!oost-dc_ose_2021-metrics --cfg job -p params
 ```
 
 ```{code-cell}
@@ -232,7 +232,7 @@ tags:
   - scroll-output
 ---
 %%bash
-ocb-dc_ose_2021-metrics -m \
+oost-dc_ose_2021-metrics -m \
     'hydra.searchpath=[file://conf]' \
       +overrides@params=global_eval \
       dry=True
@@ -252,7 +252,7 @@ tags:
   - scroll-output
 ---
 %%bash
-ocb-dc_ose_2021-metrics \
+oost-dc_ose_2021-metrics \
   'hydra.searchpath=[file://conf]' \
     +overrides@params=global_eval dry=True
 ```
@@ -263,7 +263,7 @@ tags:
   - scroll-output
 ---
 %%bash
-ocb-dc_ose_2021-metrics\
+oost-dc_ose_2021-metrics\
     'hydra.searchpath=[file://conf]' \
      +overrides@params=global_eval
 ```

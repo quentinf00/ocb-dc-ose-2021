@@ -1,4 +1,4 @@
 dependencies:
   - pip:
-    - "ocb-dc-ose-2021"
+    - "oost-dc-ose-2021"
 

@@ -6,9 +6,9 @@ jupytext:
     format_version: 0.13
     jupytext_version: 1.16.1
 kernelspec:
-  display_name: ocb-docs
+  display_name: oost-docs
   language: python
-  name: ocb-docs
+  name: oost-docs
 ---
 
 # Versioned data download and reproduction
@@ -16,19 +16,19 @@ kernelspec:
 
 ## Reusing processing steps and reproducing data preparation
 
-### Use the configured `ocb-dc_ose_2021-input_data` pipeline
+### Use the configured `oost-dc_ose_2021-input_data` pipeline
 ![data schema](imgs/data_doc.png)
 
 #### Reproduce processing of single satellite
 
 ```{code-cell} ipython3
-!ocb-dc_ose_2021-input_data --cfg job -p params
+!oost-dc_ose_2021-input_data --cfg job -p params
 ```
 
 ```{code-cell} ipython3
 :tags: [scroll-output]
 
-!ocb-dc_ose_2021-input_data params.sat=j2g
+!oost-dc_ose_2021-input_data params.sat=j2g
 ```
 
 ```{code-cell} ipython3
@@ -55,7 +55,7 @@ bin_size = 1/20
 #### Dry (without actual execution) run for all satellites
 
 ```{code-cell} ipython3
-!ocb-dc_ose_2021-input_data --multirun dry=True
+!oost-dc_ose_2021-input_data --multirun dry=True
 ```
 
 ## Downloading versioned and preprocessed data
@@ -65,7 +65,7 @@ bin_size = 1/20
 
 ```{code-cell} ipython3
 # Storing the repo url for convenience
-%env DC_REPO=https://github.com/quentinf00/ocb-dc-ose-2021.git
+%env DC_REPO=https://github.com/quentinf00/oost-dc-ose-2021.git
 ```
 
 ```{code-cell} ipython3
@@ -118,9 +118,9 @@ print("Successful reproduction")
 ### More on pipeline usage (help, doc, ...)
 
 ```{code-cell} ipython3
-!ocb-dc_ose_2021-input_data --help
+!oost-dc_ose_2021-input_data --help
 ```
 
 ```{code-cell} ipython3
-!ocb-dc_ose_2021-input_data params.sat=alg dry=True 'hydra.verbose=[aprl.appareil]'
+!oost-dc_ose_2021-input_data params.sat=alg dry=True 'hydra.verbose=[aprl.appareil]'
 ```

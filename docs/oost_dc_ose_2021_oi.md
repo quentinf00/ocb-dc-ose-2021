@@ -6,8 +6,8 @@ jupytext:
     format_version: 0.13
     jupytext_version: 1.16.1
 kernelspec:
-  display_name: OcbDocs
-  name: ocb-docs
+  display_name: oost
+  name: oost-docs
 ---
 
 
@@ -15,13 +15,13 @@ kernelspec:
 
 ## Fetching the input data
 
-More detail in [](./ocb_dc_ose_2021_data.md)
+More detail in [](./oost.md)
 ```{code-cell}
 ---
 tags:
   - scroll-output
 ---
-!dvc get https://github.com/quentinf00/ocb-dc-ose-2021.git datachallenge/data/prepared/input
+!dvc get https://github.com/quentinf00/oost-dc-ose-2021.git datachallenge/data/prepared/input
 ```
 
 ```{code-cell}
@@ -124,13 +124,13 @@ tags:
   - scroll-output
 ---
 %%bash
-dvc get  https://github.com/quentinf00/ocb-dc-ose-2021.git \
+dvc get  https://github.com/quentinf00/oost-dc-ose-2021.git \
   datachallenge/data/prepared/ref \
   -o data/prepared/ref
 ```
 
 
-### Use the configured `ocb-dc_ose_2021-metrics`
+### Use the configured `oost-dc_ose_2021-metrics`
 
 ![metrics pipeline](imgs/metrics_doc.png)
 ```{code-cell}
@@ -138,7 +138,7 @@ outgrid.to_dataset(name='ssh').to_netcdf('output.nc')
 ```
 
 ```{code-cell} ipython3
-!ocb-dc_ose_2021-metrics --cfg job -p params
+!oost-dc_ose_2021-metrics --cfg job -p params
 ```
 
 ```{code-cell} ipython3
@@ -146,7 +146,7 @@ outgrid.to_dataset(name='ssh').to_netcdf('output.nc')
 tags:
   - scroll-output
 ---
-!ocb-dc_ose_2021-metrics dry=True
+!oost-dc_ose_2021-metrics dry=True
 ```
 
 ```{code-cell}
@@ -155,7 +155,7 @@ tags:
   - scroll-output
 ---
 %%bash
-ocb-dc_ose_2021-metrics params.study_path=output.nc \
+oost-dc_ose_2021-metrics params.study_path=output.nc \
     'to_run=[_03_interp_on_track,_04_1_lambdax,_04_2_mu]'
 ```
 
@@ -169,7 +169,7 @@ print(pd.concat([pd.read_json(p, typ='series') for p in glob.glob('data/metrics/
 
 ### Make your reconstruction public through a http link
 ```bash
-aws s3 cp output.nc s3://melody/quentin_cloud/ocb_oi_demo.nc --acl public-read
+aws s3 cp output.nc s3://melody/quentin_cloud/oost.nc --acl public-read
 ```
 
 ### Commit to a branch `leaderboard/*` adding your method
