@@ -1,9 +1,11 @@
-# OceanBench DataChallenge
+# Ocean Observation Science Toolkit: SSH Data challenge Design
 
 
 ## Overall presentation
+This project comes with 
+This jupyter book demonstrate through a series of notebooks how a combination of tools
 
-We provide here the documentation and example notebooks associated with  `https://github.com/quentinf00/ocb-dc-ose-2021.git`.
+We provide here the documentation and example notebooks associated with  `https://github.com/quentinf00/oost-demo-ssh-dc.git`.
 This aims at laying foundations for building an ecosystem to facilitate the development and application of ocean observation science
 
 This work is built upon existing work that you should check out !

@@ -1,0 +1,1221 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Participating to the data challenge: applying, evaluating and submitting a method &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'oost_dc_ose_2021_oi';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Reusing the datachallenge implementation for exploring global usecase with different constellation" href="oost_dc_ose_2021_global.html" />
+    <link rel="prev" title="Versioned data download and reproduction" href="oost_dc_ose_2021_data.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Ocean Observation Science Toolkit: SSH Data challenge Design
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="oost_dc_ose_2021_data.html">Versioned data download and reproduction</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Participating to the data challenge: applying, evaluating and submitting a method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="oost_dc_ose_2021_global.html">Reusing the datachallenge implementation for exploring global usecase with different constellation</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/quentinf00/oost-demo-ssh-dc/blob/main/docs/oost_dc_ose_2021_oi.md" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/quentinf00/oost-demo-ssh-dc" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/quentinf00/oost-demo-ssh-dc/issues/new?title=Issue%20on%20page%20%2Foost_dc_ose_2021_oi.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/oost_dc_ose_2021_oi.ipynb" target="_blank"
+   class="btn btn-sm btn-download-notebook-button dropdown-item"
+   title="Download notebook file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="_sources/oost_dc_ose_2021_oi.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Participating to the data challenge: applying, evaluating and submitting a method</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fetching-the-input-data">Fetching the input data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applying-my-method-basic-optimal-interpolation">Applying my method: Basic optimal interpolation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-results">Visualize results</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluate">Evaluate</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fetch-reference-data">Fetch reference data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-the-configured-oost-dc-ose-2021-metrics">Use the configured <code class="docutils literal notranslate"><span class="pre">oost-dc_ose_2021-metrics</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submit-method-to-datachallenge">Submit method to datachallenge</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#make-your-reconstruction-public-through-a-http-link">Make your reconstruction public through a http link</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#commit-to-a-branch-leaderboard-adding-your-method">Commit to a branch <code class="docutils literal notranslate"><span class="pre">leaderboard/*</span></code> adding your method</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#leaderboard-is-automatically-updated">Leaderboard is automatically updated</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-your-pull-request">Open your pull request</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="participating-to-the-data-challenge-applying-evaluating-and-submitting-a-method">
+<h1>Participating to the data challenge: applying, evaluating and submitting a method<a class="headerlink" href="#participating-to-the-data-challenge-applying-evaluating-and-submitting-a-method" title="Link to this heading">#</a></h1>
+<section id="fetching-the-input-data">
+<h2>Fetching the input data<a class="headerlink" href="#fetching-the-input-data" title="Link to this heading">#</a></h2>
+<p>More detail in <a class="reference internal" href="oost_dc_ose_2021_data.html"><span class="std std-doc">Versioned data download and reproduction</span></a></p>
+<div class="cell tag_scroll-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>dvc<span class="w"> </span>get<span class="w"> </span>https://github.com/quentinf00/oost-demo-ssh-dc.git<span class="w"> </span>datachallenge/data/prepared/input
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>!
+Cloning oost-demo-ssh-dc.git|                       |0.00/? [00:00,      ?obj/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cloning oost-demo-ssh-dc.git|          | Counting |1.00/102 [00:00,   2.20obj/s]
+Cloning oost-demo-ssh-dc.git|          | Counting |1.00/102 [00:00,   2.20obj/s]
+Cloning oost-demo-ssh-dc.git|███████████| Counting |102/102 [00:00,   2.20obj/s]
+Cloning oost-demo-ssh-dc.git| | Compressing | Compressing objects:   2% (2/68) |
+Cloning oost-demo-ssh-dc.git|██████| Compressing |68.0/68.0 [00:00,   2.20obj/s]
+Cloning oost-demo-ssh-dc.git|██████| Compressing |68.0/68.0 [00:00,   2.20obj/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                                
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>!
+  0% Downloading input|                              |0/7 [00:00&lt;?,    ?files/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>!
+
+datachallenge/data/prepared/input/.gitignore          |0.00 [00:00,        ?B/s]
+
+                                                                                
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>!
+
+  0%|          |datachallenge/data/prepared/inpu0.00/454k [00:00&lt;?,        ?B/s]
+
+
+!
+
+
+  0%|          |datachallenge/data/prepared/inpu0.00/703k [00:00&lt;?,        ?B/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>!
+
+
+
+  0%|          |datachallenge/data/prepared/inp0.00/2.39M [00:00&lt;?,        ?B/s]
+
+
+
+
+!
+
+
+
+
+  0%|          |datachallenge/data/prepared/inp0.00/2.22M [00:00&lt;?,        ?B/s]
+
+                                                                                
+ 29% Downloading input|███████▏                 |2/7 [00:00&lt;00:00,  8.73files/s]
+
+
+                                                                                
+
+!
+
+  0%|          |datachallenge/data/prepared/inp0.00/2.65M [00:00&lt;?,        ?B/s]
+
+
+!
+
+
+  0%|          |datachallenge/data/prepared/inp0.00/2.48M [00:00&lt;?,        ?B/s]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                                
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                                
+
+                                                                                
+
+
+                                                                                
+100% Downloading input|█████████████████████████|7/7 [00:00&lt;00:00, 24.18files/s]
+                                                                                
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+<span class="n">obs</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_mfdataset</span><span class="p">(</span><span class="s1">&#39;input/*.nc&#39;</span><span class="p">,</span> <span class="n">combine</span><span class="o">=</span><span class="s1">&#39;nested&#39;</span><span class="p">,</span><span class="n">concat_dim</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
+<span class="n">bin_size</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">20</span>
+<span class="p">(</span>
+    <span class="n">obs</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="s1">&#39;2017-01-01&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+        <span class="n">lat</span><span class="o">=</span><span class="n">obs</span><span class="o">.</span><span class="n">lat</span> <span class="o">/</span> <span class="n">bin_size</span> <span class="o">//</span> <span class="mi">1</span> <span class="o">*</span> <span class="n">bin_size</span><span class="p">,</span>
+        <span class="n">lon</span><span class="o">=</span><span class="n">obs</span><span class="o">.</span><span class="n">lon</span> <span class="o">/</span> <span class="n">bin_size</span> <span class="o">//</span> <span class="mi">1</span> <span class="o">*</span> <span class="n">bin_size</span>
+    <span class="p">)[[</span><span class="s1">&#39;ssh&#39;</span><span class="p">,</span> <span class="s1">&#39;lat&#39;</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">drop_vars</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">to_dataframe</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;lat&#39;</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    <span class="o">.</span><span class="n">to_xarray</span><span class="p">()</span>
+<span class="p">)</span><span class="o">.</span><span class="n">ssh</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7efe20295650&gt;
+</pre></div>
+</div>
+<img alt="_images/aee7c14f1b87468638e0d5acbc061552f98c0d7ace0b249a601109d41839965d.png" src="_images/aee7c14f1b87468638e0d5acbc061552f98c0d7ace0b249a601109d41839965d.png" />
+</div>
+</div>
+<section id="applying-my-method-basic-optimal-interpolation">
+<h3>Applying my method: Basic optimal interpolation<a class="headerlink" href="#applying-my-method-basic-optimal-interpolation" title="Link to this heading">#</a></h3>
+<p><img alt="oi shema" src="_images/oi_doc.png" /></p>
+<div class="cell tag_hide-cell docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell content</span>
+<span class="expanded">Hide code cell content</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># GIST: https://gist.github.com/quentinf00/2d034392ee9b385fb4de3c8628bfc8cache44</span>
+<span class="o">!</span>wget<span class="w"> </span>https://gist.githubusercontent.com/quentinf00/2d034392ee9b385fb4de3c8628bfc844/raw/4afecfce184a6e668def7ec3a99cb6cd4d612bdc/patcher_oi_torch.py
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--2024-04-15 15:44:40--  https://gist.githubusercontent.com/quentinf00/2d034392ee9b385fb4de3c8628bfc844/raw/4afecfce184a6e668def7ec3a99cb6cd4d612bdc/patcher_oi_torch.py
+Resolving gist.githubusercontent.com (gist.githubusercontent.com)... 185.199.110.133, 185.199.108.133, 185.199.109.133, ...
+Connecting to gist.githubusercontent.com (gist.githubusercontent.com)|185.199.110.133|:443... connected.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HTTP request sent, awaiting response... 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>200 OK
+Length: 4247 (4,1K) [text/plain]
+Saving to: ‘patcher_oi_torch.py’
+
+
+patcher_oi_torch.py   0%[                    ]       0  --.-KB/s               
+patcher_oi_torch.py 100%[===================&gt;]   4,15K  --.-KB/s    in 0s      
+
+2024-04-15 15:44:40 (66,7 MB/s) - ‘patcher_oi_torch.py’ saved [4247/4247]
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<script src="https://gist.github.com/quentinf00/2d034392ee9b385fb4de3c8628bfc844.js"></script><div class="cell tag_scroll-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">partial</span>
+<span class="kn">from</span> <span class="nn">xrpatcher</span> <span class="kn">import</span> <span class="n">XRDAPatcher</span>
+<span class="kn">from</span> <span class="nn">patcher_oi_torch</span> <span class="kn">import</span> <span class="n">oi</span>
+
+
+<span class="n">outgrid</span> <span class="o">=</span> <span class="n">oi</span><span class="p">(</span>
+        <span class="n">outgrid_da</span><span class="o">=</span><span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="p">(</span>
+            <span class="n">dims</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="s1">&#39;lat&#39;</span><span class="p">,</span> <span class="s1">&#39;lon&#39;</span><span class="p">),</span>
+            <span class="n">coords</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+                <span class="n">time</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s2">&quot;2017-01-01&quot;</span><span class="p">,</span> <span class="s2">&quot;2017-12-31&quot;</span><span class="p">),</span>
+                <span class="n">lat</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">33</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">),</span>
+                <span class="n">lon</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">65</span><span class="p">,</span> <span class="o">-</span><span class="mi">55</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">),</span>
+            <span class="p">),</span>
+        <span class="p">),</span>
+        <span class="n">patcher_cls</span><span class="o">=</span><span class="n">partial</span><span class="p">(</span><span class="n">XRDAPatcher</span><span class="p">,</span>
+            <span class="n">patches</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">lat</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">lon</span><span class="o">=</span><span class="mi">40</span><span class="p">),</span>
+            <span class="n">strides</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">lat</span><span class="o">=</span><span class="mi">40</span><span class="p">,</span> <span class="n">lon</span><span class="o">=</span><span class="mi">40</span><span class="p">)</span>
+        <span class="p">),</span>
+        <span class="n">obs</span><span class="o">=</span><span class="n">obs</span><span class="o">.</span><span class="n">load</span><span class="p">(),</span>
+        <span class="n">lt</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">to_timedelta</span><span class="p">(</span><span class="s1">&#39;7D&#39;</span><span class="p">),</span> <span class="n">lx</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span> <span class="n">ly</span><span class="o">=</span><span class="mf">1.</span><span class="p">,</span>
+        <span class="n">noise</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span>
+        <span class="n">obs_dt</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">to_timedelta</span><span class="p">(</span><span class="s1">&#39;1D&#39;</span><span class="p">),</span> <span class="n">obs_dx</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">obs_dy</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span>
+        <span class="n">device</span><span class="o">=</span><span class="s1">&#39;cuda&#39;</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|                                                                                                                           | 0/73 [00:00&lt;?, ?it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  1%|█▌                                                                                                                 | 1/73 [00:03&lt;03:48,  3.17s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  3%|███▏                                                                                                               | 2/73 [00:03&lt;01:46,  1.50s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  4%|████▋                                                                                                              | 3/73 [00:03&lt;01:06,  1.05it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  5%|██████▎                                                                                                            | 4/73 [00:04&lt;00:48,  1.44it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  7%|███████▉                                                                                                           | 5/73 [00:04&lt;00:37,  1.80it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  8%|█████████▍                                                                                                         | 6/73 [00:04&lt;00:31,  2.12it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 10%|███████████                                                                                                        | 7/73 [00:05&lt;00:27,  2.41it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 11%|████████████▌                                                                                                      | 8/73 [00:05&lt;00:24,  2.63it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 12%|██████████████▏                                                                                                    | 9/73 [00:05&lt;00:22,  2.81it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 14%|███████████████▌                                                                                                  | 10/73 [00:05&lt;00:21,  2.94it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 15%|█████████████████▏                                                                                                | 11/73 [00:06&lt;00:20,  3.04it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 16%|██████████████████▋                                                                                               | 12/73 [00:06&lt;00:19,  3.11it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 18%|████████████████████▎                                                                                             | 13/73 [00:06&lt;00:18,  3.17it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 19%|█████████████████████▊                                                                                            | 14/73 [00:07&lt;00:17,  3.34it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 21%|███████████████████████▍                                                                                          | 15/73 [00:07&lt;00:16,  3.57it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 22%|████████████████████████▉                                                                                         | 16/73 [00:07&lt;00:14,  3.80it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 23%|██████████████████████████▌                                                                                       | 17/73 [00:07&lt;00:13,  4.13it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 25%|████████████████████████████                                                                                      | 18/73 [00:07&lt;00:12,  4.42it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 26%|█████████████████████████████▋                                                                                    | 19/73 [00:08&lt;00:11,  4.69it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 27%|███████████████████████████████▏                                                                                  | 20/73 [00:08&lt;00:10,  4.88it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 29%|████████████████████████████████▊                                                                                 | 21/73 [00:08&lt;00:10,  5.03it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 30%|██████████████████████████████████▎                                                                               | 22/73 [00:08&lt;00:10,  5.07it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 32%|███████████████████████████████████▉                                                                              | 23/73 [00:08&lt;00:09,  5.09it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 33%|█████████████████████████████████████▍                                                                            | 24/73 [00:09&lt;00:09,  5.06it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 34%|███████████████████████████████████████                                                                           | 25/73 [00:09&lt;00:09,  5.05it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 36%|████████████████████████████████████████▌                                                                         | 26/73 [00:09&lt;00:09,  5.04it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 37%|██████████████████████████████████████████▏                                                                       | 27/73 [00:09&lt;00:09,  5.04it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 38%|███████████████████████████████████████████▋                                                                      | 28/73 [00:09&lt;00:09,  4.97it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 40%|█████████████████████████████████████████████▎                                                                    | 29/73 [00:10&lt;00:08,  4.94it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 41%|██████████████████████████████████████████████▊                                                                   | 30/73 [00:10&lt;00:08,  4.91it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 42%|████████████████████████████████████████████████▍                                                                 | 31/73 [00:10&lt;00:08,  4.93it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 44%|█████████████████████████████████████████████████▉                                                                | 32/73 [00:10&lt;00:08,  4.89it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 45%|███████████████████████████████████████████████████▌                                                              | 33/73 [00:10&lt;00:08,  4.87it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 47%|█████████████████████████████████████████████████████                                                             | 34/73 [00:11&lt;00:08,  4.86it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 48%|██████████████████████████████████████████████████████▋                                                           | 35/73 [00:11&lt;00:07,  4.90it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 49%|████████████████████████████████████████████████████████▏                                                         | 36/73 [00:11&lt;00:07,  4.83it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 51%|█████████████████████████████████████████████████████████▊                                                        | 37/73 [00:11&lt;00:07,  4.71it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 52%|███████████████████████████████████████████████████████████▎                                                      | 38/73 [00:12&lt;00:07,  4.53it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 53%|████████████████████████████████████████████████████████████▉                                                     | 39/73 [00:12&lt;00:07,  4.33it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 55%|██████████████████████████████████████████████████████████████▍                                                   | 40/73 [00:12&lt;00:08,  4.01it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 56%|████████████████████████████████████████████████████████████████                                                  | 41/73 [00:12&lt;00:08,  3.77it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 58%|█████████████████████████████████████████████████████████████████▌                                                | 42/73 [00:13&lt;00:08,  3.56it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 59%|███████████████████████████████████████████████████████████████████▏                                              | 43/73 [00:13&lt;00:08,  3.47it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 60%|████████████████████████████████████████████████████████████████████▋                                             | 44/73 [00:13&lt;00:08,  3.39it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 62%|██████████████████████████████████████████████████████████████████████▎                                           | 45/73 [00:14&lt;00:08,  3.33it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 63%|███████████████████████████████████████████████████████████████████████▊                                          | 46/73 [00:14&lt;00:08,  3.29it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 64%|█████████████████████████████████████████████████████████████████████████▍                                        | 47/73 [00:14&lt;00:07,  3.27it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 66%|██████████████████████████████████████████████████████████████████████████▉                                       | 48/73 [00:15&lt;00:07,  3.26it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 67%|████████████████████████████████████████████████████████████████████████████▌                                     | 49/73 [00:15&lt;00:07,  3.27it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 68%|██████████████████████████████████████████████████████████████████████████████                                    | 50/73 [00:15&lt;00:06,  3.30it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 70%|███████████████████████████████████████████████████████████████████████████████▋                                  | 51/73 [00:15&lt;00:06,  3.41it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 71%|█████████████████████████████████████████████████████████████████████████████████▏                                | 52/73 [00:16&lt;00:05,  3.55it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 73%|██████████████████████████████████████████████████████████████████████████████████▊                               | 53/73 [00:16&lt;00:05,  3.71it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 74%|████████████████████████████████████████████████████████████████████████████████████▎                             | 54/73 [00:16&lt;00:04,  3.96it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 75%|█████████████████████████████████████████████████████████████████████████████████████▉                            | 55/73 [00:16&lt;00:04,  4.19it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 77%|███████████████████████████████████████████████████████████████████████████████████████▍                          | 56/73 [00:17&lt;00:03,  4.36it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 78%|█████████████████████████████████████████████████████████████████████████████████████████                         | 57/73 [00:17&lt;00:03,  4.46it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 79%|██████████████████████████████████████████████████████████████████████████████████████████▌                       | 58/73 [00:17&lt;00:03,  4.61it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 81%|████████████████████████████████████████████████████████████████████████████████████████████▏                     | 59/73 [00:17&lt;00:03,  4.64it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 82%|█████████████████████████████████████████████████████████████████████████████████████████████▋                    | 60/73 [00:17&lt;00:02,  4.71it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 84%|███████████████████████████████████████████████████████████████████████████████████████████████▎                  | 61/73 [00:18&lt;00:02,  4.75it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 85%|████████████████████████████████████████████████████████████████████████████████████████████████▊                 | 62/73 [00:18&lt;00:02,  4.77it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 86%|██████████████████████████████████████████████████████████████████████████████████████████████████▍               | 63/73 [00:18&lt;00:02,  4.79it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 88%|███████████████████████████████████████████████████████████████████████████████████████████████████▉              | 64/73 [00:18&lt;00:01,  4.91it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 89%|█████████████████████████████████████████████████████████████████████████████████████████████████████▌            | 65/73 [00:18&lt;00:01,  4.94it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 90%|███████████████████████████████████████████████████████████████████████████████████████████████████████           | 66/73 [00:19&lt;00:01,  4.98it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 92%|████████████████████████████████████████████████████████████████████████████████████████████████████████▋         | 67/73 [00:19&lt;00:01,  5.02it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 93%|██████████████████████████████████████████████████████████████████████████████████████████████████████████▏       | 68/73 [00:19&lt;00:00,  5.06it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 95%|███████████████████████████████████████████████████████████████████████████████████████████████████████████▊      | 69/73 [00:19&lt;00:00,  4.99it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 96%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████▎    | 70/73 [00:19&lt;00:00,  4.99it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 97%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████▉   | 71/73 [00:20&lt;00:00,  4.94it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 99%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████▍ | 72/73 [00:20&lt;00:00,  4.98it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 73/73 [00:20&lt;00:00,  5.02it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 73/73 [00:20&lt;00:00,  3.57it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="visualize-results">
+<h3>Visualize results<a class="headerlink" href="#visualize-results" title="Link to this heading">#</a></h3>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ocn_tools._src.geoprocessing.geostrophic</span> <span class="k">as</span> <span class="nn">geo</span>
+<span class="p">(</span>
+    <span class="n">outgrid</span><span class="o">.</span><span class="n">to_dataset</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;ssh&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">pipe</span><span class="p">(</span><span class="n">geo</span><span class="o">.</span><span class="n">geostrophic_velocities</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">pipe</span><span class="p">(</span><span class="n">geo</span><span class="o">.</span><span class="n">kinetic_energy</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+<span class="p">)</span><span class="o">.</span><span class="n">ke</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">col</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="n">col_wrap</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.plot.facetgrid.FacetGrid at 0x7efd27b9cb90&gt;
+</pre></div>
+</div>
+<img alt="_images/43237c123bcb53a0fb85e2419ffbee0657f89b999d90f72ed96b4bda993b2aac.png" src="_images/43237c123bcb53a0fb85e2419ffbee0657f89b999d90f72ed96b4bda993b2aac.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="evaluate">
+<h2>Evaluate<a class="headerlink" href="#evaluate" title="Link to this heading">#</a></h2>
+<section id="fetch-reference-data">
+<h3>Fetch reference data<a class="headerlink" href="#fetch-reference-data" title="Link to this heading">#</a></h3>
+<div class="cell tag_scroll-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+dvc get  https://github.com/quentinf00/oost-demo-ssh-dc.git \
+  datachallenge/data/prepared/ref \
+  -o data/prepared/ref
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="use-the-configured-oost-dc-ose-2021-metrics">
+<h3>Use the configured <code class="docutils literal notranslate"><span class="pre">oost-dc_ose_2021-metrics</span></code><a class="headerlink" href="#use-the-configured-oost-dc-ose-2021-metrics" title="Link to this heading">#</a></h3>
+<p><img alt="metrics pipeline" src="_images/metrics_doc.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">outgrid</span><span class="o">.</span><span class="n">to_dataset</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;ssh&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">to_netcdf</span><span class="p">(</span><span class="s1">&#39;output.nc&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>oost-dc_ose_2021-metrics<span class="w"> </span>--cfg<span class="w"> </span>job<span class="w"> </span>-p<span class="w"> </span>params
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span># @package params
+method: default
+study_path: data/downloads/method_outputs/${.method}.nc
+study_var: ssh
+sat: c2
+min_time: &#39;2017-01-01&#39;
+max_time: &#39;2017-12-31&#39;
+min_lon: -65.0
+max_lon: -55.0
+min_lat: 33.0
+max_lat: 43.0
+
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_scroll-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>oost-dc_ose_2021-metrics<span class="w"> </span><span class="nv">dry</span><span class="o">=</span>True
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-15 15:45:12,552][aprl.appareil][INFO] - Starting
+[2024-04-15 15:45:12,552][aprl.appareil][INFO] - Running part _01_dl_track
+[2024-04-15 15:45:12,552][aprl.appareil][INFO] - Running part _02_prepare_track
+[2024-04-15 15:45:12,552][aprl.appareil][INFO] - Running part _03_interp_on_track
+[2024-04-15 15:45:12,552][aprl.appareil][INFO] - Running part _04_1_lambdax
+[2024-04-15 15:45:12,552][aprl.appareil][INFO] - Running part _04_2_mu
+[2024-04-15 15:45:12,552][aprl.appareil][INFO] - Done
+
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_scroll-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="k">bash</span>
+oost-dc_ose_2021-metrics params.study_path=output.nc \
+    &#39;to_run=[_03_interp_on_track,_04_1_lambdax,_04_2_mu]&#39;
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-15 15:45:15,500][aprl.appareil][INFO] - Starting
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-15 15:45:15,500][aprl.appareil][INFO] - Running part _03_interp_on_track
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-15 15:45:15,500][oost_dc_ose_2021.mods.interp_on_track][INFO] - Starting
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-15 15:45:16,315][oost_dc_ose_2021.mods.interp_on_track][INFO] - Done
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-15 15:45:16,316][aprl.appareil][INFO] - part _03_interp_on_track done
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-15 15:45:16,316][aprl.appareil][INFO] - Running part _04_1_lambdax
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-15 15:45:16,316][oost_dc_ose_2021.mods.lambdax][INFO] - Starting
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-15 15:45:16,388][oost_dc_ose_2021.mods.lambdax][INFO] - Effective scale resolved (interpolated at score 0.5) 143.37
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-15 15:45:16,397][oost_dc_ose_2021.mods.lambdax][INFO] - Done
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-15 15:45:16,397][aprl.appareil][INFO] - part _04_1_lambdax done
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-15 15:45:16,397][aprl.appareil][INFO] - Running part _04_2_mu
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-15 15:45:16,397][oost_dc_ose_2021.mods.mu][INFO] - Starting
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-15 15:45:16,433][oost_dc_ose_2021.mods.mu][INFO] - Mu score: 0.8818722045815395
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-15 15:45:16,433][oost_dc_ose_2021.mods.mu][INFO] - Done
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-15 15:45:16,433][aprl.appareil][INFO] - part _04_2_mu done
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-15 15:45:16,433][aprl.appareil][INFO] - Done
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">glob</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">typ</span><span class="o">=</span><span class="s1">&#39;series&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;data/metrics/*.json&#39;</span><span class="p">)])</span><span class="o">.</span><span class="n">to_markdown</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|             |          0 |
+|:------------|-----------:|
+| $\lambda_x$ | 143.366    |
+| $\mu$       |   0.881872 |
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="submit-method-to-datachallenge">
+<h2>Submit method to datachallenge<a class="headerlink" href="#submit-method-to-datachallenge" title="Link to this heading">#</a></h2>
+<section id="make-your-reconstruction-public-through-a-http-link">
+<h3>Make your reconstruction public through a http link<a class="headerlink" href="#make-your-reconstruction-public-through-a-http-link" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>aws<span class="w"> </span>s3<span class="w"> </span>cp<span class="w"> </span>output.nc<span class="w"> </span>s3://melody/quentin_cloud/oost_oi_demo.nc<span class="w"> </span>--acl<span class="w"> </span>public-read
+</pre></div>
+</div>
+</section>
+<section id="commit-to-a-branch-leaderboard-adding-your-method">
+<h3>Commit to a branch <code class="docutils literal notranslate"><span class="pre">leaderboard/*</span></code> adding your method<a class="headerlink" href="#commit-to-a-branch-leaderboard-adding-your-method" title="Link to this heading">#</a></h3>
+<p><img alt="commit" src="_images/workflow_commit.png" /></p>
+</section>
+<section id="leaderboard-is-automatically-updated">
+<h3>Leaderboard is automatically updated<a class="headerlink" href="#leaderboard-is-automatically-updated" title="Link to this heading">#</a></h3>
+<p><img alt="action" src="_images/workflow_actions.png" />
+<img alt="lb" src="_images/workflow_lb.png" /></p>
+</section>
+<section id="open-your-pull-request">
+<h3>Open your pull request<a class="headerlink" href="#open-your-pull-request" title="Link to this heading">#</a></h3>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "oost-docs"
+        },
+        kernelOptions: {
+            name: "oost-docs",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'oost-docs'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="oost_dc_ose_2021_data.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Versioned data download and reproduction</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="oost_dc_ose_2021_global.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Reusing the datachallenge implementation for exploring global usecase with different constellation</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fetching-the-input-data">Fetching the input data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#applying-my-method-basic-optimal-interpolation">Applying my method: Basic optimal interpolation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-results">Visualize results</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluate">Evaluate</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fetch-reference-data">Fetch reference data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-the-configured-oost-dc-ose-2021-metrics">Use the configured <code class="docutils literal notranslate"><span class="pre">oost-dc_ose_2021-metrics</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#submit-method-to-datachallenge">Submit method to datachallenge</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#make-your-reconstruction-public-through-a-http-link">Make your reconstruction public through a http link</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#commit-to-a-branch-leaderboard-adding-your-method">Commit to a branch <code class="docutils literal notranslate"><span class="pre">leaderboard/*</span></code> adding your method</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#leaderboard-is-automatically-updated">Leaderboard is automatically updated</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-your-pull-request">Open your pull request</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
