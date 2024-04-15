@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Participating to the data challenge: applying, evaluating and submitting a method &#8212; My sample book</title>
+    <title>Datachallenge participation: Metrics computation and automated leaderboard update &#8212; My sample book</title>
   
   
   
@@ -60,8 +60,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'oost_dc_ose_2021_oi';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Reusing the datachallenge implementation for exploring global usecase with different constellation" href="oost_dc_ose_2021_global.html" />
-    <link rel="prev" title="Versioned data download and reproduction" href="oost_dc_ose_2021_data.html" />
+    <link rel="next" title="Reusing the pipelines for a global usecase" href="oost_dc_ose_2021_global.html" />
+    <link rel="prev" title="Versioned data access and reproduction" href="oost_dc_ose_2021_data.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -178,9 +178,9 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Setup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="oost_dc_ose_2021_data.html">Versioned data download and reproduction</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Participating to the data challenge: applying, evaluating and submitting a method</a></li>
-<li class="toctree-l1"><a class="reference internal" href="oost_dc_ose_2021_global.html">Reusing the datachallenge implementation for exploring global usecase with different constellation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="oost_dc_ose_2021_data.html">Versioned data access and reproduction</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Datachallenge participation: Metrics computation and automated leaderboard update</a></li>
+<li class="toctree-l1"><a class="reference internal" href="oost_dc_ose_2021_global.html">Reusing the pipelines for a global usecase</a></li>
 </ul>
 
     </div>
@@ -222,37 +222,6 @@
         <div class="header-article-item">
 
 <div class="article-header-buttons">
-
-
-
-
-
-<div class="dropdown dropdown-launch-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
-    <i class="fas fa-rocket"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://colab.research.google.com/github/quentinf00/oost-demo-ssh-dc/blob/main/docs/oost_dc_ose_2021_oi.md" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch onColab"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  
-    <img src="_static/images/logo_colab.png">
-  </span>
-<span class="btn__text-container">Colab</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
 
 
 
@@ -310,23 +279,6 @@
     <i class="fas fa-download"></i>
   </button>
   <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="_sources/oost_dc_ose_2021_oi.ipynb" target="_blank"
-   class="btn btn-sm btn-download-notebook-button dropdown-item"
-   title="Download notebook file"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-code"></i>
-  </span>
-<span class="btn__text-container">.ipynb</span>
-</a>
-</li>
-      
       
       
       
@@ -414,7 +366,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Participating to the data challenge: applying, evaluating and submitting a method</h1>
+    <h1>Datachallenge participation: Metrics computation and automated leaderboard update</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -452,11 +404,11 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="participating-to-the-data-challenge-applying-evaluating-and-submitting-a-method">
-<h1>Participating to the data challenge: applying, evaluating and submitting a method<a class="headerlink" href="#participating-to-the-data-challenge-applying-evaluating-and-submitting-a-method" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="datachallenge-participation-metrics-computation-and-automated-leaderboard-update">
+<h1>Datachallenge participation: Metrics computation and automated leaderboard update<a class="headerlink" href="#datachallenge-participation-metrics-computation-and-automated-leaderboard-update" title="Link to this heading">#</a></h1>
 <section id="fetching-the-input-data">
 <h2>Fetching the input data<a class="headerlink" href="#fetching-the-input-data" title="Link to this heading">#</a></h2>
-<p>More detail in <a class="reference internal" href="oost_dc_ose_2021_data.html"><span class="std std-doc">Versioned data download and reproduction</span></a></p>
+<p>More detail in <a class="reference internal" href="oost_dc_ose_2021_data.html"><span class="std std-doc">Versioned data access and reproduction</span></a></p>
 <div class="cell tag_scroll-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>dvc<span class="w"> </span>get<span class="w"> </span>https://github.com/quentinf00/oost-demo-ssh-dc.git<span class="w"> </span>datachallenge/data/prepared/input
@@ -1119,7 +1071,7 @@ oost-dc_ose_2021-metrics params.study_path=output.nc \
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Versioned data download and reproduction</p>
+        <p class="prev-next-title">Versioned data access and reproduction</p>
       </div>
     </a>
     <a class="right-next"
@@ -1127,7 +1079,7 @@ oost-dc_ose_2021-metrics params.study_path=output.nc \
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Reusing the datachallenge implementation for exploring global usecase with different constellation</p>
+        <p class="prev-next-title">Reusing the pipelines for a global usecase</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

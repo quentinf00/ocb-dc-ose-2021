@@ -11,7 +11,7 @@ kernelspec:
 ---
 
 
-# Participating to the data challenge: applying, evaluating and submitting a method 
+# Datachallenge participation: Metrics computation and automated leaderboard update
 
 ## Fetching the input data
 

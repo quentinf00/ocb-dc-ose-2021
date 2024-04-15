@@ -179,9 +179,9 @@
         </ul>
         <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Setup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="oost_dc_ose_2021_data.html">Versioned data download and reproduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="oost_dc_ose_2021_oi.html">Participating to the data challenge: applying, evaluating and submitting a method</a></li>
-<li class="toctree-l1"><a class="reference internal" href="oost_dc_ose_2021_global.html">Reusing the datachallenge implementation for exploring global usecase with different constellation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="oost_dc_ose_2021_data.html">Versioned data access and reproduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="oost_dc_ose_2021_oi.html">Datachallenge participation: Metrics computation and automated leaderboard update</a></li>
+<li class="toctree-l1"><a class="reference internal" href="oost_dc_ose_2021_global.html">Reusing the pipelines for a global usecase</a></li>
 </ul>
 
     </div>
@@ -378,9 +378,14 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overall-presentation">Overall presentation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background-on-the-shoulder-of-giants">Background: On the shoulder of Giants:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-concepts-tools-and-features">New concepts, Tools and Features:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#features">Features:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concepts">Concepts:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tools">Tools</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#related-projects">related projects</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-showcase">Feature Showcase</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contributing">Contributing</a></li>
 </ul>
             </nav>
         </div>
@@ -396,41 +401,69 @@ document.write(`
 <h1>Ocean Observation Science Toolkit: SSH Data challenge Design<a class="headerlink" href="#ocean-observation-science-toolkit-ssh-data-challenge-design" title="Link to this heading">#</a></h1>
 <section id="overall-presentation">
 <h2>Overall presentation<a class="headerlink" href="#overall-presentation" title="Link to this heading">#</a></h2>
-<p>This project comes with
-This jupyter book demonstrate through a series of notebooks how a combination of tools</p>
-<p>We provide here the documentation and example notebooks associated with  <code class="docutils literal notranslate"><span class="pre">https://github.com/quentinf00/oost-demo-ssh-dc.git</span></code>.
-This aims at laying foundations for building an ecosystem to facilitate the development and application of ocean observation science</p>
-<p>This work is built upon existing work that you should check out !</p>
+<p>This book presents the repo <code class="docutils literal notranslate"><span class="pre">https://github.com/quentinf00/oost-demo-ssh-dc.git</span></code> which is an re-implementation of the <a class="reference external" href="https://github.com/ocean-data-challenges/2023a_SSH_mapping_OSE">2021a_SSH_mapping_OSE data-challenge</a>.
+This project introduces a series of tools and practices that aims at facilitating the development and application of ocean observation science.</p>
 </section>
-<section id="background-on-the-shoulder-of-giants">
-<h2>Background: On the shoulder of Giants:<a class="headerlink" href="#background-on-the-shoulder-of-giants" title="Link to this heading">#</a></h2>
+<section id="new-concepts-tools-and-features">
+<h2>New concepts, Tools and Features:<a class="headerlink" href="#new-concepts-tools-and-features" title="Link to this heading">#</a></h2>
+<section id="features">
+<h3>Features:<a class="headerlink" href="#features" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p><strong><a class="reference external" href="https://ocean-data-challenges.github.io/">Ocean-data-challenges</a></strong> provide:</p>
+<li><p>Data access made easier</p></li>
+<li><p>Guaranteed reproducibility</p></li>
+<li><p>Automatic leaderboard computation</p></li>
+<li><p>Easy extensibility of data  and metric computations to other use-cases</p></li>
+</ul>
+</section>
+<section id="concepts">
+<h3>Concepts:<a class="headerlink" href="#concepts" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Versioned data</strong>: being able to store, access and compare different version of a dataset</p></li>
+<li><p><strong>Workflow management</strong>: orchestrating the tasks involved in processing the data and generating the results</p></li>
+<li><p><strong>Continuous integration</strong>: Automatically running tasks when changes are made</p></li>
+<li><p><strong>App packaging</strong>: Providing reusable and customizable interfaces to the software</p></li>
+</ul>
+</section>
+<section id="tools">
+<h3>Tools<a class="headerlink" href="#tools" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong><a class="reference external" href="https://hydra.cc/docs/intro/">hydra</a> and <a class="reference external" href="https://mit-ll-responsible-ai.github.io/hydra-zen/">hydra-zen</a></strong> provide:</p>
+<ul>
+<li><p>python &lt;-&gt; configuration workflow (share code, adapt config)</p></li>
+<li><p>CLI integration</p></li>
+<li><p>easy // computing (local, cluster), logging</p></li>
+</ul>
+</li>
+<li><p><strong><a class="reference external" href="https://dvc.org/doc/use-cases">dvc</a></strong> provides:</p>
+<ul>
+<li><p>data versioning via git indexed cloud storage</p></li>
+<li><p>workflow management</p></li>
+</ul>
+</li>
+<li><p><strong><a class="reference external" href="https://docs.github.com/en/actions">github action</a></strong></p>
+<ul>
+<li><p>continuous integration</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="related-projects">
+<h3>related projects<a class="headerlink" href="#related-projects" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong><a class="reference external" href="https://ocean-data-challenges.github.io/">ocean-data-challenges</a></strong> provide:</p>
 <ul>
 <li><p>well thought evaluation use cases</p></li>
 <li><p>input data download instructions</p></li>
 <li><p>metrics code and notebooks to evaluate methods</p></li>
 </ul>
 </li>
-<li><p><strong><a class="reference external" href="https://jejjohnson.github.io/oceanbench/content/overview.html">OceanBench</a></strong> provide:</p>
+<li><p><strong><a class="reference external" href="https://jejjohnson.github.io/oceanbench/content/overview.html">oceanbench</a></strong> provide:</p>
 <ul>
-<li><p>suite of tools  and configuration for developing ML application</p></li>
-</ul>
-</li>
-<li><p><strong><a class="reference external" href="https://hydra.cc/docs/intro/">Hydra</a> and <a class="reference external" href="https://mit-ll-responsible-ai.github.io/hydra-zen/">Hydra-zen</a></strong> provide:</p>
-<ul>
-<li><p>Python &lt;-&gt; Configuration workflow (share code, adapt config)</p></li>
-<li><p>CLI integration</p></li>
-<li><p>easy // computing (local, cluster), logging</p></li>
-</ul>
-</li>
-<li><p><strong><a class="reference external" href="https://dvc.org/doc/use-cases">DVC</a></strong> provides:</p>
-<ul>
-<li><p>data versioning (git for data)</p></li>
-<li><p>pipeline parameters and artefacts description and orchestration (make for data science)</p></li>
+<li><p>suite of tools and configuration for developing ml application</p></li>
 </ul>
 </li>
 </ul>
+</section>
 </section>
 <section id="feature-showcase">
 <h2>Feature Showcase<a class="headerlink" href="#feature-showcase" title="Link to this heading">#</a></h2>
@@ -442,20 +475,14 @@ This aims at laying foundations for building an ecosystem to facilitate the deve
 <iframe width="560" height="315" src="https://www.youtube.com/embed/9sMfMNRIaJA?si=2r3As5ZdwhrWZkPk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 <ul class="simple">
 <li><p>Metrics computation and automated leaderboard update</p></li>
-<li><p>Configuring new usecases and scaling to operations</p></li>
+<li><p>Reusing the pipelines for a global usecase</p></li>
 </ul>
-</section>
-<section id="contributing">
-<h2>Contributing<a class="headerlink" href="#contributing" title="Link to this heading">#</a></h2>
-<p>The idea of this project is to define the guidelines so that different actors can add their brick to the ecosystem while providing good interoperability with exitings components.
-The following examples aims at clarifying how to do so:
-<em>To be continued</em></p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Setup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="oost_dc_ose_2021_data.html">Versioned data download and reproduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="oost_dc_ose_2021_oi.html">Participating to the data challenge: applying, evaluating and submitting a method</a></li>
-<li class="toctree-l1"><a class="reference internal" href="oost_dc_ose_2021_global.html">Reusing the datachallenge implementation for exploring global usecase with different constellation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="oost_dc_ose_2021_data.html">Versioned data access and reproduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="oost_dc_ose_2021_oi.html">Datachallenge participation: Metrics computation and automated leaderboard update</a></li>
+<li class="toctree-l1"><a class="reference internal" href="oost_dc_ose_2021_global.html">Reusing the pipelines for a global usecase</a></li>
 </ul>
 </div>
 </section>
@@ -517,9 +544,14 @@ The following examples aims at clarifying how to do so:
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overall-presentation">Overall presentation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#background-on-the-shoulder-of-giants">Background: On the shoulder of Giants:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-concepts-tools-and-features">New concepts, Tools and Features:</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#features">Features:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concepts">Concepts:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tools">Tools</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#related-projects">related projects</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-showcase">Feature Showcase</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contributing">Contributing</a></li>
 </ul>
   </nav></div>
 
