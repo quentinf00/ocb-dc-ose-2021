@@ -36,11 +36,17 @@ repository:
 sphinx:
   extra_extensions:
     - 'autoapi.extension'
+    - 'sphinx.ext.mathjax'
+    - 'sphinx.ext.napoleon'
   config:
     autoapi_dirs: 
-    - ../oost_dc_ose_2021
+    - ../oost_dc_ose_2021/mods
     autoapi_root: "api"
     autoapi_add_toctree_entry: false
+    autoapi_options: 
+    - 'members'
+    - 'undoc-members'
+    mathjax_path: "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
 # launch_buttons:
 #   colab_url: "https://colab.research.google.com"
 # Add GitHub buttons to your book

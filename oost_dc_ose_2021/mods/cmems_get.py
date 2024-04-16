@@ -34,13 +34,13 @@ def duacs_l3(sat: str = "c2"):
     return f"cmems_obs-sl_glo_phy-ssh_my_{sat}-l3-duacs_PT1S"
 
 
-b = hydra_zen.make_custom_builds_fn(populate_full_signature=True)
+_b = hydra_zen.make_custom_builds_fn(populate_full_signature=True)
 
 run, cfg = aprl.part.register(
     copernicusmarine.get,
     base_args=dict(
-        dataset_id=b(duacs_l3),
-        regex=b(month_regex_from_date),
+        dataset_id=_b(duacs_l3),
+        regex=_b(month_regex_from_date),
         output_directory="${aprl-mkp:data/downloads/ref}",
         force_download=True,
         overwrite_output_data=True,

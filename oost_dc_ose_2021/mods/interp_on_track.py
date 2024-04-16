@@ -9,7 +9,7 @@ import ocn_tools._src.geoprocessing.gridding as ocngri
 import ocn_tools._src.geoprocessing.validation as ocnval
 import xarray as xr
 
-log = logging.getLogger(__name__)
+_log = logging.getLogger(__name__)
 
 
 def preprocess_map(ds, ssh_var="ssh"):
@@ -25,7 +25,7 @@ def preprocess_map(ds, ssh_var="ssh"):
 
     Returns: validated xarray.Dataset
     """
-    log.debug(f"Processing {ds}, using ssh_var {ssh_var}")
+    _log.debug(f"Processing {ds}, using ssh_var {ssh_var}")
     return (
         ds.pipe(ocnval.validate_latlon)
         .pipe(ocnval.validate_time)
@@ -40,11 +40,9 @@ def interp_on_track(
     Sample a map along an altimeter track
 
     The input data is read using:
-    ```
         xr.open_mfdataset(
             paths, preprocess=preprocess, combine="nested", concat_dim="time"
         )
-    ```
 
     Args:
         grid_paths (str | Path | Sequence): path(s) to netcdf file(s) containing the data to sample
@@ -55,40 +53,39 @@ def interp_on_track(
     """
     Path(output_path).parent.mkdir(parents=True, exist_ok=True)
 
-    log.info(f"Starting")
-    log.debug(f"Opening {grid_paths=}")
-    log.debug(f"Applying preprocessing {preprocess_grid}")
-    log.debug(f"{getattr(preprocess_grid, '__doc__', '')}")
+    _log.info(f"Starting")
+    _log.debug(f"Opening {grid_paths=}")
+    _log.debug(f"Applying preprocessing {preprocess_grid}")
+    _log.debug(f"{getattr(preprocess_grid, '__doc__', '')}")
     map_ds = xr.open_mfdataset(
         grid_paths, preprocess=preprocess_grid, combine="nested", concat_dim="time"
     )
 
-    log.debug(f"Opening {track_paths=}")
-    log.debug(f"Applying preprocessing {preprocess_track}")
-    log.debug(f"{getattr(preprocess_track, '__doc__', '')}")
+    _log.debug(f"Opening {track_paths=}")
+    _log.debug(f"Applying preprocessing {preprocess_track}")
+    _log.debug(f"{getattr(preprocess_track, '__doc__', '')}")
     track = xr.open_mfdataset(
         track_paths, preprocess=preprocess_track, combine="nested", concat_dim="time"
     )
 
-    log.debug(f"Sampling {map_ds.coords} along {track.coords}")
-    log.debug(f"Writing results to {output_path}")
+    _log.debug(f"Sampling {map_ds.coords} along {track.coords}")
+    _log.debug(f"Writing results to {output_path}")
     out_ds = ocngri.grid_to_coord_based(src_grid_ds=map_ds, tgt_coord_based_ds=track)
-    log.debug(
+    _log.debug(
         f"{out_ds.pipe(np.isfinite).sum()=}, {out_ds.pipe(np.isnan).sum()=} (Check map and track coordinates)"
     )
     out_ds.to_netcdf(output_path)
-    log.info(f"Done")
+    _log.info(f"Done")
 
 
-b = hydra_zen.make_custom_builds_fn(populate_full_signature=True)
-pb = hydra_zen.make_custom_builds_fn(zen_partial=True, populate_full_signature=True)
+_pb = hydra_zen.make_custom_builds_fn(zen_partial=True, populate_full_signature=True)
 run, cfg = aprl.part.register(
     interp_on_track,
     base_args=dict(
         grid_paths="???",
         track_paths="data/prepared/ref/default.nc",
         output_path="data/prepared/method_output/map_on_track.nc",
-        preprocess_grid=pb(preprocess_map, ssh_var="rec_ssh"),
+        preprocess_grid=_pb(preprocess_map, ssh_var="rec_ssh"),
         preprocess_track=None,
     ),
 )

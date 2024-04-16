@@ -10,7 +10,7 @@ import hydra_zen
 import xarray as xr
 from ocn_tools._src.metrics.stats import nrmse_ds
 
-log = logging.getLogger(__name__)
+_log = logging.getLogger(__name__)
 
 
 def mu(
@@ -20,9 +20,12 @@ def mu(
     preprocess_ref=None,
     preprocess_study=None,
 ):
-    """
-    Compute the normalized RMSE score $mu$ as:
-    $$ mu =  1 - \frac{RMS(ref - study)}{RMS(ref)} $$
+    r"""
+
+    Compute the normalized RMSE score:
+
+    .. math::
+        \mu =  1 - \frac{RMS(ref - study)}{RMS(ref)}
 
     Args:
         output_path (str): Path where to write the json with the score value
@@ -31,19 +34,19 @@ def mu(
         study_paths (str | Path | Sequence): path(s) to netcdf file(s) containing the analysis dataset
         ref_paths (str | Path | Sequence): path(s) to netcdf file(s) containing the reference dataset
     """
-    log.info("Starting")
+    _log.info("Starting")
     Path(output_path).parent.mkdir(parents=True, exist_ok=True)
 
-    log.debug(f"Opening {study_paths=}")
-    log.debug(f"Applying preprocessing {preprocess_study}")
-    log.debug(f"{getattr(preprocess_study, '__doc__', '')}")
+    _log.debug(f"Opening {study_paths=}")
+    _log.debug(f"Applying preprocessing {preprocess_study}")
+    _log.debug(f"{getattr(preprocess_study, '__doc__', '')}")
     study_da = xr.open_mfdataset(
         study_paths, preprocess=preprocess_study, combine="nested", concat_dim="time"
     )
 
-    log.debug(f"Opening {ref_paths=}")
-    log.debug(f"Applying preprocessing {preprocess_ref}")
-    log.debug(f"{getattr(preprocess_ref, '__doc__', '')}")
+    _log.debug(f"Opening {ref_paths=}")
+    _log.debug(f"Applying preprocessing {preprocess_ref}")
+    _log.debug(f"{getattr(preprocess_ref, '__doc__', '')}")
     ref_da = xr.open_mfdataset(
         ref_paths, preprocess=preprocess_ref, combine="nested", concat_dim="time"
     )
@@ -59,20 +62,20 @@ def mu(
 
     mu = eval_ds.pipe(partial_score_fn).item()
 
-    log.info(f"Mu score: {mu}")
-    log.debug(f"Writing to : {output_path}")
+    _log.info(f"Mu score: {mu}")
+    _log.debug(f"Writing to : {output_path}")
 
     with open(Path(output_path), "w") as f:
         json.dump({"$\mu$": mu}, f)
-    log.info("Done")
+    _log.info("Done")
 
 
-b = hydra_zen.make_custom_builds_fn()
+_b = hydra_zen.make_custom_builds_fn()
 run, cfg = aprl.part.register(
     mu,
     base_args=dict(
-        preprocess_ref=b(aprl.utils.kw2a, fn=operator.itemgetter, ssh_var="ssh"),
-        preprocess_study=b(aprl.utils.kw2a, fn=operator.itemgetter, ssh_var="rec_ssh"),
+        preprocess_ref=_b(aprl.utils.kw2a, fn=operator.itemgetter, ssh_var="ssh"),
+        preprocess_study=_b(aprl.utils.kw2a, fn=operator.itemgetter, ssh_var="rec_ssh"),
     ),
 )
 

@@ -1,16 +1,16 @@
 import glob
 import logging
-from functools import partial
 from pathlib import Path
 from typing import Callable, Sequence
 
-log = logging.getLogger(__name__)
 import aprl.part
 import aprl.utils
 import hydra_zen
 import ocn_tools._src.geoprocessing.validation as ocnval
 import pandas as pd
 import xarray as xr
+
+_log = logging.getLogger(__name__)
 
 
 def preprocess_track(
@@ -42,11 +42,12 @@ def preprocess_track(
 
     """
 
-    log.debug(
+    _log.debug(
         f"Processing {ds}, using ssh_var {(min_lon, max_lon, min_lat, max_lat, min_time, max_time)}"
     )
     ds = (
-        ds.load().rename(longitude="lon", latitude="lat")
+        ds.load()
+        .rename(longitude="lon", latitude="lat")
         .pipe(ocnval.validate_latlon)
         .pipe(ocnval.validate_time)
         .pipe(
@@ -64,7 +65,7 @@ def preprocess_track(
         .pipe(ocnval.validate_ssh)
         .sortby("time")[["ssh"]]
     )
-    log.debug(f"Returning {ds=}")
+    _log.debug(f"Returning {ds=}")
     return ds
 
 
@@ -84,35 +85,35 @@ def prepare_track(
         sort_paths (bool): whether to sort input_paths before concatenation
     """
     Path(output_path).parent.mkdir(parents=True, exist_ok=True)
-    log.info(f"Starting")
+    _log.info(f"Starting")
     if sort_paths:
-        log.debug(f"Sorting {input_paths=}")
+        _log.debug(f"Sorting {input_paths=}")
         input_paths = sorted(input_paths)
-    log.debug(f"Opening {input_paths=}")
-    log.debug(f"Applying preprocessing {preprocess}")
-    log.debug(f"{getattr(preprocess, '__doc__', '')}")
+    _log.debug(f"Opening {input_paths=}")
+    _log.debug(f"Applying preprocessing {preprocess}")
+    _log.debug(f"{getattr(preprocess, '__doc__', '')}")
     ds = xr.open_mfdataset(
         input_paths,
         preprocess=preprocess,
         combine="nested",
         concat_dim="time",
     )
-    log.debug(f"Writing to {output_path}")
+    _log.debug(f"Writing to {output_path}")
     ds.to_netcdf(output_path)
-    log.info("Done")
+    _log.info("Done")
 
 
-b = hydra_zen.make_custom_builds_fn(populate_full_signature=True)
-pb = hydra_zen.make_custom_builds_fn(zen_partial=True, populate_full_signature=True)
+_b = hydra_zen.make_custom_builds_fn(populate_full_signature=True)
+_pb = hydra_zen.make_custom_builds_fn(zen_partial=True, populate_full_signature=True)
 
 run, cfg = aprl.part.register(
     prepare_track,
     base_args=dict(
-        input_paths=b(
+        input_paths=_b(
             glob.iglob, pathname="data/downloads/ref/**/*.nc", recursive=True
         ),
         output_path="data/prepared/ref/default.nc",
-        preprocess=pb(
+        preprocess=_pb(
             preprocess_track,
             min_lon=-65,
             max_lon=-55,
