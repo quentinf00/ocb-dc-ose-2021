@@ -377,12 +377,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overall-presentation">Overall presentation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overall-presentation">Overall presentation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#related-projects">Related projects</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-concepts-tools-and-features">New concepts, Tools and Features:</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#features">Features:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-challenge-features">Data challenge features:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concepts">Concepts:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tools">Tools</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#related-projects">related projects</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-showcase">Feature Showcase</a></li>
@@ -401,31 +403,45 @@ document.write(`
 <h1>Ocean Observation Science Toolkit: SSH Data challenge Design<a class="headerlink" href="#ocean-observation-science-toolkit-ssh-data-challenge-design" title="Link to this heading">#</a></h1>
 <section id="overall-presentation">
 <h2>Overall presentation<a class="headerlink" href="#overall-presentation" title="Link to this heading">#</a></h2>
-<p>This book presents the repo <code class="docutils literal notranslate"><span class="pre">https://github.com/quentinf00/oost-demo-ssh-dc.git</span></code> which is an re-implementation of the <a class="reference external" href="https://github.com/ocean-data-challenges/2023a_SSH_mapping_OSE">2021a_SSH_mapping_OSE data-challenge</a>.
-This project introduces a series of tools and practices that aims at facilitating the development and application of ocean observation science.</p>
+<section id="related-projects">
+<h3>Related projects<a class="headerlink" href="#related-projects" title="Link to this heading">#</a></h3>
+<p>This project can be seen as an iteration over existing work.</p>
+<p>Firstly <strong><a class="reference external" href="https://ocean-data-challenges.github.io/">ocean-data-challenges</a></strong> which propose framed ocean observation tasks with input data and relevant metrics. Those data challenges provide a great catalyzer for academic collaboration on shared issues by facilitating the inter-comparison of methods.
+Then <strong><a class="reference external" href="https://jejjohnson.github.io/oceanbench/content/overview.html">oceanbench</a></strong> aimed at lowering the barrier of entry to ocean science by proposing utility tools for ocean data processing (<a class="reference external" href="https://github.com/jejjohnson/ocn-tools/">ocn-tools</a>, data access (<a class="reference external" href="https://github.com/quentinf00/oceanbench-data-registry">data-registry</a>), domain patching and stitching (<a class="reference external" href="https://github.com/jejjohnson/xrpatcher">xrpatcher</a>) and  an configuration registry to showcase the orchestration of those different tools <a class="reference external" href="https://github.com/jejjohnson/oceanbench">oceanbench</a></p>
+<p>Building on those project, we aim at laying the foundations for a collaborative and evolutive ecosystem that facilitate:</p>
+<ul class="simple">
+<li><p>Sharing experimental setups, data, methods, metrics and processing steps</p></li>
+<li><p>Reproducing data processing and results</p></li>
+<li><p>Extending and evolving experimental setups, data processing, methods</p></li>
+</ul>
+<p>This book presents the repo <code class="docutils literal notranslate"><span class="pre">https://github.com/quentinf00/oost-demo-ssh-dc.git</span></code> which is an re-implementation of the <a class="reference external" href="https://github.com/ocean-data-challenges/2023a_SSH_mapping_OSE">2021a_SSH_mapping_OSE data-challenge</a> aiming at showcasing this attempt</p>
+</section>
 </section>
 <section id="new-concepts-tools-and-features">
 <h2>New concepts, Tools and Features:<a class="headerlink" href="#new-concepts-tools-and-features" title="Link to this heading">#</a></h2>
-<section id="features">
-<h3>Features:<a class="headerlink" href="#features" title="Link to this heading">#</a></h3>
+<section id="data-challenge-features">
+<h3>Data challenge features:<a class="headerlink" href="#data-challenge-features" title="Link to this heading">#</a></h3>
+<p>This implementation offers the following improvement over the previous implementation:</p>
 <ul class="simple">
-<li><p>Data access made easier</p></li>
-<li><p>Guaranteed reproducibility</p></li>
-<li><p>Automatic leaderboard computation</p></li>
-<li><p>Easy extensibility of data  and metric computations to other use-cases</p></li>
+<li><p>Data access made easier (single command to download the prepared data)</p></li>
+<li><p>Reproducibility and constistence (of metrics and data prep)</p></li>
+<li><p>Automatic leaderboard computation (when adding or updating a method or updating the metrics)</p></li>
+<li><p>Resusability of processing steps (data, metrics) for other use-cases made easy</p></li>
 </ul>
 </section>
 <section id="concepts">
 <h3>Concepts:<a class="headerlink" href="#concepts" title="Link to this heading">#</a></h3>
+<p>Those new features are made possible through the use of the following concepts:</p>
 <ul class="simple">
 <li><p><strong>Versioned data</strong>: being able to store, access and compare different version of a dataset</p></li>
 <li><p><strong>Workflow management</strong>: orchestrating the tasks involved in processing the data and generating the results</p></li>
 <li><p><strong>Continuous integration</strong>: Automatically running tasks when changes are made</p></li>
-<li><p><strong>App packaging</strong>: Providing reusable and customizable interfaces to the software</p></li>
+<li><p><strong>Application packaging</strong>: Providing portable and customizable interfaces to the software</p></li>
 </ul>
 </section>
 <section id="tools">
 <h3>Tools<a class="headerlink" href="#tools" title="Link to this heading">#</a></h3>
+<p>In order to implement the previous concepts, the following tools and library</p>
 <ul class="simple">
 <li><p><strong><a class="reference external" href="https://hydra.cc/docs/intro/">hydra</a> and <a class="reference external" href="https://mit-ll-responsible-ai.github.io/hydra-zen/">hydra-zen</a></strong> provide:</p>
 <ul>
@@ -440,26 +456,9 @@ This project introduces a series of tools and practices that aims at facilitatin
 <li><p>workflow management</p></li>
 </ul>
 </li>
-<li><p><strong><a class="reference external" href="https://docs.github.com/en/actions">github action</a></strong></p>
+<li><p><strong><a class="reference external" href="https://docs.github.com/en/actions">github actions</a></strong></p>
 <ul>
 <li><p>continuous integration</p></li>
-</ul>
-</li>
-</ul>
-</section>
-<section id="related-projects">
-<h3>related projects<a class="headerlink" href="#related-projects" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p><strong><a class="reference external" href="https://ocean-data-challenges.github.io/">ocean-data-challenges</a></strong> provide:</p>
-<ul>
-<li><p>well thought evaluation use cases</p></li>
-<li><p>input data download instructions</p></li>
-<li><p>metrics code and notebooks to evaluate methods</p></li>
-</ul>
-</li>
-<li><p><strong><a class="reference external" href="https://jejjohnson.github.io/oceanbench/content/overview.html">oceanbench</a></strong> provide:</p>
-<ul>
-<li><p>suite of tools and configuration for developing ml application</p></li>
 </ul>
 </li>
 </ul>
@@ -543,12 +542,14 @@ This project introduces a series of tools and practices that aims at facilitatin
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overall-presentation">Overall presentation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overall-presentation">Overall presentation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#related-projects">Related projects</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-concepts-tools-and-features">New concepts, Tools and Features:</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#features">Features:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-challenge-features">Data challenge features:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concepts">Concepts:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tools">Tools</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#related-projects">related projects</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-showcase">Feature Showcase</a></li>
