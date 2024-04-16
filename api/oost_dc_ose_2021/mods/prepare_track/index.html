@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../../../_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css?v=eafc0fe6" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
@@ -61,7 +61,6 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'api/oost_dc_ose_2021/mods/prepare_track/index';</script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="oost_dc_ose_2021.pipelines" href="../../pipelines/index.html" />
     <link rel="prev" title="oost_dc_ose_2021.mods.mu" href="../mu/index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -177,11 +176,28 @@
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Installation</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../../../installation.html">Setup</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">A hands-on example</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../../../oost_dc_ose_2021_data.html">Versioned data access and reproduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../oost_dc_ose_2021_oi.html">Datachallenge participation: Metrics computation and automated leaderboard update</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../oost_dc_ose_2021_global.html">Reusing the pipelines for a global usecase</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../../input_data_pipeline.html"><code class="docutils literal notranslate"><span class="pre">oost-dc_ose_2021-input_data</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../metrics_pipeline.html"><code class="docutils literal notranslate"><span class="pre">oost-dc_ose_2021-metrics</span></code></a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">oost_dc_ose_2021.mods</span></code></a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../cmems_get/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">oost_dc_ose_2021.mods.cmems_get</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../interp_on_track/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">oost_dc_ose_2021.mods.interp_on_track</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../lambdax/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">oost_dc_ose_2021.mods.lambdax</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../mu/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">oost_dc_ose_2021.mods.mu</span></code></a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">oost_dc_ose_2021.mods.prepare_track</span></code></a></li>
+</ul>
+</li>
 </ul>
 
     </div>
@@ -378,15 +394,8 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attributes">Attributes</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oost_dc_ose_2021.mods.prepare_track.log"><code class="docutils literal notranslate"><span class="pre">log</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oost_dc_ose_2021.mods.prepare_track.preprocess_track"><code class="docutils literal notranslate"><span class="pre">preprocess_track()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oost_dc_ose_2021.mods.prepare_track.prepare_track"><code class="docutils literal notranslate"><span class="pre">prepare_track()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oost_dc_ose_2021.mods.prepare_track.b"><code class="docutils literal notranslate"><span class="pre">b</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oost_dc_ose_2021.mods.prepare_track.pb"><code class="docutils literal notranslate"><span class="pre">pb</span></code></a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oost_dc_ose_2021.mods.prepare_track.preprocess_track"><code class="docutils literal notranslate"><span class="pre">preprocess_track()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oost_dc_ose_2021.mods.prepare_track.prepare_track"><code class="docutils literal notranslate"><span class="pre">prepare_track()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -404,39 +413,6 @@ document.write(`
 <span id="oost-dc-ose-2021-mods-prepare-track"></span><h1><a class="reference internal" href="#module-oost_dc_ose_2021.mods.prepare_track" title="oost_dc_ose_2021.mods.prepare_track"><code class="xref py py-mod docutils literal notranslate"><span class="pre">oost_dc_ose_2021.mods.prepare_track</span></code></a><a class="headerlink" href="#module-oost_dc_ose_2021.mods.prepare_track" title="Link to this heading">#</a></h1>
 <section id="module-contents">
 <h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading">#</a></h2>
-<section id="functions">
-<h3>Functions<a class="headerlink" href="#functions" title="Link to this heading">#</a></h3>
-<table class="autosummary longtable table autosummary">
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#oost_dc_ose_2021.mods.prepare_track.preprocess_track" title="oost_dc_ose_2021.mods.prepare_track.preprocess_track"><code class="xref py py-obj docutils literal notranslate"><span class="pre">preprocess_track</span></code></a>(ds[, min_lon, max_lon, min_lat, ...])</p></td>
-<td><p>Check presence of time, lat, lon coordinates</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#oost_dc_ose_2021.mods.prepare_track.prepare_track" title="oost_dc_ose_2021.mods.prepare_track.prepare_track"><code class="xref py py-obj docutils literal notranslate"><span class="pre">prepare_track</span></code></a>(input_paths, output_path, preprocess[, ...])</p></td>
-<td><p>Open multifile dataset to be contatenated by time apply processing and write output</p></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="attributes">
-<h3>Attributes<a class="headerlink" href="#attributes" title="Link to this heading">#</a></h3>
-<table class="autosummary longtable table autosummary">
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#oost_dc_ose_2021.mods.prepare_track.log" title="oost_dc_ose_2021.mods.prepare_track.log"><code class="xref py py-obj docutils literal notranslate"><span class="pre">log</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#oost_dc_ose_2021.mods.prepare_track.b" title="oost_dc_ose_2021.mods.prepare_track.b"><code class="xref py py-obj docutils literal notranslate"><span class="pre">b</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#oost_dc_ose_2021.mods.prepare_track.pb" title="oost_dc_ose_2021.mods.prepare_track.pb"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pb</span></code></a></p></td>
-<td><p></p></td>
-</tr>
-</tbody>
-</table>
-<dl class="py data">
-<dt class="sig sig-object py" id="oost_dc_ose_2021.mods.prepare_track.log">
-<span class="sig-prename descclassname"><span class="pre">oost_dc_ose_2021.mods.prepare_track.</span></span><span class="sig-name descname"><span class="pre">log</span></span><a class="headerlink" href="#oost_dc_ose_2021.mods.prepare_track.log" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
 <dl class="py function">
 <dt class="sig sig-object py" id="oost_dc_ose_2021.mods.prepare_track.preprocess_track">
 <span class="sig-prename descclassname"><span class="pre">oost_dc_ose_2021.mods.prepare_track.</span></span><span class="sig-name descname"><span class="pre">preprocess_track</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ds</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">xarray.Dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_lon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">-66</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_lon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">-54</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_lat</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">32</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_lat</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">44</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'2016-12-01'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_time</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'2018-02-01'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#oost_dc_ose_2021.mods.prepare_track.preprocess_track" title="Link to this definition">#</a></dt>
@@ -445,14 +421,17 @@ Set units to longitude, latitude, ssh variable
 Set range of longitude between -180 and 180
 Selecting SSH variable
 Filter values between min_max values for lat, lon and time</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>ds: Dataset
-min_lon: min longitude value
-max_lon: max longitude value
-min_lat: min latitude value
-max_lat: max latitude value
-min_time: min time value
-max_time: max time value</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ds</strong> – Dataset</p></li>
+<li><p><strong>min_lon</strong> – min longitude value</p></li>
+<li><p><strong>max_lon</strong> – max longitude value</p></li>
+<li><p><strong>min_lat</strong> – min latitude value</p></li>
+<li><p><strong>max_lat</strong> – max latitude value</p></li>
+<li><p><strong>min_time</strong> – min time value</p></li>
+<li><p><strong>max_time</strong> – max time value</p></li>
+</ul>
 </dd>
 </dl>
 <p>Returns: xarray.Dataset</p>
@@ -462,26 +441,18 @@ max_time: max time value</p>
 <dt class="sig sig-object py" id="oost_dc_ose_2021.mods.prepare_track.prepare_track">
 <span class="sig-prename descclassname"><span class="pre">oost_dc_ose_2021.mods.prepare_track.</span></span><span class="sig-name descname"><span class="pre">prepare_track</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_paths</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">preprocess</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="p"><span class="pre">[</span></span><span class="p"><span class="pre">[</span></span><span class="pre">xarray.Dataset</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">xarray.Dataset</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sort_paths</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#oost_dc_ose_2021.mods.prepare_track.prepare_track" title="Link to this definition">#</a></dt>
 <dd><p>Open multifile dataset to be contatenated by time apply processing and write output</p>
-<dl class="simple">
-<dt>Args:</dt><dd><p>input_paths (str | Path | Sequence): path(s) to input netcdf file(s)
-output_path (str): path where to write the output
-preprocess (callable): function to apply to each netcdf
-sort_paths (bool): whether to sort input_paths before concatenation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input_paths</strong> (<em>str</em><em> | </em><em>Path</em><em> | </em><em>Sequence</em>) – path(s) to input netcdf file(s)</p></li>
+<li><p><strong>output_path</strong> (<em>str</em>) – path where to write the output</p></li>
+<li><p><strong>preprocess</strong> (<em>callable</em>) – function to apply to each netcdf</p></li>
+<li><p><strong>sort_paths</strong> (<em>bool</em>) – whether to sort input_paths before concatenation</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
 
-<dl class="py data">
-<dt class="sig sig-object py" id="oost_dc_ose_2021.mods.prepare_track.b">
-<span class="sig-prename descclassname"><span class="pre">oost_dc_ose_2021.mods.prepare_track.</span></span><span class="sig-name descname"><span class="pre">b</span></span><a class="headerlink" href="#oost_dc_ose_2021.mods.prepare_track.b" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-<dl class="py data">
-<dt class="sig sig-object py" id="oost_dc_ose_2021.mods.prepare_track.pb">
-<span class="sig-prename descclassname"><span class="pre">oost_dc_ose_2021.mods.prepare_track.</span></span><span class="sig-name descname"><span class="pre">pb</span></span><a class="headerlink" href="#oost_dc_ose_2021.mods.prepare_track.pb" title="Link to this definition">#</a></dt>
-<dd></dd></dl>
-
-</section>
 </section>
 </section>
 
@@ -524,15 +495,6 @@ sort_paths (bool): whether to sort input_paths before concatenation</p>
         <p class="prev-next-title"><code class="xref py py-mod docutils literal notranslate"><span class="pre">oost_dc_ose_2021.mods.mu</span></code></p>
       </div>
     </a>
-    <a class="right-next"
-       href="../../pipelines/index.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><code class="xref py py-mod docutils literal notranslate"><span class="pre">oost_dc_ose_2021.pipelines</span></code></p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -550,15 +512,8 @@ sort_paths (bool): whether to sort input_paths before concatenation</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#module-contents">Module Contents</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions">Functions</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attributes">Attributes</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oost_dc_ose_2021.mods.prepare_track.log"><code class="docutils literal notranslate"><span class="pre">log</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oost_dc_ose_2021.mods.prepare_track.preprocess_track"><code class="docutils literal notranslate"><span class="pre">preprocess_track()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oost_dc_ose_2021.mods.prepare_track.prepare_track"><code class="docutils literal notranslate"><span class="pre">prepare_track()</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oost_dc_ose_2021.mods.prepare_track.b"><code class="docutils literal notranslate"><span class="pre">b</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#oost_dc_ose_2021.mods.prepare_track.pb"><code class="docutils literal notranslate"><span class="pre">pb</span></code></a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oost_dc_ose_2021.mods.prepare_track.preprocess_track"><code class="docutils literal notranslate"><span class="pre">preprocess_track()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oost_dc_ose_2021.mods.prepare_track.prepare_track"><code class="docutils literal notranslate"><span class="pre">prepare_track()</span></code></a></li>
 </ul>
 </li>
 </ul>

@@ -7,31 +7,6 @@
 Module Contents
 ---------------
 
-
-Functions
-~~~~~~~~~
-
-.. autoapisummary::
-
-   oost_dc_ose_2021.mods.interp_on_track.preprocess_map
-   oost_dc_ose_2021.mods.interp_on_track.interp_on_track
-
-
-
-Attributes
-~~~~~~~~~~
-
-.. autoapisummary::
-
-   oost_dc_ose_2021.mods.interp_on_track.log
-   oost_dc_ose_2021.mods.interp_on_track.b
-   oost_dc_ose_2021.mods.interp_on_track.pb
-
-
-.. py:data:: log
-
-   
-
 .. py:function:: preprocess_map(ds, ssh_var='ssh')
 
    Check presence of time, lat, lon coordinates
@@ -39,9 +14,10 @@ Attributes
    Set range of longitude between -180 and 180
    Select ssh variable
 
-   Args:
-       ds (xarray.Dataset): input dataset
-       ssh_var (str): Sea surface height variable
+   :param ds: input dataset
+   :type ds: xarray.Dataset
+   :param ssh_var: Sea surface height variable
+   :type ssh_var: str
 
    Returns: validated xarray.Dataset
 
@@ -51,25 +27,19 @@ Attributes
    Sample a map along an altimeter track
 
    The input data is read using:
-   ```
        xr.open_mfdataset(
            paths, preprocess=preprocess, combine="nested", concat_dim="time"
        )
-   ```
 
-   Args:
-       grid_paths (str | Path | Sequence): path(s) to netcdf file(s) containing the data to sample
-       track_paths (str | Path | Sequence): path(s) to netcdf file(s) containing alongtrack data with a time dimension
-       output_path (str): path where to write the output
-       preprocess_grid (callable): function to apply to each grid netcdf
-       preprocess_track (callable): function to apply to each grid netcdf
+   :param grid_paths: path(s) to netcdf file(s) containing the data to sample
+   :type grid_paths: str | Path | Sequence
+   :param track_paths: path(s) to netcdf file(s) containing alongtrack data with a time dimension
+   :type track_paths: str | Path | Sequence
+   :param output_path: path where to write the output
+   :type output_path: str
+   :param preprocess_grid: function to apply to each grid netcdf
+   :type preprocess_grid: callable
+   :param preprocess_track: function to apply to each grid netcdf
+   :type preprocess_track: callable
 
-
-.. py:data:: b
-
-   
-
-.. py:data:: pb
-
-   
 

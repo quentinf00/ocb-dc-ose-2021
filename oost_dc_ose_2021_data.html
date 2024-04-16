@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=eafc0fe6" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
@@ -177,11 +177,28 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Installation</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Setup</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">A hands-on example</span></p>
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Versioned data access and reproduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="oost_dc_ose_2021_oi.html">Datachallenge participation: Metrics computation and automated leaderboard update</a></li>
 <li class="toctree-l1"><a class="reference internal" href="oost_dc_ose_2021_global.html">Reusing the pipelines for a global usecase</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="input_data_pipeline.html"><code class="docutils literal notranslate"><span class="pre">oost-dc_ose_2021-input_data</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="metrics_pipeline.html"><code class="docutils literal notranslate"><span class="pre">oost-dc_ose_2021-metrics</span></code></a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="api/oost_dc_ose_2021/mods/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">oost_dc_ose_2021.mods</span></code></a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/oost_dc_ose_2021/mods/cmems_get/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">oost_dc_ose_2021.mods.cmems_get</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/oost_dc_ose_2021/mods/interp_on_track/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">oost_dc_ose_2021.mods.interp_on_track</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/oost_dc_ose_2021/mods/lambdax/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">oost_dc_ose_2021.mods.lambdax</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/oost_dc_ose_2021/mods/mu/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">oost_dc_ose_2021.mods.mu</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/oost_dc_ose_2021/mods/prepare_track/index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">oost_dc_ose_2021.mods.prepare_track</span></code></a></li>
+</ul>
+</li>
 </ul>
 
     </div>
@@ -390,7 +407,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-prepared-input-data">Downloading prepared input data</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-input-data">Visualize input data</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-generated-data-vs-downloaded">Checking generated data VS downloaded</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more-on-pipeline-usage-help-doc">More on pipeline usage (help, doc, …)</a></li>
 </ul>
 </li>
 </ul>
@@ -446,43 +462,45 @@ max_lat: 44.0
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-15 15:43:54,539][aprl.appareil][INFO] - Starting
-[2024-04-15 15:43:54,539][aprl.appareil][INFO] - Running part _01_dl_track
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-16 14:56:36,754][aprl.appareil][INFO] - Starting
+[2024-04-16 14:56:36,754][aprl.appareil][INFO] - Running part _01_dl_track
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO - 2024-04-15T15:43:55Z - Dataset version was not specified, the latest one was selected: &quot;202112&quot;
-[2024-04-15 15:43:55,025][copernicus_marine_root_logger][INFO] - Dataset version was not specified, the latest one was selected: &quot;202112&quot;
-INFO - 2024-04-15T15:43:55Z - Dataset part was not specified, the first one was selected: &quot;default&quot;
-[2024-04-15 15:43:55,025][copernicus_marine_root_logger][INFO] - Dataset part was not specified, the first one was selected: &quot;default&quot;
-INFO - 2024-04-15T15:43:55Z - Service was not specified, the default one was selected: &quot;original-files&quot;
-[2024-04-15 15:43:55,025][copernicus_marine_root_logger][INFO] - Service was not specified, the default one was selected: &quot;original-files&quot;
-INFO - 2024-04-15T15:43:55Z - Downloading using service original-files...
-[2024-04-15 15:43:55,025][copernicus_marine_root_logger][INFO] - Downloading using service original-files...
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>INFO - 2024-04-16T14:56:37Z - Dataset version was not specified, the latest one was selected: &quot;202112&quot;
+[2024-04-16 14:56:37,207][copernicus_marine_root_logger][INFO] - Dataset version was not specified, the latest one was selected: &quot;202112&quot;
+INFO - 2024-04-16T14:56:37Z - Dataset part was not specified, the first one was selected: &quot;default&quot;
+[2024-04-16 14:56:37,207][copernicus_marine_root_logger][INFO] - Dataset part was not specified, the first one was selected: &quot;default&quot;
+INFO - 2024-04-16T14:56:37Z - Service was not specified, the default one was selected: &quot;original-files&quot;
+[2024-04-16 14:56:37,207][copernicus_marine_root_logger][INFO] - Service was not specified, the default one was selected: &quot;original-files&quot;
+INFO - 2024-04-16T14:56:37Z - Downloading using service original-files...
+[2024-04-16 14:56:37,207][copernicus_marine_root_logger][INFO] - Downloading using service original-files...
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|                                                    | 0/66 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  2%|▋                                           | 1/66 [00:16&lt;17:23, 16.05s/it]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  2%|▋                                           | 1/66 [00:13&lt;14:37, 13.49s/it]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  3%|█▎                                          | 2/66 [00:16&lt;07:14,  6.80s/it]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  3%|█▎                                          | 2/66 [00:15&lt;06:58,  6.53s/it]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 64%|███████████████████████████▎               | 42/66 [00:16&lt;00:04,  4.99it/s]
-100%|███████████████████████████████████████████| 66/66 [00:16&lt;00:00,  3.99it/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  5%|██                                          | 3/66 [00:15&lt;03:51,  3.68s/it]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-15 15:44:11,960][aprl.appareil][INFO] - part _01_dl_track done
-[2024-04-15 15:44:11,960][aprl.appareil][INFO] - Running part _02_prepare_track
-[2024-04-15 15:44:11,960][oost_dc_ose_2021.mods.prepare_track][INFO] - Starting
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  8%|███▎                                        | 5/66 [00:15&lt;01:40,  1.64s/it]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-15 15:44:16,142][oost_dc_ose_2021.mods.prepare_track][INFO] - Done
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 27%|███████████▋                               | 18/66 [00:15&lt;00:13,  3.56it/s]
+100%|███████████████████████████████████████████| 66/66 [00:15&lt;00:00,  4.15it/s]
+[2024-04-16 14:56:53,544][aprl.appareil][INFO] - part _01_dl_track done
+[2024-04-16 14:56:53,544][aprl.appareil][INFO] - Running part _02_prepare_track
+[2024-04-16 14:56:53,544][oost_dc_ose_2021.mods.prepare_track][INFO] - Starting
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-15 15:44:16,183][aprl.appareil][INFO] - part _02_prepare_track done
-[2024-04-15 15:44:16,183][aprl.appareil][INFO] - Done
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-16 14:56:57,585][oost_dc_ose_2021.mods.prepare_track][INFO] - Done
+[2024-04-16 14:56:57,612][aprl.appareil][INFO] - part _02_prepare_track done
+[2024-04-16 14:56:57,612][aprl.appareil][INFO] - Done
 
 </pre></div>
 </div>
@@ -881,10 +899,10 @@ Attributes: (12/44)
     time_coverage_end:               2017-07-11T23:30:27Z
     time_coverage_resolution:        P1S
     time_coverage_start:             2017-07-11T11:11:25Z
-    title:                           DT OSTM/Jason-2 Long Repeat Orbit Global...</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-0c3a0d1a-c43c-4d5b-8060-3e80ae9d8eaa' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-0c3a0d1a-c43c-4d5b-8060-3e80ae9d8eaa' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>time</span>: 14060</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-ea3aa10a-8ed0-4acd-9627-730e329f20f1' class='xr-section-summary-in' type='checkbox'  checked><label for='section-ea3aa10a-8ed0-4acd-9627-730e329f20f1' class='xr-section-summary' >Coordinates: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2017-07-11T14:55:44.772069888 .....</div><input id='attrs-c4520778-3ebf-4f74-b768-62b949bd689f' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-c4520778-3ebf-4f74-b768-62b949bd689f' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-21c32d25-96a5-46be-bde1-84f56317db1f' class='xr-var-data-in' type='checkbox'><label for='data-21c32d25-96a5-46be-bde1-84f56317db1f' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;2017-07-11T14:55:44.772069888&#x27;, &#x27;2017-07-11T14:55:45.769939968&#x27;,
+    title:                           DT OSTM/Jason-2 Long Repeat Orbit Global...</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-237b9bf7-0976-4be6-b249-a2033e7d63f5' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-237b9bf7-0976-4be6-b249-a2033e7d63f5' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>time</span>: 14060</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-ed5ee2a3-0c90-4c35-a246-391fb0577517' class='xr-section-summary-in' type='checkbox'  checked><label for='section-ed5ee2a3-0c90-4c35-a246-391fb0577517' class='xr-section-summary' >Coordinates: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2017-07-11T14:55:44.772069888 .....</div><input id='attrs-a08b9ece-3a90-4059-a469-04f0ad63ecfc' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-a08b9ece-3a90-4059-a469-04f0ad63ecfc' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-547a4983-5e79-462f-a04e-9261a9dca7a8' class='xr-var-data-in' type='checkbox'><label for='data-547a4983-5e79-462f-a04e-9261a9dca7a8' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;2017-07-11T14:55:44.772069888&#x27;, &#x27;2017-07-11T14:55:45.769939968&#x27;,
        &#x27;2017-07-11T14:55:46.767809792&#x27;, ..., &#x27;2017-09-14T02:10:26.254863104&#x27;,
        &#x27;2017-09-14T02:10:27.252733184&#x27;, &#x27;2017-09-14T02:10:28.250603008&#x27;],
-      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lon</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(14060,), meta=np.ndarray&gt;</div><input id='attrs-5fb41e81-7cb1-4aa2-a352-709d459ce7ce' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-5fb41e81-7cb1-4aa2-a352-709d459ce7ce' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6b3f7981-04d1-4dd1-86d8-f51f43faafa8' class='xr-var-data-in' type='checkbox'><label for='data-6b3f7981-04d1-4dd1-86d8-f51f43faafa8' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>degrees_east</dd><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>long_name :</span></dt><dd>Longitude of measurement</dd></dl></div><div class='xr-var-data'><table>
+      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lon</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(14060,), meta=np.ndarray&gt;</div><input id='attrs-a4650e08-366c-432b-8253-30c53c96a42e' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-a4650e08-366c-432b-8253-30c53c96a42e' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-c4c55fc3-a80d-4048-9215-2222bbd447d4' class='xr-var-data-in' type='checkbox'><label for='data-c4c55fc3-a80d-4048-9215-2222bbd447d4' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>degrees_east</dd><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>long_name :</span></dt><dd>Longitude of measurement</dd></dl></div><div class='xr-var-data'><table>
     <tr>
         <td>
             <table style="border-collapse: collapse;">
@@ -939,7 +957,7 @@ Attributes: (12/44)
 </svg>
         </td>
     </tr>
-</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lat</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(14060,), meta=np.ndarray&gt;</div><input id='attrs-474ca1eb-0bc0-4a8e-a1d9-4cb730c3e13c' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-474ca1eb-0bc0-4a8e-a1d9-4cb730c3e13c' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-264c41ac-976a-494b-9f7f-838d108ad512' class='xr-var-data-in' type='checkbox'><label for='data-264c41ac-976a-494b-9f7f-838d108ad512' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>degrees_north</dd><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>long_name :</span></dt><dd>Latitude of measurement</dd></dl></div><div class='xr-var-data'><table>
+</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lat</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(14060,), meta=np.ndarray&gt;</div><input id='attrs-7c0e8416-3cef-46c0-9b4d-c670176ac912' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-7c0e8416-3cef-46c0-9b4d-c670176ac912' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-0bb6958a-6a48-4661-bcc7-caabbc20b7d9' class='xr-var-data-in' type='checkbox'><label for='data-0bb6958a-6a48-4661-bcc7-caabbc20b7d9' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>degrees_north</dd><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>long_name :</span></dt><dd>Latitude of measurement</dd></dl></div><div class='xr-var-data'><table>
     <tr>
         <td>
             <table style="border-collapse: collapse;">
@@ -994,7 +1012,7 @@ Attributes: (12/44)
 </svg>
         </td>
     </tr>
-</table></div></li></ul></div></li><li class='xr-section-item'><input id='section-9df84356-1f47-4ae5-84ab-d1df779947d8' class='xr-section-summary-in' type='checkbox'  checked><label for='section-9df84356-1f47-4ae5-84ab-d1df779947d8' class='xr-section-summary' >Data variables: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>ssh</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(14060,), meta=np.ndarray&gt;</div><input id='attrs-f0ff54d5-af8d-42e5-ba10-32efdea33bf3' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-f0ff54d5-af8d-42e5-ba10-32efdea33bf3' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-304dfb56-b369-44aa-8d87-1d8657fd5126' class='xr-var-data-in' type='checkbox'><label for='data-304dfb56-b369-44aa-8d87-1d8657fd5126' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>m</dd><dt><span>standard_name :</span></dt><dd>sea_surface_height</dd><dt><span>long_name :</span></dt><dd>Sea Surface Height</dd></dl></div><div class='xr-var-data'><table>
+</table></div></li></ul></div></li><li class='xr-section-item'><input id='section-de8e5e68-52f6-4c79-8ce4-8c1dd77a0826' class='xr-section-summary-in' type='checkbox'  checked><label for='section-de8e5e68-52f6-4c79-8ce4-8c1dd77a0826' class='xr-section-summary' >Data variables: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>ssh</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(14060,), meta=np.ndarray&gt;</div><input id='attrs-0fdb9243-ca61-4b11-91bf-907a24cb6fe9' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-0fdb9243-ca61-4b11-91bf-907a24cb6fe9' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-127086f8-00eb-4527-8798-75507c2db430' class='xr-var-data-in' type='checkbox'><label for='data-127086f8-00eb-4527-8798-75507c2db430' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>m</dd><dt><span>standard_name :</span></dt><dd>sea_surface_height</dd><dt><span>long_name :</span></dt><dd>Sea Surface Height</dd></dl></div><div class='xr-var-data'><table>
     <tr>
         <td>
             <table style="border-collapse: collapse;">
@@ -1049,7 +1067,7 @@ Attributes: (12/44)
 </svg>
         </td>
     </tr>
-</table></div></li></ul></div></li><li class='xr-section-item'><input id='section-6b0c8b99-9138-497c-aaa3-068db98d7f1a' class='xr-section-summary-in' type='checkbox'  ><label for='section-6b0c8b99-9138-497c-aaa3-068db98d7f1a' class='xr-section-summary' >Indexes: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-index-name'><div>time</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-d2c582ec-a504-461b-8c31-6c47c7985051' class='xr-index-data-in' type='checkbox'/><label for='index-d2c582ec-a504-461b-8c31-6c47c7985051' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(DatetimeIndex([&#x27;2017-07-11 14:55:44.772069888&#x27;,
+</table></div></li></ul></div></li><li class='xr-section-item'><input id='section-dd5dc070-c91e-4fd8-a151-0729c073e8c0' class='xr-section-summary-in' type='checkbox'  ><label for='section-dd5dc070-c91e-4fd8-a151-0729c073e8c0' class='xr-section-summary' >Indexes: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-index-name'><div>time</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-14964804-9176-4ac7-bdb0-ae701192e715' class='xr-index-data-in' type='checkbox'/><label for='index-14964804-9176-4ac7-bdb0-ae701192e715' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(DatetimeIndex([&#x27;2017-07-11 14:55:44.772069888&#x27;,
                &#x27;2017-07-11 14:55:45.769939968&#x27;,
                &#x27;2017-07-11 14:55:46.767809792&#x27;,
                &#x27;2017-07-11 14:55:47.765679872&#x27;,
@@ -1070,7 +1088,7 @@ Attributes: (12/44)
                &#x27;2017-09-14 02:10:26.254863104&#x27;,
                &#x27;2017-09-14 02:10:27.252733184&#x27;,
                &#x27;2017-09-14 02:10:28.250603008&#x27;],
-              dtype=&#x27;datetime64[ns]&#x27;, name=&#x27;time&#x27;, length=14060, freq=None))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-f2c5fabd-8fc5-4eb5-a0c7-2f3cd6d6756e' class='xr-section-summary-in' type='checkbox'  ><label for='section-f2c5fabd-8fc5-4eb5-a0c7-2f3cd6d6756e' class='xr-section-summary' >Attributes: <span>(44)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>Conventions :</span></dt><dd>CF-1.6</dd><dt><span>Metadata_Conventions :</span></dt><dd>Unidata Dataset Discovery v1.0</dd><dt><span>cdm_data_type :</span></dt><dd>Swath</dd><dt><span>comment :</span></dt><dd>Sea surface height measured by altimeters referenced to the [1993, 2012] period; with additional corrections; the proposed sla is already corrected for dac, ocean_tide and lwe; [uncorrected sla]=[sla from product]+[dac]+[ocean_tide]-[lwe]</dd><dt><span>contact :</span></dt><dd>servicedesk.cmems@mercator-ocean.eu</dd><dt><span>creator_email :</span></dt><dd>servicedesk.cmems@mercator-ocean.eu</dd><dt><span>creator_name :</span></dt><dd>CMEMS - Sea Level Thematic Assembly Center</dd><dt><span>creator_url :</span></dt><dd>http://marine.copernicus.eu</dd><dt><span>date_created :</span></dt><dd>2021-09-09T05:40:03Z</dd><dt><span>date_issued :</span></dt><dd>2021-09-09T05:40:03Z</dd><dt><span>date_modified :</span></dt><dd>2021-09-09T05:40:03Z</dd><dt><span>geospatial_lat_max :</span></dt><dd>66.147938</dd><dt><span>geospatial_lat_min :</span></dt><dd>-66.1426</dd><dt><span>geospatial_lat_resolution :</span></dt><dd>0.02496149999999986</dd><dt><span>geospatial_lat_units :</span></dt><dd>degrees_north</dd><dt><span>geospatial_lon_max :</span></dt><dd>359.98487</dd><dt><span>geospatial_lon_min :</span></dt><dd>0.000499</dd><dt><span>geospatial_lon_resolution :</span></dt><dd>0.02909299999999604</dd><dt><span>geospatial_lon_units :</span></dt><dd>degrees_east</dd><dt><span>geospatial_vertical_max :</span></dt><dd>0.0</dd><dt><span>geospatial_vertical_min :</span></dt><dd>0.0</dd><dt><span>geospatial_vertical_positive :</span></dt><dd>down</dd><dt><span>geospatial_vertical_resolution :</span></dt><dd>point</dd><dt><span>geospatial_vertical_units :</span></dt><dd>m</dd><dt><span>history :</span></dt><dd>2021-09-09T05:40:03Z: Creation</dd><dt><span>institution :</span></dt><dd>CLS, CNES</dd><dt><span>keywords :</span></dt><dd>Oceans &gt; Ocean Topography &gt; Sea Surface Height</dd><dt><span>keywords_vocabulary :</span></dt><dd>NetCDF COARDS Climate and Forecast Standard Names</dd><dt><span>license :</span></dt><dd>http://marine.copernicus.eu/web/27-service-commitments-and-licence.php</dd><dt><span>platform :</span></dt><dd>OSTM/Jason-2 Long Repeat Orbit</dd><dt><span>processing_level :</span></dt><dd>L3</dd><dt><span>product_version :</span></dt><dd>vDec2021</dd><dt><span>project :</span></dt><dd>COPERNICUS MARINE ENVIRONMENT MONITORING SERVICE (CMEMS)</dd><dt><span>references :</span></dt><dd>http://marine.copernicus.eu</dd><dt><span>software_version :</span></dt><dd>7.0_DUACS_DT2021_baseline</dd><dt><span>source :</span></dt><dd>OSTM/Jason-2 Long Repeat Orbit measurements</dd><dt><span>ssalto_duacs_comment :</span></dt><dd>The reference mission used for the altimeter inter-calibration processing is Topex/Poseidon between 1993-01-01 and 2002-04-23, Jason-1 between 2002-04-24 and 2008-10-18, OSTM/Jason-2 between 2008-10-19 and 2016-06-25, Jason-3 since 2016-06-25.</dd><dt><span>standard_name_vocabulary :</span></dt><dd>NetCDF Climate and Forecast (CF) Metadata Convention Standard Name Table v37</dd><dt><span>summary :</span></dt><dd>SSALTO/DUACS Delayed-Time Level-3 sea surface height measured by OSTM/Jason-2 Long Repeat Orbit altimetry observations over Global Ocean.</dd><dt><span>time_coverage_duration :</span></dt><dd>P12H19M2.66746S</dd><dt><span>time_coverage_end :</span></dt><dd>2017-07-11T23:30:27Z</dd><dt><span>time_coverage_resolution :</span></dt><dd>P1S</dd><dt><span>time_coverage_start :</span></dt><dd>2017-07-11T11:11:25Z</dd><dt><span>title :</span></dt><dd>DT OSTM/Jason-2 Long Repeat Orbit Global Ocean Along track SSALTO/DUACS Sea Surface Height L3 product</dd></dl></div></li></ul></div></div></div></div>
+              dtype=&#x27;datetime64[ns]&#x27;, name=&#x27;time&#x27;, length=14060, freq=None))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-e6250116-20d6-4cab-8a16-124139331ad2' class='xr-section-summary-in' type='checkbox'  ><label for='section-e6250116-20d6-4cab-8a16-124139331ad2' class='xr-section-summary' >Attributes: <span>(44)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>Conventions :</span></dt><dd>CF-1.6</dd><dt><span>Metadata_Conventions :</span></dt><dd>Unidata Dataset Discovery v1.0</dd><dt><span>cdm_data_type :</span></dt><dd>Swath</dd><dt><span>comment :</span></dt><dd>Sea surface height measured by altimeters referenced to the [1993, 2012] period; with additional corrections; the proposed sla is already corrected for dac, ocean_tide and lwe; [uncorrected sla]=[sla from product]+[dac]+[ocean_tide]-[lwe]</dd><dt><span>contact :</span></dt><dd>servicedesk.cmems@mercator-ocean.eu</dd><dt><span>creator_email :</span></dt><dd>servicedesk.cmems@mercator-ocean.eu</dd><dt><span>creator_name :</span></dt><dd>CMEMS - Sea Level Thematic Assembly Center</dd><dt><span>creator_url :</span></dt><dd>http://marine.copernicus.eu</dd><dt><span>date_created :</span></dt><dd>2021-09-09T05:40:03Z</dd><dt><span>date_issued :</span></dt><dd>2021-09-09T05:40:03Z</dd><dt><span>date_modified :</span></dt><dd>2021-09-09T05:40:03Z</dd><dt><span>geospatial_lat_max :</span></dt><dd>66.147938</dd><dt><span>geospatial_lat_min :</span></dt><dd>-66.1426</dd><dt><span>geospatial_lat_resolution :</span></dt><dd>0.02496149999999986</dd><dt><span>geospatial_lat_units :</span></dt><dd>degrees_north</dd><dt><span>geospatial_lon_max :</span></dt><dd>359.98487</dd><dt><span>geospatial_lon_min :</span></dt><dd>0.000499</dd><dt><span>geospatial_lon_resolution :</span></dt><dd>0.02909299999999604</dd><dt><span>geospatial_lon_units :</span></dt><dd>degrees_east</dd><dt><span>geospatial_vertical_max :</span></dt><dd>0.0</dd><dt><span>geospatial_vertical_min :</span></dt><dd>0.0</dd><dt><span>geospatial_vertical_positive :</span></dt><dd>down</dd><dt><span>geospatial_vertical_resolution :</span></dt><dd>point</dd><dt><span>geospatial_vertical_units :</span></dt><dd>m</dd><dt><span>history :</span></dt><dd>2021-09-09T05:40:03Z: Creation</dd><dt><span>institution :</span></dt><dd>CLS, CNES</dd><dt><span>keywords :</span></dt><dd>Oceans &gt; Ocean Topography &gt; Sea Surface Height</dd><dt><span>keywords_vocabulary :</span></dt><dd>NetCDF COARDS Climate and Forecast Standard Names</dd><dt><span>license :</span></dt><dd>http://marine.copernicus.eu/web/27-service-commitments-and-licence.php</dd><dt><span>platform :</span></dt><dd>OSTM/Jason-2 Long Repeat Orbit</dd><dt><span>processing_level :</span></dt><dd>L3</dd><dt><span>product_version :</span></dt><dd>vDec2021</dd><dt><span>project :</span></dt><dd>COPERNICUS MARINE ENVIRONMENT MONITORING SERVICE (CMEMS)</dd><dt><span>references :</span></dt><dd>http://marine.copernicus.eu</dd><dt><span>software_version :</span></dt><dd>7.0_DUACS_DT2021_baseline</dd><dt><span>source :</span></dt><dd>OSTM/Jason-2 Long Repeat Orbit measurements</dd><dt><span>ssalto_duacs_comment :</span></dt><dd>The reference mission used for the altimeter inter-calibration processing is Topex/Poseidon between 1993-01-01 and 2002-04-23, Jason-1 between 2002-04-24 and 2008-10-18, OSTM/Jason-2 between 2008-10-19 and 2016-06-25, Jason-3 since 2016-06-25.</dd><dt><span>standard_name_vocabulary :</span></dt><dd>NetCDF Climate and Forecast (CF) Metadata Convention Standard Name Table v37</dd><dt><span>summary :</span></dt><dd>SSALTO/DUACS Delayed-Time Level-3 sea surface height measured by OSTM/Jason-2 Long Repeat Orbit altimetry observations over Global Ocean.</dd><dt><span>time_coverage_duration :</span></dt><dd>P12H19M2.66746S</dd><dt><span>time_coverage_end :</span></dt><dd>2017-07-11T23:30:27Z</dd><dt><span>time_coverage_resolution :</span></dt><dd>P1S</dd><dt><span>time_coverage_start :</span></dt><dd>2017-07-11T11:11:25Z</dd><dt><span>title :</span></dt><dd>DT OSTM/Jason-2 Long Repeat Orbit Global Ocean Along track SSALTO/DUACS Sea Surface Height L3 product</dd></dl></div></li></ul></div></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1090,7 +1108,7 @@ Attributes: (12/44)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7fc7f1e03950&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7f46da0869d0&gt;
 </pre></div>
 </div>
 <img alt="_images/0d6aaa0ef1e5798736459669dea92bf06a95368ea7822e33dbaea1cee56fd656.png" src="_images/0d6aaa0ef1e5798736459669dea92bf06a95368ea7822e33dbaea1cee56fd656.png" />
@@ -1106,49 +1124,49 @@ Attributes: (12/44)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-15 15:44:22,968][HYDRA] Launching 6 jobs locally
-[2024-04-15 15:44:22,968][HYDRA] 	#0 : params.sat=alg dry=True
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-16 14:57:04,380][HYDRA] Launching 6 jobs locally
+[2024-04-16 14:57:04,380][HYDRA] 	#0 : params.sat=alg dry=True
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-15 15:44:23,059][aprl.appareil][INFO] - Starting
-[2024-04-15 15:44:23,060][aprl.appareil][INFO] - Running part _01_dl_track
-[2024-04-15 15:44:23,060][aprl.appareil][INFO] - Running part _02_prepare_track
-[2024-04-15 15:44:23,060][aprl.appareil][INFO] - Done
-[2024-04-15 15:44:23,060][HYDRA] 	#1 : params.sat=h2ag dry=True
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-16 14:57:04,472][aprl.appareil][INFO] - Starting
+[2024-04-16 14:57:04,472][aprl.appareil][INFO] - Running part _01_dl_track
+[2024-04-16 14:57:04,472][aprl.appareil][INFO] - Running part _02_prepare_track
+[2024-04-16 14:57:04,472][aprl.appareil][INFO] - Done
+[2024-04-16 14:57:04,472][HYDRA] 	#1 : params.sat=h2ag dry=True
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-15 15:44:23,151][aprl.appareil][INFO] - Starting
-[2024-04-15 15:44:23,151][aprl.appareil][INFO] - Running part _01_dl_track
-[2024-04-15 15:44:23,151][aprl.appareil][INFO] - Running part _02_prepare_track
-[2024-04-15 15:44:23,151][aprl.appareil][INFO] - Done
-[2024-04-15 15:44:23,151][HYDRA] 	#2 : params.sat=j2g dry=True
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-16 14:57:04,563][aprl.appareil][INFO] - Starting
+[2024-04-16 14:57:04,563][aprl.appareil][INFO] - Running part _01_dl_track
+[2024-04-16 14:57:04,563][aprl.appareil][INFO] - Running part _02_prepare_track
+[2024-04-16 14:57:04,563][aprl.appareil][INFO] - Done
+[2024-04-16 14:57:04,564][HYDRA] 	#2 : params.sat=j2g dry=True
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-15 15:44:23,241][aprl.appareil][INFO] - Starting
-[2024-04-15 15:44:23,241][aprl.appareil][INFO] - Running part _01_dl_track
-[2024-04-15 15:44:23,241][aprl.appareil][INFO] - Running part _02_prepare_track
-[2024-04-15 15:44:23,241][aprl.appareil][INFO] - Done
-[2024-04-15 15:44:23,241][HYDRA] 	#3 : params.sat=j2n dry=True
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-16 14:57:04,654][aprl.appareil][INFO] - Starting
+[2024-04-16 14:57:04,654][aprl.appareil][INFO] - Running part _01_dl_track
+[2024-04-16 14:57:04,654][aprl.appareil][INFO] - Running part _02_prepare_track
+[2024-04-16 14:57:04,654][aprl.appareil][INFO] - Done
+[2024-04-16 14:57:04,655][HYDRA] 	#3 : params.sat=j2n dry=True
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-15 15:44:23,330][aprl.appareil][INFO] - Starting
-[2024-04-15 15:44:23,330][aprl.appareil][INFO] - Running part _01_dl_track
-[2024-04-15 15:44:23,330][aprl.appareil][INFO] - Running part _02_prepare_track
-[2024-04-15 15:44:23,330][aprl.appareil][INFO] - Done
-[2024-04-15 15:44:23,331][HYDRA] 	#4 : params.sat=j3 dry=True
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-16 14:57:04,745][aprl.appareil][INFO] - Starting
+[2024-04-16 14:57:04,745][aprl.appareil][INFO] - Running part _01_dl_track
+[2024-04-16 14:57:04,745][aprl.appareil][INFO] - Running part _02_prepare_track
+[2024-04-16 14:57:04,745][aprl.appareil][INFO] - Done
+[2024-04-16 14:57:04,746][HYDRA] 	#4 : params.sat=j3 dry=True
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-15 15:44:23,419][aprl.appareil][INFO] - Starting
-[2024-04-15 15:44:23,420][aprl.appareil][INFO] - Running part _01_dl_track
-[2024-04-15 15:44:23,420][aprl.appareil][INFO] - Running part _02_prepare_track
-[2024-04-15 15:44:23,420][aprl.appareil][INFO] - Done
-[2024-04-15 15:44:23,420][HYDRA] 	#5 : params.sat=s3a dry=True
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-16 14:57:04,835][aprl.appareil][INFO] - Starting
+[2024-04-16 14:57:04,835][aprl.appareil][INFO] - Running part _01_dl_track
+[2024-04-16 14:57:04,835][aprl.appareil][INFO] - Running part _02_prepare_track
+[2024-04-16 14:57:04,835][aprl.appareil][INFO] - Done
+[2024-04-16 14:57:04,836][HYDRA] 	#5 : params.sat=s3a dry=True
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-15 15:44:23,569][aprl.appareil][INFO] - Starting
-[2024-04-15 15:44:23,569][aprl.appareil][INFO] - Running part _01_dl_track
-[2024-04-15 15:44:23,569][aprl.appareil][INFO] - Running part _02_prepare_track
-[2024-04-15 15:44:23,569][aprl.appareil][INFO] - Done
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-16 14:57:04,984][aprl.appareil][INFO] - Starting
+[2024-04-16 14:57:04,984][aprl.appareil][INFO] - Running part _01_dl_track
+[2024-04-16 14:57:04,984][aprl.appareil][INFO] - Running part _02_prepare_track
+[2024-04-16 14:57:04,984][aprl.appareil][INFO] - Done
 </pre></div>
 </div>
 </div>
@@ -1186,12 +1204,13 @@ Attributes: (12/44)
 Cloning oost-demo-ssh-dc.git|                       |0.00/? [00:00,      ?obj/s]
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cloning oost-demo-ssh-dc.git|          | Counting |1.00/102 [00:00,   2.10obj/s]
-Cloning oost-demo-ssh-dc.git|          | Counting |1.00/102 [00:00,   2.10obj/s]
-Cloning oost-demo-ssh-dc.git|███████████| Counting |102/102 [00:00,   2.10obj/s]
-Cloning oost-demo-ssh-dc.git| | Compressing | Compressing objects:   2% (2/68) |
-Cloning oost-demo-ssh-dc.git|██████| Compressing |68.0/68.0 [00:00,   2.10obj/s]
-Cloning oost-demo-ssh-dc.git|██████| Compressing |68.0/68.0 [00:00,   2.10obj/s]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cloning oost-demo-ssh-dc.git|          | Counting |1.00/276 [00:00,   2.03obj/s]
+Cloning oost-demo-ssh-dc.git|          | Counting |1.00/276 [00:00,   2.03obj/s]
+Cloning oost-demo-ssh-dc.git|███████████| Counting |276/276 [00:00,   2.03obj/s]
+Cloning oost-demo-ssh-dc.git|███████████| Counting |276/276 [00:00,   2.03obj/s]
+Cloning oost-demo-ssh-dc.git|       | Compressing |1.00/154 [00:00,   2.03obj/s]
+Cloning oost-demo-ssh-dc.git|████████| Compressing |154/154 [00:00,   2.03obj/s]
+Cloning oost-demo-ssh-dc.git|████████| Compressing |154/154 [00:00,   2.03obj/s]
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                                                
@@ -1654,10 +1673,10 @@ Attributes: (12/44)
     time_coverage_end:               2016-12-01T23:19:21Z
     time_coverage_resolution:        P1S
     time_coverage_start:             2016-12-01T00:00:30Z
-    title:                           DT Altika Drifting Phase Global Ocean Al...</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-47542050-2016-4348-a5a6-48dce0a4389e' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-47542050-2016-4348-a5a6-48dce0a4389e' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>time</span>: 353305</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-86250fd1-ec6f-41c4-8e49-dc0fdda127aa' class='xr-section-summary-in' type='checkbox'  checked><label for='section-86250fd1-ec6f-41c4-8e49-dc0fdda127aa' class='xr-section-summary' >Coordinates: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2016-12-01T22:45:18.975349760 .....</div><input id='attrs-bd52587b-b19d-4fc1-8184-4fec8c230c8b' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-bd52587b-b19d-4fc1-8184-4fec8c230c8b' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-ecb8bfe6-470d-4c39-87c4-86f5754a8ed3' class='xr-var-data-in' type='checkbox'><label for='data-ecb8bfe6-470d-4c39-87c4-86f5754a8ed3' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;2016-12-01T22:45:18.975349760&#x27;, &#x27;2016-12-01T22:45:20.031349760&#x27;,
+    title:                           DT Altika Drifting Phase Global Ocean Al...</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-f945a47a-a5ac-48cb-9e89-13512eeeaa3a' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-f945a47a-a5ac-48cb-9e89-13512eeeaa3a' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>time</span>: 353305</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-f1807248-5497-4504-9f63-4dc349a87e99' class='xr-section-summary-in' type='checkbox'  checked><label for='section-f1807248-5497-4504-9f63-4dc349a87e99' class='xr-section-summary' >Coordinates: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2016-12-01T22:45:18.975349760 .....</div><input id='attrs-bd0efbf7-e77b-4e92-8897-a3970b4c2e34' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-bd0efbf7-e77b-4e92-8897-a3970b4c2e34' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-39f20cea-6c1e-4ca4-b648-96296ca712a1' class='xr-var-data-in' type='checkbox'><label for='data-39f20cea-6c1e-4ca4-b648-96296ca712a1' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;2016-12-01T22:45:18.975349760&#x27;, &#x27;2016-12-01T22:45:20.031349760&#x27;,
        &#x27;2016-12-01T22:45:21.087350016&#x27;, ..., &#x27;2018-01-31T14:25:10.678193152&#x27;,
        &#x27;2018-01-31T14:25:11.678193152&#x27;, &#x27;2018-01-31T14:25:12.678193408&#x27;],
-      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lon</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(78000,), meta=np.ndarray&gt;</div><input id='attrs-4d55866b-f933-4a5f-8831-28733c9279b9' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-4d55866b-f933-4a5f-8831-28733c9279b9' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-28beb2cf-e91d-41c3-9ed5-2597b85a7a02' class='xr-var-data-in' type='checkbox'><label for='data-28beb2cf-e91d-41c3-9ed5-2597b85a7a02' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>degrees_east</dd><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>long_name :</span></dt><dd>Longitude of measurement</dd></dl></div><div class='xr-var-data'><table>
+      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lon</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(78000,), meta=np.ndarray&gt;</div><input id='attrs-8f4782d3-4cba-4d11-a93f-f0479b0624e0' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-8f4782d3-4cba-4d11-a93f-f0479b0624e0' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-30f3ae32-4205-4845-b01f-fb1578b7a2c3' class='xr-var-data-in' type='checkbox'><label for='data-30f3ae32-4205-4845-b01f-fb1578b7a2c3' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>degrees_east</dd><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>long_name :</span></dt><dd>Longitude of measurement</dd></dl></div><div class='xr-var-data'><table>
     <tr>
         <td>
             <table style="border-collapse: collapse;">
@@ -1717,7 +1736,7 @@ Attributes: (12/44)
 </svg>
         </td>
     </tr>
-</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lat</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(78000,), meta=np.ndarray&gt;</div><input id='attrs-1102b916-e182-4a4b-b05a-8ea56aef1c16' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-1102b916-e182-4a4b-b05a-8ea56aef1c16' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-42595270-94f1-4fe1-9e0f-977f6c092de6' class='xr-var-data-in' type='checkbox'><label for='data-42595270-94f1-4fe1-9e0f-977f6c092de6' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>degrees_north</dd><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>long_name :</span></dt><dd>Latitude of measurement</dd></dl></div><div class='xr-var-data'><table>
+</table></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lat</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(78000,), meta=np.ndarray&gt;</div><input id='attrs-881c4de8-f30e-442c-b3f7-bdb37bb2a482' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-881c4de8-f30e-442c-b3f7-bdb37bb2a482' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-1ac36b9d-63c5-4c4c-80aa-35f4966cee2c' class='xr-var-data-in' type='checkbox'><label for='data-1ac36b9d-63c5-4c4c-80aa-35f4966cee2c' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>degrees_north</dd><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>long_name :</span></dt><dd>Latitude of measurement</dd></dl></div><div class='xr-var-data'><table>
     <tr>
         <td>
             <table style="border-collapse: collapse;">
@@ -1777,7 +1796,7 @@ Attributes: (12/44)
 </svg>
         </td>
     </tr>
-</table></div></li></ul></div></li><li class='xr-section-item'><input id='section-c0fd55c3-8961-47b4-82bf-c804c548675a' class='xr-section-summary-in' type='checkbox'  checked><label for='section-c0fd55c3-8961-47b4-82bf-c804c548675a' class='xr-section-summary' >Data variables: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>ssh</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(78000,), meta=np.ndarray&gt;</div><input id='attrs-db57b2c7-a6bd-41fe-9c10-fcc4131b1a49' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-db57b2c7-a6bd-41fe-9c10-fcc4131b1a49' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-02493f18-c56a-4255-a90b-f55ed921bce2' class='xr-var-data-in' type='checkbox'><label for='data-02493f18-c56a-4255-a90b-f55ed921bce2' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>m</dd><dt><span>standard_name :</span></dt><dd>sea_surface_height</dd><dt><span>long_name :</span></dt><dd>Sea Surface Height</dd></dl></div><div class='xr-var-data'><table>
+</table></div></li></ul></div></li><li class='xr-section-item'><input id='section-315a2346-f6f2-4513-bfa3-3d985be1c5e2' class='xr-section-summary-in' type='checkbox'  checked><label for='section-315a2346-f6f2-4513-bfa3-3d985be1c5e2' class='xr-section-summary' >Data variables: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>ssh</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>dask.array&lt;chunksize=(78000,), meta=np.ndarray&gt;</div><input id='attrs-196e4b29-b33c-4754-8df6-fd471388e772' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-196e4b29-b33c-4754-8df6-fd471388e772' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-f167ba5f-518e-4a6a-8a09-d52479971ad2' class='xr-var-data-in' type='checkbox'><label for='data-f167ba5f-518e-4a6a-8a09-d52479971ad2' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>m</dd><dt><span>standard_name :</span></dt><dd>sea_surface_height</dd><dt><span>long_name :</span></dt><dd>Sea Surface Height</dd></dl></div><div class='xr-var-data'><table>
     <tr>
         <td>
             <table style="border-collapse: collapse;">
@@ -1837,7 +1856,7 @@ Attributes: (12/44)
 </svg>
         </td>
     </tr>
-</table></div></li></ul></div></li><li class='xr-section-item'><input id='section-9559bbe1-6e16-42b6-823a-cfad96b85e2e' class='xr-section-summary-in' type='checkbox'  ><label for='section-9559bbe1-6e16-42b6-823a-cfad96b85e2e' class='xr-section-summary' >Indexes: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-index-name'><div>time</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-090a08e7-2016-477f-872b-358bf67ed0fe' class='xr-index-data-in' type='checkbox'/><label for='index-090a08e7-2016-477f-872b-358bf67ed0fe' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(DatetimeIndex([&#x27;2016-12-01 22:45:18.975349760&#x27;,
+</table></div></li></ul></div></li><li class='xr-section-item'><input id='section-31de98b8-727a-4de5-b06a-29632f7719a4' class='xr-section-summary-in' type='checkbox'  ><label for='section-31de98b8-727a-4de5-b06a-29632f7719a4' class='xr-section-summary' >Indexes: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-index-name'><div>time</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-dcc14f41-aea2-40bd-999d-a3d3ff7ca01e' class='xr-index-data-in' type='checkbox'/><label for='index-dcc14f41-aea2-40bd-999d-a3d3ff7ca01e' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(DatetimeIndex([&#x27;2016-12-01 22:45:18.975349760&#x27;,
                &#x27;2016-12-01 22:45:20.031349760&#x27;,
                &#x27;2016-12-01 22:45:21.087350016&#x27;,
                &#x27;2016-12-01 22:45:22.143350016&#x27;,
@@ -1858,7 +1877,7 @@ Attributes: (12/44)
                &#x27;2018-01-31 14:25:10.678193152&#x27;,
                &#x27;2018-01-31 14:25:11.678193152&#x27;,
                &#x27;2018-01-31 14:25:12.678193408&#x27;],
-              dtype=&#x27;datetime64[ns]&#x27;, name=&#x27;time&#x27;, length=353305, freq=None))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-a633213e-30db-4b94-9d8f-2c91c9a9795f' class='xr-section-summary-in' type='checkbox'  ><label for='section-a633213e-30db-4b94-9d8f-2c91c9a9795f' class='xr-section-summary' >Attributes: <span>(44)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>Conventions :</span></dt><dd>CF-1.6</dd><dt><span>Metadata_Conventions :</span></dt><dd>Unidata Dataset Discovery v1.0</dd><dt><span>cdm_data_type :</span></dt><dd>Swath</dd><dt><span>comment :</span></dt><dd>Sea surface height measured by altimeters referenced to the [1993, 2012] period; with additional corrections; the proposed sla is already corrected for dac, ocean_tide and lwe; [uncorrected sla]=[sla from product]+[dac]+[ocean_tide]-[lwe]</dd><dt><span>contact :</span></dt><dd>servicedesk.cmems@mercator-ocean.eu</dd><dt><span>creator_email :</span></dt><dd>servicedesk.cmems@mercator-ocean.eu</dd><dt><span>creator_name :</span></dt><dd>CMEMS - Sea Level Thematic Assembly Center</dd><dt><span>creator_url :</span></dt><dd>http://marine.copernicus.eu</dd><dt><span>date_created :</span></dt><dd>2021-09-08T13:44:36Z</dd><dt><span>date_issued :</span></dt><dd>2021-09-08T13:44:36Z</dd><dt><span>date_modified :</span></dt><dd>2021-09-08T13:44:36Z</dd><dt><span>geospatial_lat_max :</span></dt><dd>81.509018</dd><dt><span>geospatial_lat_min :</span></dt><dd>-77.038071</dd><dt><span>geospatial_lat_resolution :</span></dt><dd>0.052618500000001234</dd><dt><span>geospatial_lat_units :</span></dt><dd>degrees_north</dd><dt><span>geospatial_lon_max :</span></dt><dd>359.998917</dd><dt><span>geospatial_lon_min :</span></dt><dd>0.012548</dd><dt><span>geospatial_lon_resolution :</span></dt><dd>0.017998999999988996</dd><dt><span>geospatial_lon_units :</span></dt><dd>degrees_east</dd><dt><span>geospatial_vertical_max :</span></dt><dd>0.0</dd><dt><span>geospatial_vertical_min :</span></dt><dd>0.0</dd><dt><span>geospatial_vertical_positive :</span></dt><dd>down</dd><dt><span>geospatial_vertical_resolution :</span></dt><dd>point</dd><dt><span>geospatial_vertical_units :</span></dt><dd>m</dd><dt><span>history :</span></dt><dd>2021-09-08T13:44:36Z: Creation</dd><dt><span>institution :</span></dt><dd>CLS, CNES</dd><dt><span>keywords :</span></dt><dd>Oceans &gt; Ocean Topography &gt; Sea Surface Height</dd><dt><span>keywords_vocabulary :</span></dt><dd>NetCDF COARDS Climate and Forecast Standard Names</dd><dt><span>license :</span></dt><dd>http://marine.copernicus.eu/web/27-service-commitments-and-licence.php</dd><dt><span>platform :</span></dt><dd>Altika Drifting Phase</dd><dt><span>processing_level :</span></dt><dd>L3</dd><dt><span>product_version :</span></dt><dd>vDec2021</dd><dt><span>project :</span></dt><dd>COPERNICUS MARINE ENVIRONMENT MONITORING SERVICE (CMEMS)</dd><dt><span>references :</span></dt><dd>http://marine.copernicus.eu</dd><dt><span>software_version :</span></dt><dd>7.0_DUACS_DT2021_baseline</dd><dt><span>source :</span></dt><dd>Altika Drifting Phase measurements</dd><dt><span>ssalto_duacs_comment :</span></dt><dd>The reference mission used for the altimeter inter-calibration processing is Topex/Poseidon between 1993-01-01 and 2002-04-23, Jason-1 between 2002-04-24 and 2008-10-18, OSTM/Jason-2 between 2008-10-19 and 2016-06-25, Jason-3 since 2016-06-25.</dd><dt><span>standard_name_vocabulary :</span></dt><dd>NetCDF Climate and Forecast (CF) Metadata Convention Standard Name Table v37</dd><dt><span>summary :</span></dt><dd>SSALTO/DUACS Delayed-Time Level-3 sea surface height measured by Altika Drifting Phase altimetry observations over Global Ocean.</dd><dt><span>time_coverage_duration :</span></dt><dd>P23H18M50.723265S</dd><dt><span>time_coverage_end :</span></dt><dd>2016-12-01T23:19:21Z</dd><dt><span>time_coverage_resolution :</span></dt><dd>P1S</dd><dt><span>time_coverage_start :</span></dt><dd>2016-12-01T00:00:30Z</dd><dt><span>title :</span></dt><dd>DT Altika Drifting Phase Global Ocean Along track SSALTO/DUACS Sea Surface Height L3 product</dd></dl></div></li></ul></div></div></div></div>
+              dtype=&#x27;datetime64[ns]&#x27;, name=&#x27;time&#x27;, length=353305, freq=None))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-10447343-0e27-4411-b07d-cef1e626e591' class='xr-section-summary-in' type='checkbox'  ><label for='section-10447343-0e27-4411-b07d-cef1e626e591' class='xr-section-summary' >Attributes: <span>(44)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>Conventions :</span></dt><dd>CF-1.6</dd><dt><span>Metadata_Conventions :</span></dt><dd>Unidata Dataset Discovery v1.0</dd><dt><span>cdm_data_type :</span></dt><dd>Swath</dd><dt><span>comment :</span></dt><dd>Sea surface height measured by altimeters referenced to the [1993, 2012] period; with additional corrections; the proposed sla is already corrected for dac, ocean_tide and lwe; [uncorrected sla]=[sla from product]+[dac]+[ocean_tide]-[lwe]</dd><dt><span>contact :</span></dt><dd>servicedesk.cmems@mercator-ocean.eu</dd><dt><span>creator_email :</span></dt><dd>servicedesk.cmems@mercator-ocean.eu</dd><dt><span>creator_name :</span></dt><dd>CMEMS - Sea Level Thematic Assembly Center</dd><dt><span>creator_url :</span></dt><dd>http://marine.copernicus.eu</dd><dt><span>date_created :</span></dt><dd>2021-09-08T13:44:36Z</dd><dt><span>date_issued :</span></dt><dd>2021-09-08T13:44:36Z</dd><dt><span>date_modified :</span></dt><dd>2021-09-08T13:44:36Z</dd><dt><span>geospatial_lat_max :</span></dt><dd>81.509018</dd><dt><span>geospatial_lat_min :</span></dt><dd>-77.038071</dd><dt><span>geospatial_lat_resolution :</span></dt><dd>0.052618500000001234</dd><dt><span>geospatial_lat_units :</span></dt><dd>degrees_north</dd><dt><span>geospatial_lon_max :</span></dt><dd>359.998917</dd><dt><span>geospatial_lon_min :</span></dt><dd>0.012548</dd><dt><span>geospatial_lon_resolution :</span></dt><dd>0.017998999999988996</dd><dt><span>geospatial_lon_units :</span></dt><dd>degrees_east</dd><dt><span>geospatial_vertical_max :</span></dt><dd>0.0</dd><dt><span>geospatial_vertical_min :</span></dt><dd>0.0</dd><dt><span>geospatial_vertical_positive :</span></dt><dd>down</dd><dt><span>geospatial_vertical_resolution :</span></dt><dd>point</dd><dt><span>geospatial_vertical_units :</span></dt><dd>m</dd><dt><span>history :</span></dt><dd>2021-09-08T13:44:36Z: Creation</dd><dt><span>institution :</span></dt><dd>CLS, CNES</dd><dt><span>keywords :</span></dt><dd>Oceans &gt; Ocean Topography &gt; Sea Surface Height</dd><dt><span>keywords_vocabulary :</span></dt><dd>NetCDF COARDS Climate and Forecast Standard Names</dd><dt><span>license :</span></dt><dd>http://marine.copernicus.eu/web/27-service-commitments-and-licence.php</dd><dt><span>platform :</span></dt><dd>Altika Drifting Phase</dd><dt><span>processing_level :</span></dt><dd>L3</dd><dt><span>product_version :</span></dt><dd>vDec2021</dd><dt><span>project :</span></dt><dd>COPERNICUS MARINE ENVIRONMENT MONITORING SERVICE (CMEMS)</dd><dt><span>references :</span></dt><dd>http://marine.copernicus.eu</dd><dt><span>software_version :</span></dt><dd>7.0_DUACS_DT2021_baseline</dd><dt><span>source :</span></dt><dd>Altika Drifting Phase measurements</dd><dt><span>ssalto_duacs_comment :</span></dt><dd>The reference mission used for the altimeter inter-calibration processing is Topex/Poseidon between 1993-01-01 and 2002-04-23, Jason-1 between 2002-04-24 and 2008-10-18, OSTM/Jason-2 between 2008-10-19 and 2016-06-25, Jason-3 since 2016-06-25.</dd><dt><span>standard_name_vocabulary :</span></dt><dd>NetCDF Climate and Forecast (CF) Metadata Convention Standard Name Table v37</dd><dt><span>summary :</span></dt><dd>SSALTO/DUACS Delayed-Time Level-3 sea surface height measured by Altika Drifting Phase altimetry observations over Global Ocean.</dd><dt><span>time_coverage_duration :</span></dt><dd>P23H18M50.723265S</dd><dt><span>time_coverage_end :</span></dt><dd>2016-12-01T23:19:21Z</dd><dt><span>time_coverage_resolution :</span></dt><dd>P1S</dd><dt><span>time_coverage_start :</span></dt><dd>2016-12-01T00:00:30Z</dd><dt><span>title :</span></dt><dd>DT Altika Drifting Phase Global Ocean Along track SSALTO/DUACS Sea Surface Height L3 product</dd></dl></div></li></ul></div></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1878,7 +1897,7 @@ Attributes: (12/44)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7fc8345fec10&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7f46d9fb0b10&gt;
 </pre></div>
 </div>
 <img alt="_images/5effa604ca256a4947f115135ec77cdc899ba90c7af5c937a2a3060137e01622.png" src="_images/5effa604ca256a4947f115135ec77cdc899ba90c7af5c937a2a3060137e01622.png" />
@@ -1899,186 +1918,6 @@ Attributes: (12/44)
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Successful reproduction
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="more-on-pipeline-usage-help-doc">
-<h3>More on pipeline usage (help, doc, …)<a class="headerlink" href="#more-on-pipeline-usage-help-doc" title="Link to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>oost-dc_ose_2021-input_data<span class="w"> </span>--help
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    ==============
-Overview:
-    Download and prepare data for SSH Mapping (requires CMEMS credentials for download)
-    The ssh is computed as &quot;sla_filtered + mdt - lwe&quot;
-
-Basic CLI Usage:
-  *  params.sat=&lt;sat_id&gt; to download a prepare a specific satellite
-
-  *  --multirun: Execute the pipeline for each sat in sat_list
-
-  *  params.(min|max)_(lon|lat|time)=&lt;bound&gt; to change the bound
-
-  *  `-cd conf overrides=my_conf` to load config from conf/aprl/overrides/my_conf.yaml
-
-Params:
-    sat (str): altimeter id to download (place holder for multirun)
-    sat_list (str): list of satellite to download
-    min_time: start of the temporal domain
-    max_time: end of the temporal domain
-    min_lon: lower longitudinal bound
-    max_lon: upper longitudinal bound
-    min_lat: upper latitudinal bound
-    max_lat: upper latitudinal bound
-
-Parts:
-	_01_dl_track -&gt; copernicusmarine.python_interface.get.get
-	_02_prepare_track -&gt; oost_dc_ose_2021.mods.prepare_track.prepare_track
-
-Misc:
-    Run  with &quot;dry=True hydra.verbose=aprl.appareil&quot; for displaying the doc of each part
-
-    Run with `to_run=[&lt;part&gt;,...]` to run specific parts
-
-
-== Configuration groups ==
-Compose your configuration from those groups (group=option)
-
-aprl: dc_ose_2021_inference_data, get, prepare_track
-aprl/args: get, prepare_track
-aprl/overrides: none
-aprl/params: dc_ose_2021_inference_data
-args: __placeholder
-overrides: __placeholder
-params: __placeholder
-
-
-== Config ==
-Override anything in the config (foo.bar=value)
-
-params:
-  sat: ???
-  sat_list:
-  - alg
-  - h2ag
-  - j2g
-  - j2n
-  - j3
-  - s3a
-  min_time: &#39;2016-12-01&#39;
-  max_time: &#39;2018-02-01&#39;
-  min_lon: -66.0
-  max_lon: -54.0
-  min_lat: 32.0
-  max_lat: 44.0
-_target_: aprl.appareil.run
-_partial_: true
-to_run:
-- _01_dl_track
-- _02_prepare_track
-parts:
-  _01_dl_track:
-    _target_: copernicusmarine.python_interface.get.get
-    _partial_: true
-    dataset_id:
-      _target_: oost_dc_ose_2021.mods.cmems_get.duacs_l3
-      sat: ${....params.sat}
-    regex:
-      _target_: oost_dc_ose_2021.mods.cmems_get.month_regex_from_date
-      min_time: ${....params.min_time}
-      max_time: ${....params.max_time}
-    output_directory: data/downloads/input/${...params.sat}
-    force_download: true
-    overwrite_output_data: true
-  _02_prepare_track:
-    _target_: oost_dc_ose_2021.mods.prepare_track.prepare_track
-    _partial_: true
-    input_paths:
-      _target_: glob.iglob
-      pathname: ${..._01_dl_track.output_directory}/**/*.nc
-      root_dir: null
-      dir_fd: null
-      recursive: true
-      include_hidden: false
-    output_path: data/prepared/input/${...params.sat}.nc
-    preprocess:
-      _target_: oost_dc_ose_2021.mods.prepare_track.preprocess_track
-      _partial_: true
-      min_lon: ${....params.min_lon}
-      max_lon: ${....params.max_lon}
-      min_lat: ${....params.min_lat}
-      max_lat: ${....params.max_lat}
-      min_time: ${....params.min_time}
-      max_time: ${....params.max_time}
-    sort_paths: true
-dry: false
-
-
-Powered by Hydra (https://hydra.cc)
-Use --hydra-help to view Hydra specific help
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>oost-dc_ose_2021-input_data<span class="w"> </span>params.sat<span class="o">=</span>alg<span class="w"> </span><span class="nv">dry</span><span class="o">=</span>True<span class="w"> </span><span class="s1">&#39;hydra.verbose=[aprl.appareil]&#39;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2024-04-15 15:44:33,731][aprl.appareil][INFO] - Starting
-[2024-04-15 15:44:33,732][aprl.appareil][INFO] - Running part _01_dl_track
-[2024-04-15 15:44:33,732][aprl.appareil][DEBUG] - get
-[2024-04-15 15:44:33,732][aprl.appareil][DEBUG] - 
-    Fetches data from the Copernicus Marine server based on the provided parameters.
-
-    Args:
-        dataset_url (str, optional): The URL of the dataset to retrieve.
-        dataset_id (str, optional): The unique identifier of the dataset.
-        dataset_version (str, optional): Force the use of a specific dataset version.
-        dataset_part (str, optional): Force the use of a specific dataset part.
-        username (str, optional): The username for authentication.
-        password (str, optional): The password for authentication.
-        no_directories (bool, optional): If True, downloaded files will not be organized into directories.
-        show_outputnames (bool, optional): If True, display the names of the downloaded files.
-        output_directory (Union[pathlib.Path, str], optional): The directory where downloaded files will be saved.
-        credentials_file (Union[pathlib.Path, str], optional): Path to a file containing authentication credentials.
-        force_download (bool, optional): Skip confirmation before download.
-        overwrite_output_data (bool, optional): If True, overwrite existing output files.
-        request_file (Union[pathlib.Path, str], optional): Path to a file containing request parameters.
-        service (str, optional): Force the use of a specific service.
-        overwrite_metadata_cache (bool, optional): If True, overwrite the metadata cache.
-        no_metadata_cache (bool, optional): If True, do not use the metadata cache.
-        filter (str, optional): Apply a filter to the downloaded data.
-        regex (str, optional): Apply a regular expression filter to the downloaded data.
-        file_list (Union[pathlib.Path, str], optional): A path to a text file that list filenames line by line. Filenames must match the absolute paths of the files to download.
-        create_file_list (str, optional): Option to only create a file containing the names of the the targeted files instead of downloading them. It writes the file in the directory specified with the --output-directory option (default to current directory). If specified, no other action will be performed.
-        index_parts (bool, optional): If True, download index files. Only for INSITU datasets. Temporary option.
-        sync (bool, optional): If True, synchronize the local directory with the remote directory.
-        sync_delete (bool, optional): If True, delete local files that are not present on the remote server while applying sync.
-
-    Returns:
-        List[pathlib.Path]: A list of paths to the downloaded files.
-    
-[2024-04-15 15:44:33,732][aprl.appareil][INFO] - Running part _02_prepare_track
-[2024-04-15 15:44:33,732][aprl.appareil][DEBUG] - prepare_track
-[2024-04-15 15:44:33,732][aprl.appareil][DEBUG] - 
-    Open multifile dataset to be contatenated by time apply processing and write output
-
-    Args:
-        input_paths (str | Path | Sequence): path(s) to input netcdf file(s)
-        output_path (str): path where to write the output
-        preprocess (callable): function to apply to each netcdf
-        sort_paths (bool): whether to sort input_paths before concatenation
-    
-[2024-04-15 15:44:33,732][aprl.appareil][INFO] - Done
 </pre></div>
 </div>
 </div>
@@ -2164,7 +2003,6 @@ Use --hydra-help to view Hydra specific help
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-prepared-input-data">Downloading prepared input data</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualize-input-data">Visualize input data</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#checking-generated-data-vs-downloaded">Checking generated data VS downloaded</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more-on-pipeline-usage-help-doc">More on pipeline usage (help, doc, …)</a></li>
 </ul>
 </li>
 </ul>

@@ -115,12 +115,3 @@ xr.testing.assert_allclose(
 print("Successful reproduction")
 ```
 
-### More on pipeline usage (help, doc, ...)
-
-```{code-cell} ipython3
-!oost-dc_ose_2021-input_data --help
-```
-
-```{code-cell} ipython3
-!oost-dc_ose_2021-input_data params.sat=alg dry=True 'hydra.verbose=[aprl.appareil]'
-```
