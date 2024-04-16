@@ -33,6 +33,12 @@ repository:
   path_to_book: docs  # Optional path to your book, relative to the repository root
   branch: main  # Which branch of the repository should be used when creating links (optional)
 
+sphinx:
+  extra_extensions:
+    - 'autoapi.extension'
+  config:
+    autoapi_dirs: 
+    - ../oost_dc_ose_2021
 # launch_buttons:
 #   colab_url: "https://colab.research.google.com"
 # Add GitHub buttons to your book
