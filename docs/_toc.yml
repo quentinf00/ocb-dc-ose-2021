@@ -8,3 +8,4 @@ chapters:
 - file: oost_dc_ose_2021_data
 - file: oost_dc_ose_2021_oi
 - file: oost_dc_ose_2021_global
+- file: api/oost_dc_ose_2021/index

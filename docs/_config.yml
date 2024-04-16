@@ -39,6 +39,8 @@ sphinx:
   config:
     autoapi_dirs: 
     - ../oost_dc_ose_2021
+    autoapi_root: "api"
+    autoapi_add_toctree_entry: false
 # launch_buttons:
 #   colab_url: "https://colab.research.google.com"
 # Add GitHub buttons to your book
