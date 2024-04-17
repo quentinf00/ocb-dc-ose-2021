@@ -38,6 +38,8 @@ sphinx:
     - 'autoapi.extension'
     - 'sphinx.ext.mathjax'
     - 'sphinx.ext.napoleon'
+    - 'sphinxcontrib.mermaid'
+    - sphinx.ext.viewcode
   config:
     autoapi_dirs: 
     - ../oost_dc_ose_2021/mods
