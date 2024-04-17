@@ -1,5 +1,8 @@
 # Ocean Observation Science Toolkit: SSH Data challenge Design
 
+## Table of Content
+```{tableofcontents}
+```
 
 ## Overall presentation
 
@@ -49,15 +52,12 @@ In order to implement the previous concepts, the following tools and library
 ## Feature Showcase
 We provide through the following notebooks and associated 5 min walkthrough videos demonstrations on the new features brought by this implementations
 ![](imgs/contrib_doc.png)
-- Versioned data access and reproduction for data challenges
+### Versioned data access and reproduction for data challenges
 <iframe width="560" height="315" src="https://www.youtube.com/embed/qWT-vczLlCA?si=gBRizrtw6dIO92uo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-- Metrics computation and automated leaderboard update
+### Metrics computation and automated leaderboard update
 <iframe width="560" height="315" src="https://www.youtube.com/embed/CZUp0g8ZTBk?si=u_XA3A0NGh7yNFDc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-- Reusing the pipelines for a global usecase
+### Reusing the pipelines for a global usecase
 <iframe width="560" height="315" src="https://www.youtube.com/embed/-V-5fS7oSvw?si=fkobRQggG_pYlNAm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-
-```{tableofcontents}
-```
