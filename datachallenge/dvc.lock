@@ -843,3 +843,164 @@ stages:
       hash: md5
       md5: 282e18bad1816b41ac9b1857271ee87f
       size: 30
+  diagnostics/method_output@oi_demo:
+    cmd: "mkdir -p data/downloads/method_outputs\nwget https://s3.eu-west-2.wasabisys.com/melody/quentin_cloud/oost_oi_demo.nc
+      -nc -O 'data/downloads/method_outputs/oi_demo.nc'\n"
+    params:
+      methods.toml:
+        methods.oi_demo:
+          url: https://s3.eu-west-2.wasabisys.com/melody/quentin_cloud/oost_oi_demo.nc
+          var: ssh
+    outs:
+    - path: data/downloads/method_outputs/oi_demo.nc
+      hash: md5
+      md5: d20fd61b9da6ed633307b0d86caf51eb
+      size: 4684829
+  diagnostics/interp_on_track@oi_demo:
+    cmd: oost-dc_ose_2021-metrics 'to_run=[_03_interp_on_track]' 'params.study_var=ssh'
+      'params.method=oi_demo'
+    deps:
+    - path: ../oost_dc_ose_2021/mods/interp_on_track.py
+      hash: md5
+      md5: 877fa912eb20d8a426e5940a2e9a9d68
+      size: 3157
+    - path: ../oost_dc_ose_2021/pipelines/metrics.py
+      hash: md5
+      md5: 9630bb0d8c7a0c11ba88566667951546
+      size: 4688
+    - path: data/downloads/method_outputs/oi_demo.nc
+      hash: md5
+      md5: d20fd61b9da6ed633307b0d86caf51eb
+      size: 4684829
+    - path: data/prepared/ref/c2.nc
+      hash: md5
+      md5: 888055307c12551cb187bd39ad1651f4
+      size: 1589781
+    params:
+      full_config.yaml:
+        metrics.parts._03_interp_on_track:
+          _partial_: true
+          _target_: oost_dc_ose_2021.mods.interp_on_track.interp_on_track
+          grid_paths: data/downloads/method_outputs/default.nc
+          output_path: data/prepared/method_outputs/default_on_track.nc
+          preprocess_grid:
+            _partial_: true
+            _target_: oost_dc_ose_2021.mods.interp_on_track.preprocess_map
+            ssh_var: ssh
+          preprocess_track:
+          track_paths: data/prepared/ref/c2.nc
+      methods.toml:
+        methods.oi_demo:
+          url: https://s3.eu-west-2.wasabisys.com/melody/quentin_cloud/oost_oi_demo.nc
+          var: ssh
+    outs:
+    - path: data/prepared/method_outputs/oi_demo_on_track.nc
+      hash: md5
+      md5: 99ae957acd975fab4a5e89dde5bffd57
+      size: 1581683
+  diagnostics/metric_lambdax@oi_demo:
+    cmd: oost-dc_ose_2021-metrics 'to_run=[_04_1_lambdax]' 'params.study_var=ssh'
+      'params.method=oi_demo'
+    deps:
+    - path: ../oost_dc_ose_2021/mods/lambdax.py
+      hash: md5
+      md5: 0ad7d5110e33cdfd760329b1c0224ab2
+      size: 5346
+    - path: ../oost_dc_ose_2021/pipelines/metrics.py
+      hash: md5
+      md5: 9630bb0d8c7a0c11ba88566667951546
+      size: 4688
+    - path: data/prepared/method_outputs/oi_demo_on_track.nc
+      hash: md5
+      md5: 99ae957acd975fab4a5e89dde5bffd57
+      size: 1581683
+    - path: data/prepared/ref/c2.nc
+      hash: md5
+      md5: 888055307c12551cb187bd39ad1651f4
+      size: 1589781
+    params:
+      full_config.yaml:
+        metrics.parts._04_1_lambdax:
+          _partial_: true
+          _target_: oost_dc_ose_2021.mods.lambdax.lambdax
+          delta_t: 0.9434
+          length_scale: 1000.0
+          output_lambdax_path: data/metrics/lambdax_default.json
+          output_psd_path: data/prepared/method_outputs/psd_default.nc
+          preprocess_ref:
+            _target_: aprl.utils.kw2a
+            fn:
+              _target_: hydra_zen.funcs.get_obj
+              path: operator.itemgetter
+            ssh_var: ssh
+          preprocess_study:
+            _target_: aprl.utils.kw2a
+            fn:
+              _target_: hydra_zen.funcs.get_obj
+              path: operator.itemgetter
+            ssh_var: ssh
+          ref_paths: data/prepared/ref/c2.nc
+          segment_overlapping: 0.25
+          study_paths: data/prepared/method_outputs/default_on_track.nc
+          velocity: 6.77
+      methods.toml:
+        methods.oi_demo:
+          url: https://s3.eu-west-2.wasabisys.com/melody/quentin_cloud/oost_oi_demo.nc
+          var: ssh
+    outs:
+    - path: data/metrics/lambdax_oi_demo.json
+      hash: md5
+      md5: 03651992038436044f1ebebcc015ba50
+      size: 35
+    - path: data/prepared/method_outputs/psd_oi_demo.nc
+      hash: md5
+      md5: 9883c650abde21f9269adca5574a0877
+      size: 8954
+  diagnostics/metric_mu@oi_demo:
+    cmd: oost-dc_ose_2021-metrics 'to_run=[_04_2_mu]' 'params.study_var=ssh' 'params.method=oi_demo'
+    deps:
+    - path: ../oost_dc_ose_2021/mods/mu.py
+      hash: md5
+      md5: 87b1e1b824c77420d56788cf1e6c881b
+      size: 2526
+    - path: ../oost_dc_ose_2021/pipelines/metrics.py
+      hash: md5
+      md5: 9630bb0d8c7a0c11ba88566667951546
+      size: 4688
+    - path: data/prepared/method_outputs/oi_demo_on_track.nc
+      hash: md5
+      md5: 99ae957acd975fab4a5e89dde5bffd57
+      size: 1581683
+    - path: data/prepared/ref/c2.nc
+      hash: md5
+      md5: 888055307c12551cb187bd39ad1651f4
+      size: 1589781
+    params:
+      full_config.yaml:
+        metrics.parts._04_2_mu:
+          _partial_: true
+          _target_: oost_dc_ose_2021.mods.mu.mu
+          output_path: data/metrics/mu_default.json
+          preprocess_ref:
+            _target_: aprl.utils.kw2a
+            fn:
+              _target_: hydra_zen.funcs.get_obj
+              path: operator.itemgetter
+            ssh_var: ssh
+          preprocess_study:
+            _target_: aprl.utils.kw2a
+            fn:
+              _target_: hydra_zen.funcs.get_obj
+              path: operator.itemgetter
+            ssh_var: ssh
+          ref_paths: data/prepared/ref/c2.nc
+          study_paths: data/prepared/method_outputs/default_on_track.nc
+      methods.toml:
+        methods.oi_demo:
+          url: https://s3.eu-west-2.wasabisys.com/melody/quentin_cloud/oost_oi_demo.nc
+          var: ssh
+    outs:
+    - path: data/metrics/mu_oi_demo.json
+      hash: md5
+      md5: 1d23d92a3e3c8cefb5c4508fbb994aa5
+      size: 30
