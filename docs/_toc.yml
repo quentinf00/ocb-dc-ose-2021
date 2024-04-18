@@ -7,7 +7,7 @@ parts:
   - caption: Installation
     chapters:
     - file: installation
-  - caption: A hands-on example
+  - caption: Getting started
     chapters:
     - file: oost_dc_ose_2021_data
     - file: oost_dc_ose_2021_oi
